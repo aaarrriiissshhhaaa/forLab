@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
+C:/untitled4/libs/data_structures/vector/vector.h
+stdio.h
+-
+stdlib.h
+-
+
 C:/untitled4/main.c
 stdio.h
 -
-math.h
--
 stdint.h
 -
+libs/data_structures/vector/vector.h
+C:/untitled4/libs/data_structures/vector/vector.h
 

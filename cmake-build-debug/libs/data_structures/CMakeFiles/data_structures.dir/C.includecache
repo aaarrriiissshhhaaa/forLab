@@ -6,21 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/untitled4/libs/algorithms/array/array.h
-stddef.h
--
+C:/untitled4/libs/data_structures/vector/vector.c
+vector.h
+C:/untitled4/libs/data_structures/vector/vector.h
 
-C:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.c
-stdint.h
--
-assert.h
--
+C:/untitled4/libs/data_structures/vector/vector.h
 stdio.h
 -
-stdbool.h
+stdlib.h
 -
-malloc.h
--
-../../algorithms/array/array.h
-C:/untitled4/libs/algorithms/array/array.h
 

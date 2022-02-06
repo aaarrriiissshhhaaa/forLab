@@ -176,6 +176,12 @@
 		<Unit filename="C:/untitled4/libs/data_structures/unordered_array_set/unordered_array_set.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/vector/vector.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/vector/vector.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/untitled4/main.c">
 			<Option target="untitled4"/>
 		</Unit>
