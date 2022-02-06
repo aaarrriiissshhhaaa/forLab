@@ -32,16 +32,55 @@ void reserve(vector *v, size_t newCapacity) {
     v->capacity = newCapacity;
 }
 
-void clear(vector *v){
+void clear(vector *v) {
     v->size = 0;
 };
 
-void shrinkToFit(vector *v){
+void shrinkToFit(vector *v) {
     reserve(v, v->size);
 };
 
-void deleteVector(vector *v){
+void deleteVector(vector *v) {
     free(v->data);
     v->size = 0;
     v->capacity = 0;
+};
+
+//возврощает "истина" если вектор v
+//является пустым, иначе "ложь"
+bool isEmpty(vector *v) {
+    return !v->size;
+};
+
+//возврощает "истина" если вектор v
+//является полным, иначе "ложь"
+bool isFull(vector *v) {
+    return v->size == v->capacity;
+};
+
+//возвращает i-ый элемент вектора v
+int getVectorValue(vector *v, size_t i) {
+    return v->data[i];
+};
+
+//добавляет элемент x в конец вектора
+//v. Если вектор заполнен, увеличивает
+//количество выделенной ему памяти в 2 раза
+void pushBack(vector *v, int x) {
+    if (v->capacity == 0) {
+        reserve(v, 1);
+    } else if (isFull(v))
+        reserve(v, v->capacity * 2);
+
+    v->data[v->size] = x;
+    (v->size)++;
+};
+
+//удаляет последний элемент из вектора v
+void popBack(vector *v){
+    if(isEmpty(v)){
+        fprintf(stderr, "Vector is empty");
+        exit(1);
+    }
+    (v->size)--;
 };
