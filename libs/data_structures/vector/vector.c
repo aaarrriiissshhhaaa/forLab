@@ -76,19 +76,24 @@ void pushBack(vector *v, int x) {
     (v->size)++;
 }
 
-// удаляет последний элемент из вектора v
-void popBack(vector *v){
-    if(isEmpty(v)){
+void vectorIsEmptyError(vector *v) {
+    if (isEmpty(v)) {
         fprintf(stderr, "Vector is empty");
         exit(1);
     }
+}
+
+// удаляет последний элемент из вектора v
+void popBack(vector *v) {
+    vectorIsEmptyError(v);
+
     (v->size)--;
 }
 
 // возвращает указатель на index-ый элемент вектора v
-int* atVector(vector *v, size_t index){
-    if(index > v->size){
-        fprintf(stderr, "IndexError: a[%d] is not exists", index);
+int *atVector(vector *v, size_t index) {
+    if (index > v->size) {
+        fprintf(stderr, "IndexError: a[%u] is not exists", index);
         exit(1);
     }
 
@@ -96,20 +101,14 @@ int* atVector(vector *v, size_t index){
 }
 
 // возвращает указатель на последний элемент вектора.
-int* back(vector *v){
-    if(isEmpty(v)){
-        fprintf(stderr, "Vector is empty");
-        exit(1);
-    }
+int *back(vector *v) {
+    vectorIsEmptyError(v);
 
     return v->data + (v->size - 1);
 }
 
-int *front(vector *v){
-    if(isEmpty(v)){
-        fprintf(stderr, "Vector is empty");
-        exit(1);
-    }
+int *front(vector *v) {
+    vectorIsEmptyError(v);
 
     return v->data;
 };
