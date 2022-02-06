@@ -39,10 +39,77 @@ void test_pushBack_fullVector() {
     deleteVector(&v);
 }
 
+void test_atVector_notEmptyVector(){
+    vector v = createVector(3);
+    pushBack(&v, 1);
+    pushBack(&v, 2);
+    pushBack(&v, 3);
+
+    int * index2 = atVector(&v, 1);
+
+    assert(*index2 == 2);
+
+    deleteVector(&v);
+}
+
+void test_atVector_requestToLastElement(){
+    vector v = createVector(3);
+    pushBack(&v, 1);
+    pushBack(&v, 2);
+    pushBack(&v, 3);
+
+    int * index2 = atVector(&v, 2);
+
+    assert(*index2 == 3);
+
+    deleteVector(&v);
+}
+
+void test_atVector_requestToFirstElement(){
+    vector v = createVector(3);
+    pushBack(&v, 1);
+    pushBack(&v, 2);
+    pushBack(&v, 3);
+
+    int * index2 = atVector(&v, 0);
+
+    assert(*index2 == 1);
+
+    deleteVector(&v);
+}
+
+void test_back_oneElementInVector(){
+    vector v = createVector(1);
+    pushBack(&v, 1);
+
+    int * index2 = back(&v);
+
+    assert(*index2 == 1);
+
+    deleteVector(&v);
+}
+
+void test_front_oneElementInVector(){
+    vector v = createVector(1);
+    pushBack(&v, 1);
+
+    int * index2 = front(&v);
+
+    assert(*index2 == 1);
+
+    deleteVector(&v);
+}
+
+
 void test() {
     test_pushBack_emptyVector();
     test_pushBack_fullVector();
     test_popBack_notEmptyVector();
+    test_atVector_notEmptyVector();
+    test_atVector_requestToLastElement();
+    test_atVector_requestToFirstElement();
+    test_back_oneElementInVector();
+    test_front_oneElementInVector();
 }
 
 int main() {

@@ -34,38 +34,38 @@ void reserve(vector *v, size_t newCapacity) {
 
 void clear(vector *v) {
     v->size = 0;
-};
+}
 
 void shrinkToFit(vector *v) {
     reserve(v, v->size);
-};
+}
 
 void deleteVector(vector *v) {
     free(v->data);
     v->size = 0;
     v->capacity = 0;
-};
+}
 
-//возврощает "истина" если вектор v
-//является пустым, иначе "ложь"
+// возврощает "истина" если вектор v
+// является пустым, иначе "ложь"
 bool isEmpty(vector *v) {
     return !v->size;
-};
+}
 
-//возврощает "истина" если вектор v
-//является полным, иначе "ложь"
+// возврощает "истина" если вектор v
+// является полным, иначе "ложь"
 bool isFull(vector *v) {
     return v->size == v->capacity;
-};
+}
 
-//возвращает i-ый элемент вектора v
+// возвращает i-ый элемент вектора v
 int getVectorValue(vector *v, size_t i) {
     return v->data[i];
-};
+}
 
-//добавляет элемент x в конец вектора
-//v. Если вектор заполнен, увеличивает
-//количество выделенной ему памяти в 2 раза
+// добавляет элемент x в конец вектора
+// v. Если вектор заполнен, увеличивает
+// количество выделенной ему памяти в 2 раза
 void pushBack(vector *v, int x) {
     if (v->capacity == 0) {
         reserve(v, 1);
@@ -74,13 +74,42 @@ void pushBack(vector *v, int x) {
 
     v->data[v->size] = x;
     (v->size)++;
-};
+}
 
-//удаляет последний элемент из вектора v
+// удаляет последний элемент из вектора v
 void popBack(vector *v){
     if(isEmpty(v)){
         fprintf(stderr, "Vector is empty");
         exit(1);
     }
     (v->size)--;
+}
+
+// возвращает указатель на index-ый элемент вектора v
+int* atVector(vector *v, size_t index){
+    if(index > v->size){
+        fprintf(stderr, "IndexError: a[%d] is not exists", index);
+        exit(1);
+    }
+
+    return v->data + index;
+}
+
+// возвращает указатель на последний элемент вектора.
+int* back(vector *v){
+    if(isEmpty(v)){
+        fprintf(stderr, "Vector is empty");
+        exit(1);
+    }
+
+    return v->data + (v->size - 1);
+}
+
+int *front(vector *v){
+    if(isEmpty(v)){
+        fprintf(stderr, "Vector is empty");
+        exit(1);
+    }
+
+    return v->data;
 };
