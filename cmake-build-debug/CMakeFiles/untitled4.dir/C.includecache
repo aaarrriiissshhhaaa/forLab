@@ -14,6 +14,12 @@ stdlib.h
 stdbool.h
 -
 
+C:/untitled4/libs/data_structures/vector/vectorVoid.h
+limits.h
+-
+stdbool.h
+-
+
 C:/untitled4/main.c
 stdio.h
 -
@@ -23,4 +29,10 @@ assert.h
 -
 libs/data_structures/vector/vector.h
 C:/untitled4/libs/data_structures/vector/vector.h
+libs/data_structures/vector/vectorVoid.h
+C:/untitled4/libs/data_structures/vector/vectorVoid.h
+stdlib.h
+-
+float.h
+-
 

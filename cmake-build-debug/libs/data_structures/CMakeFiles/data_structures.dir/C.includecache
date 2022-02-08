@@ -6,14 +6,26 @@
 
 #IncludeRegexTransform: 
 
-C:/untitled4/libs/data_structures/vector/vector.c
-vector.h
-C:/untitled4/libs/data_structures/vector/vector.h
-
-C:/untitled4/libs/data_structures/vector/vector.h
+C:/untitled4/libs/data_structures/vector/vectorVoid.c
+vectorVoid.h
+C:/untitled4/libs/data_structures/vector/vectorVoid.h
+malloc.h
+-
+limits.h
+-
+stdint.h
+-
 stdio.h
 -
-stdlib.h
+stdbool.h
+-
+assert.h
+-
+memory.h
+-
+
+C:/untitled4/libs/data_structures/vector/vectorVoid.h
+limits.h
 -
 stdbool.h
 -
