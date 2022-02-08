@@ -11,37 +11,37 @@ typedef struct vectorVoid {
     size_t baseTypeSize; // размер базового типа:
 } vectorVoid;
 
-//возвращает структуру-дескриптор вектор из n значений
-//и размером базового типа baseTypeSize
+// возвращает структуру-дескриптор вектор из n значений
+// и размером базового типа baseTypeSize
 vectorVoid createVectorV(size_t n, size_t baseTypeSize);
 
-//изменяет количество памяти на newCapacity, выделенное
-//под хранение элементов вектора v
+// изменяет количество памяти на newCapacity, выделенное
+// под хранение элементов вектора v
 void reserveV(vectorVoid *v, size_t newCapacity);
 
-//освобождает память, выделенную
-//под неиспользуемые элементы вектора v
+// освобождает память, выделенную
+// под неиспользуемые элементы вектора v
 void shrinkToFitV(vectorVoid *v);
 
-//удаляет элементы вектора v
+// удаляет элементы вектора v
 void clearV(vectorVoid *v);
 
-//освобождает память выделенную вектору v
+// освобождает память выделенную вектору v
 void deleteVectorV(vectorVoid *v);
 
-//возвращает "истина" если вектор v
-//является пустым, иначе "ложь"
+// возвращает "истина" если вектор v
+// является пустым, иначе "ложь"
 bool isEmptyV(vectorVoid *v);
 
-//возвращает "истина" если вектор v
-//является полным, иначе "ложь"
+// возвращает "истина" если вектор v
+// является полным, иначе "ложь"
 bool isFullV(vectorVoid *v);
 
-//записывает по адресу destination index-ый элемент вектора v.
+// записывает по адресу destination index-ый элемент вектора v.
 void getVectorValueV(vectorVoid *v, size_t index, void *destination);
 
-//записывает на index-ый элемент вектора v значение,
-//расположенное по адресу source
+// записывает на index-ый элемент вектора v значение,
+// расположенное по адресу source
 void setVectorValueV(vectorVoid *v, size_t index, void *source);
 
 // удаляет последний элемент из вектора v

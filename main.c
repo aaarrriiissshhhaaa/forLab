@@ -80,7 +80,7 @@ void test_reserve_toLesserInt() {
 
     int a[] = {1, 2, 3, 4};
 
-    int size = sizeof(a)/sizeof(int);
+    int size = sizeof(a) / sizeof(int);
     for (int i = 0; i < size; i++)
         pushBackV(&v, a + i);
 
@@ -104,7 +104,7 @@ void test_reserve_toMoreInt() {
 
     int a[] = {1, 2, 3, 4, 5};
 
-    int size = sizeof(a)/sizeof(int);
+    int size = sizeof(a) / sizeof(int);
     for (int i = 0; i < size; i++)
         pushBackV(&v, a + i);
 
@@ -250,7 +250,7 @@ void test_isEmpty_emptyVectorInt() {
 void test_isEmpty_notEmptyVectorInt() {
     vectorVoid v = createVectorV(0, sizeof(int));
 
-    int elem = 7;
+    int elem = 8;
     pushBackV(&v, &elem);
 
     assert(!isEmptyV(&v));
@@ -269,7 +269,7 @@ void test_isFull_emptyVectorInt() {
 void test_isFull_notEmptyNotFullVectorInt() {
     vectorVoid v = createVectorV(5, sizeof(int));
 
-    int elem = 2;
+    int elem = 8;
     pushBackV(&v, &elem);
 
     assert(!isFullV(&v));
