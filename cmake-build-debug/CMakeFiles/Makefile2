@@ -81,16 +81,19 @@ clean: libs/clean
 # Recursive "all" directory target.
 libs/all: libs/data_structures/all
 libs/all: libs/algorithms/all
+libs/all: libs/test/all
 .PHONY : libs/all
 
 # Recursive "preinstall" directory target.
 libs/preinstall: libs/data_structures/preinstall
 libs/preinstall: libs/algorithms/preinstall
+libs/preinstall: libs/test/preinstall
 .PHONY : libs/preinstall
 
 # Recursive "clean" directory target.
 libs/clean: libs/data_structures/clean
 libs/clean: libs/algorithms/clean
+libs/clean: libs/test/clean
 .PHONY : libs/clean
 
 #=============================================================================
@@ -124,6 +127,21 @@ libs/data_structures/clean: libs/data_structures/CMakeFiles/data_structures.dir/
 .PHONY : libs/data_structures/clean
 
 #=============================================================================
+# Directory level rules for directory libs/test
+
+# Recursive "all" directory target.
+libs/test/all:
+.PHONY : libs/test/all
+
+# Recursive "preinstall" directory target.
+libs/test/preinstall:
+.PHONY : libs/test/preinstall
+
+# Recursive "clean" directory target.
+libs/test/clean:
+.PHONY : libs/test/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/untitled4.dir
 
 # All Build rule for target.
@@ -131,12 +149,12 @@ CMakeFiles/untitled4.dir/all: libs/data_structures/CMakeFiles/data_structures.di
 CMakeFiles/untitled4.dir/all: libs/algorithms/CMakeFiles/algorithms.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled4.dir\build.make CMakeFiles/untitled4.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled4.dir\build.make CMakeFiles/untitled4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\untitled4\cmake-build-debug\CMakeFiles --progress-num=10,11 "Built target untitled4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\untitled4\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target untitled4"
 .PHONY : CMakeFiles/untitled4.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/untitled4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/untitled4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/untitled4.dir/rule
@@ -157,12 +175,12 @@ CMakeFiles/untitled4.dir/clean:
 libs/data_structures/CMakeFiles/data_structures.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\untitled4\cmake-build-debug\CMakeFiles --progress-num=4,5,6,7,8,9 "Built target data_structures"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\untitled4\cmake-build-debug\CMakeFiles --progress-num=4,5,6,7,8,9,10 "Built target data_structures"
 .PHONY : libs/data_structures/CMakeFiles/data_structures.dir/all
 
 # Build rule for subdir invocation for target.
 libs/data_structures/CMakeFiles/data_structures.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/CMakeFiles/data_structures.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 0
 .PHONY : libs/data_structures/CMakeFiles/data_structures.dir/rule

@@ -5,7 +5,7 @@
 		<Option title="course"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\data_structures\;CMake Files\libs\algorithms\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\data_structures\;CMake Files\libs\algorithms\;CMake Files\libs\test\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/untitled4/cmake-build-debug"/>
@@ -164,6 +164,12 @@
 		<Unit filename="C:/untitled4/libs/data_structures/bitset/bitset.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/matrix/matrix.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/matrix/matrix.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.c">
 			<Option target="data_structures"/>
 		</Unit>
@@ -202,6 +208,9 @@
 		</Unit>
 		<Unit filename="C:/untitled4/libs/algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\algorithms\"/>
+		</Unit>
+		<Unit filename="C:/untitled4/libs/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\test\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

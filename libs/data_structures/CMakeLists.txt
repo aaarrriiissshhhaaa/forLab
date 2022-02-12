@@ -3,4 +3,5 @@ add_library(data_structures
         unordered_array_set/unordered_array_set.c
         bitset/bitset.c
         vector/vector.c
-        vector/vectorVoid.c)
+        vector/vectorVoid.c
+        matrix/matrix.c)
