@@ -1,11 +1,6 @@
 #ifndef COURSE_MATRIX_H
 #define COURSE_MATRIX_H
 
-// Я СОЗДАЛА СТРУКТУРУ. ПЕРВЫЙ АНЕКДОТ-оскорбление ПОШЁЛ :
-// когда тебе в следующий раз станет грустно,
-// вспомни
-// что у тебя ещё и ОП
-
 // отдельно напомню rows - строки
 // cols - стобцы, УЧИМ АНГЛИЙСКИЙ ВМЕСТЕ
 typedef struct matrix {
@@ -37,5 +32,19 @@ void freeMemMatrix(matrix m);
 // освобождает память, выделенную под хранение
 // массива ms из nMatrices матриц.
 void freeMemMatrices(matrix *ms, int nMatrices);
+
+// ввод матрицы m
+void inputMatrix(matrix m);
+
+// ввод массива из nMatrices матриц,
+// хранящейся по адресу ms
+void inputMatrices(matrix *ms, int nMatrices);
+
+// вывод матрицы m
+void outputMatrix(matrix m);
+
+// вывод массива из nMatrices матриц,
+// хранящейся по адресу ms
+void outputMatrices(matrix *ms, int nMatrices);
 
 #endif
