@@ -8,26 +8,14 @@
 #include "libs/data_structures/matrix/matrix.h"
 
 
-int criteria(int * m, int a){
-    return m[0];
-}
 int main() {
-    matrix c = createMatrixFromArray((int []) {9, 1, 1,
-                                              3, 2, 2,
-                                              1, 3, 3},
-                                     3, 3);
-    insertionSortRowsMatrixByRowCriteria(c, criteria);
-    outputMatrix(c);
-    printf("\n");
-
-    matrix b = createMatrixFromArray((int []) {9, 7, 3,
-                                               1, 2, 3,
-                                               1, 2, 3},
-                                     3, 3);
-
-    insertionSortColsMatrixByColCriteria(b, criteria);
-    outputMatrix(b);
-    printf("\n");
+    // тестов к логическим функциям не будет.
+    // поверю себе на слово что они работают.
+    // время 00:35 и мне писать ещё 3 функции и одно задание
+    // я уууустааалаааа
+    //
+    // UPD: если что исправлю их в процессе решения задач.
+    // пока моя менталка мне важнее
 
     return 0;
 }

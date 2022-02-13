@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "../../algorithms/algorithm.h"
 #include <stdlib.h>
+#include <string.h>
 
 // АНЕКДОТ-оскорбление три :
 // меня мама рожала не для того, чтобы я с такими как ты общалася
@@ -161,4 +162,41 @@ void insertionSortColsMatrixByColCriteria(matrix m,
             swapColumnsWithoutVerificationIndex(m, indexCriteria,
                                                 indexCriteria - 1);
         }
+}
+
+bool isSquareMatrix(matrix m){
+    return m.nRows == m.nCols;
+}
+
+bool twoMatricesEqual(matrix m1, matrix m2){
+    bool isEqual = m1.nRows == m2.nRows && m1.nCols == m2.nCols ? true : false;
+
+    for (size_t i = 0; i <  m1.nRows && isEqual; i++) {
+        if (memcmp(m1.values[i], m2.values[i], sizeof(int) * m1.nCols) != 0)
+            isEqual = false;
+    }
+
+    return isEqual;
+}
+
+bool isEMatrix(matrix m){
+    bool isEMatrix = isSquareMatrix(m) ? true : false;
+
+    for (int indexRow = 0; indexRow < m.nRows && isEMatrix; indexRow++)
+        for (int indexCol = 0; indexCol < m.nCols && isEMatrix; indexCol++)
+            if (indexRow != indexCol && m.values[indexRow][indexCol] != 0
+            || indexRow == indexCol && m.values[indexRow][indexRow] != 1)
+                isEMatrix = false;
+
+    return isEMatrix;
+}
+bool isSymmetricMatrix(matrix m){
+    bool isSymmetric = isSquareMatrix(m) ? true : false;
+
+    for (int indexRow = 0; indexRow < m.nRows && isSymmetric; indexRow++)
+        for (int indexCol = 0; indexCol < indexRow && isSymmetric; indexCol++)
+            if (m.values[indexRow][indexCol] != m.values[indexCol][indexRow])
+                isSymmetric = false;
+
+    return isSymmetric;
 }

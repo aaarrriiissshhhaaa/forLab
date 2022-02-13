@@ -2,7 +2,7 @@
 #define COURSE_MATRIX_H
 
 #include <stdlib.h>
-
+#include <stdbool.h>
 // отдельно напомню rows - строки
 // cols - стобцы, УЧИМ АНГЛИЙСКИЙ ВМЕСТЕ
 typedef struct matrix {
@@ -92,6 +92,25 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
 // criteria применяемой для столбцов
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int));
+
+// возвращает значение ’истина’, если
+// матрица m является квадратной, 'ложь' – в противном случае.
+bool isSquareMatrix(matrix m);
+
+// возвращает значение
+// ’истина’, если матрицы m1 и m2 равны,
+// 'ложь' – в противном случае
+bool twoMatricesEqual(matrix m1, matrix m2);
+
+// возвращает значение ’истина’, если матрица
+// m является единичной,
+// 'ложь' – в противном случае.
+bool isEMatrix(matrix m);
+
+// возвращает значение ’истина’, если
+// матрица m является симметричной,
+// 'ложь' – в противном случае
+bool isSymmetricMatrix(matrix m);
 
 //void transposeSquareMatrix(matrix m) {
 
