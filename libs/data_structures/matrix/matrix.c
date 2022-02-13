@@ -5,8 +5,8 @@
 #include "../../algorithms/algorithm.h"
 #include <stdlib.h>
 
-// АНЕКДОТ-оскорбление два :
-// как же я ща мощно ничего из себя не представляю
+// АНЕКДОТ-оскорбление три :
+// меня мама рожала не для того, чтобы я с такими как ты общалася
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -70,29 +70,29 @@ void isIndexMatrixCorrect(int size, int index) {
     }
 }
 
-void swapRowsWithVerificationIndex(matrix m, int i1, int i2) {
-    isIndexMatrixCorrect(m.nRows, i1);
-    isIndexMatrixCorrect(m.nRows, i2);
+void swapRowsWithVerificationIndex(matrix m, int rowIndex1, int rowIndex2) {
+    isIndexMatrixCorrect(m.nRows, rowIndex1);
+    isIndexMatrixCorrect(m.nRows, rowIndex2);
 
-    swap(&m.values[i1], &m.values[i2], sizeof(int *));
+    swap(&m.values[rowIndex1], &m.values[rowIndex2], sizeof(int *));
 }
 
-void swapRowsWithoutVerificationIndex(matrix m, int i1, int i2) {
-    swap(&m.values[i1], &m.values[i2], sizeof(int *));
+void swapRowsWithoutVerificationIndex(matrix m, int rowIndex1, int rowIndex2) {
+    swap(&m.values[rowIndex1], &m.values[rowIndex2], sizeof(int *));
 }
 
-void swapColumnsWithVerificationIndex(matrix m, int j1, int j2) {
-    isIndexMatrixCorrect(m.nCols, j1);
-    isIndexMatrixCorrect(m.nCols, j2);
+void swapColumnsWithVerificationIndex(matrix m, int colIndex1, int colIndex2) {
+    isIndexMatrixCorrect(m.nCols, colIndex1);
+    isIndexMatrixCorrect(m.nCols, colIndex2);
 
     for (int indexRow = 0; indexRow < m.nRows; indexRow++)
-        swap(&m.values[indexRow][j1], &m.values[indexRow][j2],
+        swap(&m.values[indexRow][colIndex1], &m.values[indexRow][colIndex2],
              sizeof(int));
 }
 
-void swapColumnsWithoutVerificationIndex(matrix m, int j1, int j2) {
+void swapColumnsWithoutVerificationIndex(matrix m, int colIndex1, int colIndex2) {
     for (int indexRow = 0; indexRow < m.nRows; indexRow++)
-        swap(&m.values[indexRow][j1], &m.values[indexRow][j2],
+        swap(&m.values[indexRow][colIndex1], &m.values[indexRow][colIndex2],
              sizeof(int));
 }
 
@@ -120,4 +120,45 @@ matrix *createArrayOfMatrixFromArray(const int *values,
                         values[indexArray++];
 
     return ms;
+}
+
+void insertionSortRowsMatrixByRowCriteria(matrix m,
+                                          int (*criteria)(int *, int)) {
+    int rowsCriteria[m.nRows];
+    for (int indexCriteria = 0; indexCriteria < m.nRows; indexCriteria++)
+        rowsCriteria[indexCriteria] = criteria(m.values[indexCriteria],
+                                               m.nCols);
+
+    for (int indexRow = 1; indexRow < m.nRows; indexRow++)
+        for (int indexCriteria = indexRow; indexCriteria > 0 &&
+                                           rowsCriteria[indexCriteria - 1]
+                                           > rowsCriteria[indexCriteria];
+                                            indexCriteria--) {
+            swap(&rowsCriteria[indexCriteria - 1],
+                 &rowsCriteria[indexCriteria], sizeof(int));
+            swapRowsWithoutVerificationIndex(m, indexCriteria,
+                                             indexCriteria - 1);
+        }
+}
+
+void insertionSortColsMatrixByColCriteria(matrix m,
+                                          int (*criteria)(int *, int)) {
+    int colsCriteria[m.nCols];
+    for (int indexRow = 0; indexRow < m.nCols; indexRow++) {
+        int colsMatrix[m.nRows];
+        for (int indexCol = 0; indexCol < m.nRows; ++indexCol)
+            colsMatrix[indexRow] = m.values[indexRow][indexCol];
+
+        colsCriteria[indexRow] = criteria(colsMatrix, m.nRows);
+    }
+    for (int indexRow = 1; indexRow < m.nCols; indexRow++)
+        for (int indexCriteria = indexRow; indexCriteria > 0 &&
+                                           colsCriteria[indexCriteria - 1]
+                                           > colsCriteria[indexCriteria];
+                                                indexCriteria--) {
+            swap(&colsCriteria[indexCriteria - 1],
+                 &colsCriteria[indexCriteria], sizeof(int));
+            swapColumnsWithoutVerificationIndex(m, indexCriteria,
+                                                indexCriteria - 1);
+        }
 }

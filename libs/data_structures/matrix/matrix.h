@@ -50,32 +50,51 @@ void outputMatrix(matrix m);
 void outputMatrices(matrix *ms, int nMatrices);
 
 // обмен строк матрицы m
-// с порядковыми номерами i1 и i2
+// с порядковыми номерами rowIndex1 и rowIndex2
 // с проверкой индексов строк
-void swapRowsWithVerificationIndex(matrix m, int i1, int i2);
+void swapRowsWithVerificationIndex(matrix m, int rowIndex1, int rowIndex2);
 
 // обмен строк матрицы m
-// с порядковыми номерами i1 и i2
+// с порядковыми номерами rowIndex1 и rowIndex2
 // без проверки индексов строк
-void swapRowsWithoutVerificationIndex(matrix m, int i1, int i2);
+void swapRowsWithoutVerificationIndex(matrix m, int rowIndex1, int rowIndex2);
 
 // обмен столбцов матрицы m
-// с порядковыми номерами i1 и i2
+// с порядковыми номерами colIndex1 и colIndex2
 // с проверкой индексов столбцов
-void swapColumnsWithVerificationIndex(matrix m, int j1, int j2);
+void swapColumnsWithVerificationIndex(matrix m, int colIndex1, int colIndex2);
 
 // обмен столбцов матрицы m
-// с порядковыми номерами i1 и i2
+// с порядковыми номерами colIndex1 и colIndex2
 // без проверки индексов столбцов
-void swapColumnsWithoutVerificationIndex(matrix m, int j1, int j2);
+void swapColumnsWithoutVerificationIndex(matrix m, int colIndex1, int colIndex2);
 
 // возвращает матрицу, размера nRows на nCols,
 // построенного из элементов массива a,
 // размещенную в динамической памяти
 matrix createMatrixFromArray(const int *a, int nRows, int nCols);
 
+// возвращает указатель на нулевую матрицу массива
+// из nMatrices матриц, размещенных в динамической памяти,
+// построенных из элементов массива values
 matrix *createArrayOfMatrixFromArray(const int *values,
                                      int nMatrices,
                                      int nRows, int nCols);
+
+// выполняет сортировку вставками строк
+// матрицы m по неубыванию значения функции criteria
+// применяемой для строк
+void insertionSortRowsMatrixByRowCriteria(matrix m,
+                                          int (*criteria)(int *, int));
+
+// выполняет сортировку вставками
+// столбцов матрицы m по неубыванию значения функции
+// criteria применяемой для столбцов
+void insertionSortColsMatrixByColCriteria(matrix m,
+                                          int (*criteria)(int *, int));
+
+//void transposeSquareMatrix(matrix m) {
+
+//}
 
 #endif

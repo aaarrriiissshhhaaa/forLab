@@ -7,29 +7,25 @@
 #include "libs/test/testMatrix/testMatrix.h"
 #include "libs/data_structures/matrix/matrix.h"
 
+
+int criteria(int * m, int a){
+    return m[0];
+}
 int main() {
-    matrix c = createMatrixFromArray((int []) {1, 1, 1,
-                                              2, 2, 2,
-                                              3, 3, 3},
+    matrix c = createMatrixFromArray((int []) {9, 1, 1,
+                                              3, 2, 2,
+                                              1, 3, 3},
                                      3, 3);
-    swapRowsWithVerificationIndex(c, 1, 2);
+    insertionSortRowsMatrixByRowCriteria(c, criteria);
     outputMatrix(c);
     printf("\n");
 
-    swapRowsWithoutVerificationIndex(c, 1, 2);
-    outputMatrix(c);
-    printf("\n");
-
-    matrix b = createMatrixFromArray((int []) {1, 2, 3,
+    matrix b = createMatrixFromArray((int []) {9, 7, 3,
                                                1, 2, 3,
                                                1, 2, 3},
                                      3, 3);
 
-    swapColumnsWithVerificationIndex(b, 1, 2);
-    outputMatrix(b);
-    printf("\n");
-
-    swapColumnsWithoutVerificationIndex(b, 1, 2);
+    insertionSortColsMatrixByColCriteria(b, criteria);
     outputMatrix(b);
     printf("\n");
 
