@@ -9,5 +9,6 @@ C:/untitled4/cmake-build-debug/libs/data_structures/CMakeFiles/rebuild_cache.dir
 C:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir
 C:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/edit_cache.dir
 C:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/rebuild_cache.dir
-C:/untitled4/cmake-build-debug/libs/test/CMakeFiles/edit_cache.dir
 C:/untitled4/cmake-build-debug/libs/test/CMakeFiles/rebuild_cache.dir
+C:/untitled4/cmake-build-debug/libs/test/CMakeFiles/test.dir
+C:/untitled4/cmake-build-debug/libs/test/CMakeFiles/edit_cache.dir

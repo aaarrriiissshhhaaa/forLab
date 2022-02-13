@@ -7,7 +7,6 @@
 #include <assert.h>
 #include "array.h"
 
-
 void inputArray_(int *const a, const size_t n) {
     for (size_t i = 0; i < n; i++)
         scanf("%d", &a[i]);

@@ -154,6 +154,19 @@ algorithms/fast:
 	$(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/build
 .PHONY : algorithms/fast
 
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -188,6 +201,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... algorithms
 	@echo ... data_structures
+	@echo ... test
 	@echo ... untitled4
 	@echo ... main.obj
 	@echo ... main.i

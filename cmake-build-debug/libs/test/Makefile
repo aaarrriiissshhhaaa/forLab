@@ -64,16 +64,6 @@ CMAKE_BINARY_DIR = C:\untitled4\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -83,6 +73,16 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -115,6 +115,44 @@ depend:
 	cd /d C:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+libs/test/CMakeFiles/test.dir/rule:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/CMakeFiles/test.dir/rule
+.PHONY : libs/test/CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: libs/test/CMakeFiles/test.dir/rule
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+testMatrix/testMatrix.obj: testMatrix/testMatrix.c.obj
+.PHONY : testMatrix/testMatrix.obj
+
+# target to build an object file
+testMatrix/testMatrix.c.obj:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.obj
+.PHONY : testMatrix/testMatrix.c.obj
+
+testMatrix/testMatrix.i: testMatrix/testMatrix.c.i
+.PHONY : testMatrix/testMatrix.i
+
+# target to preprocess a source file
+testMatrix/testMatrix.c.i:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.i
+.PHONY : testMatrix/testMatrix.c.i
+
+testMatrix/testMatrix.s: testMatrix/testMatrix.c.s
+.PHONY : testMatrix/testMatrix.s
+
+# target to generate assembly for a file
+testMatrix/testMatrix.c.s:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.s
+.PHONY : testMatrix/testMatrix.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -123,6 +161,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... test
+	@echo ... testMatrix/testMatrix.obj
+	@echo ... testMatrix/testMatrix.i
+	@echo ... testMatrix/testMatrix.s
 .PHONY : help
 
 

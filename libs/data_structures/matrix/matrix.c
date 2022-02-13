@@ -1,11 +1,12 @@
 #include "matrix.h"
 #include <malloc.h>
 #include <stdio.h>
+#include <stdint.h>
+#include "../../algorithms/algorithm.h"
+#include <stdlib.h>
 
-// Я СОЗДАЛА СТРУКТУРУ. ПЕРВЫЙ АНЕКДОТ-оскорбление ПОШЁЛ :
-// когда тебе в следующий раз станет грустно,
-// вспомни
-// что у тебя ещё и ОП
+// АНЕКДОТ-оскорбление два :
+// как же я ща мощно ничего из себя не представляю
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -62,4 +63,61 @@ void outputMatrices(matrix *ms, int nMatrices) {
     }
 }
 
+void isIndexMatrixCorrect(int size, int index) {
+    if (index >= size) {
+        fprintf(stderr, "Index {%d} out of the range", index);
+        exit(1);
+    }
+}
 
+void swapRowsWithVerificationIndex(matrix m, int i1, int i2) {
+    isIndexMatrixCorrect(m.nRows, i1);
+    isIndexMatrixCorrect(m.nRows, i2);
+
+    swap(&m.values[i1], &m.values[i2], sizeof(int *));
+}
+
+void swapRowsWithoutVerificationIndex(matrix m, int i1, int i2) {
+    swap(&m.values[i1], &m.values[i2], sizeof(int *));
+}
+
+void swapColumnsWithVerificationIndex(matrix m, int j1, int j2) {
+    isIndexMatrixCorrect(m.nCols, j1);
+    isIndexMatrixCorrect(m.nCols, j2);
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        swap(&m.values[indexRow][j1], &m.values[indexRow][j2],
+             sizeof(int));
+}
+
+void swapColumnsWithoutVerificationIndex(matrix m, int j1, int j2) {
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        swap(&m.values[indexRow][j1], &m.values[indexRow][j2],
+             sizeof(int));
+}
+
+matrix createMatrixFromArray(const int *a, int nRows, int nCols) {
+    matrix m = getMemMatrix(nRows, nCols);
+
+    int indexArray = 0;
+    for (int indexRow = 0; indexRow < nRows; indexRow++)
+        for (int indexCol = 0; indexCol < nCols; indexCol++)
+            m.values[indexRow][indexCol] = a[indexArray++];
+
+    return m;
+}
+
+matrix *createArrayOfMatrixFromArray(const int *values,
+                                     int nMatrices,
+                                     int nRows, int nCols) {
+    matrix *ms = getMemArrayOfMatrices(nMatrices, nRows, nCols);
+
+    int indexArray = 0;
+    for (int indexMatrix = 0; indexMatrix < nMatrices; indexMatrix++)
+        for (int indexRow = 0; indexRow < nRows; indexRow++)
+            for (int indexCol = 0; indexCol < nCols; indexCol++)
+                ms[indexMatrix].values[indexRow][indexCol] =
+                        values[indexArray++];
+
+    return ms;
+}
