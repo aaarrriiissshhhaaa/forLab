@@ -6,8 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-// АНЕКДОТ-оскорбление три :
-// меня мама рожала не для того, чтобы я с такими как ты общалася
+// АНЕКДОТ-оскорбление файф :
+// так быстро день пролетел, чуть не забыла
+// загнаться по всякой ерунде
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -199,4 +200,46 @@ bool isSymmetricMatrix(matrix m){
                 isSymmetric = false;
 
     return isSymmetric;
+}
+
+void transposeSquareMatrix(matrix m){
+    if(isSquareMatrix(m) == 0){
+        fprintf(stderr, "not square matrix :( ");
+        exit(1);
+    }
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        for (int indexCol = 0; indexCol < indexRow; indexCol++)
+            swap(&m.values[indexRow][indexCol],&m.values[indexCol][indexRow],
+                 sizeof(int));
+}
+
+position getMinValuePos(matrix m){
+    int minValues = m.values[0][0];
+    position minPos = {0, 0};
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        for (int indexCol = 0; indexCol < m.nCols; indexCol++)
+            if (m.values[indexRow][indexCol] < minValues) {
+                minValues = m.values[indexRow][indexCol];
+                minPos.colIndex = indexCol;
+                minPos.rowIndex = indexRow;
+            }
+
+    return minPos;
+}
+
+position getMaxValuePos(matrix m){
+    int maxValues = m.values[0][0];
+    position maxPos = {0, 0};
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        for (int indexCol = 0; indexCol < m.nCols; indexCol++)
+            if (m.values[indexRow][indexCol] > maxValues) {
+                maxValues = m.values[indexRow][indexCol];
+                maxPos.colIndex = indexCol;
+                maxPos.rowIndex = indexRow;
+            }
+
+    return maxPos;
 }

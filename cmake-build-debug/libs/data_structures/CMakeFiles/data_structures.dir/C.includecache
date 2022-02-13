@@ -23,8 +23,12 @@ stdint.h
 C:/untitled4/libs/algorithms/algorithm.h
 stdlib.h
 -
+string.h
+-
 
 C:/untitled4/libs/data_structures/matrix/matrix.h
 stdlib.h
+-
+stdbool.h
 -
 

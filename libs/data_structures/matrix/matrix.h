@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+
 // отдельно напомню rows - строки
 // cols - стобцы, УЧИМ АНГЛИЙСКИЙ ВМЕСТЕ
 typedef struct matrix {
@@ -112,8 +113,13 @@ bool isEMatrix(matrix m);
 // 'ложь' – в противном случае
 bool isSymmetricMatrix(matrix m);
 
-//void transposeSquareMatrix(matrix m) {
+// транспонирует квадратную матрицу m
+void transposeSquareMatrix(matrix m);
 
-//}
+// возвращает позицию минимального элемента матрицы m
+position getMinValuePos(matrix m);
+
+// возвращает позицию максимального элемента матрицы m
+position getMaxValuePos(matrix m);
 
 #endif

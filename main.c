@@ -9,13 +9,19 @@
 
 
 int main() {
-    // тестов к логическим функциям не будет.
-    // поверю себе на слово что они работают.
-    // время 00:35 и мне писать ещё 3 функции и одно задание
-    // я уууустааалаааа
-    //
-    // UPD: если что исправлю их в процессе решения задач.
-    // пока моя менталка мне важнее
+    // я перенесу это в тесты позже, не переживайте
+    matrix c = createMatrixFromArray((int[]){1, 2, 3, 4,
+                                             5, 6, 7, 8,
+                                             9, 10, 11, 12},
+                                     3, 4);
+
+    position min = getMinValuePos(c);
+    position max = getMaxValuePos(c);
+    position minTrue = {0, 0};
+    position maxTrue = {2, 3};
+
+    assert(min.colIndex == minTrue.colIndex && min.rowIndex == minTrue.rowIndex);
+    assert(max.colIndex == maxTrue.colIndex && max.rowIndex == maxTrue.rowIndex);
 
     return 0;
 }
