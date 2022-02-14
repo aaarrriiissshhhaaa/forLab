@@ -6,9 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-// АНЕКДОТ-оскорбление файф :
-// так быстро день пролетел, чуть не забыла
-// загнаться по всякой ерунде
+// АНЕКДОТ-оскорбление сикс :
+//
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -243,3 +242,4 @@ position getMaxValuePos(matrix m){
 
     return maxPos;
 }
+

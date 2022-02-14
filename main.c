@@ -7,21 +7,22 @@
 #include "libs/test/testMatrix/testMatrix.h"
 #include "libs/data_structures/matrix/matrix.h"
 
+void swapMaxMinIndex(matrix m){
+    position min = getMinValuePos(m);
+    position max = getMaxValuePos(m);
+
+    swapRowsWithoutVerificationIndex(m, min.rowIndex, max.rowIndex);
+}
 
 int main() {
-    // я перенесу это в тесты позже, не переживайте
-    matrix c = createMatrixFromArray((int[]){1, 2, 3, 4,
-                                             5, 6, 7, 8,
-                                             9, 10, 11, 12},
-                                     3, 4);
+    //тестов пока нет. Напишу может быть завтра.
+    matrix c = createMatrixFromArray((int[]){4, 6, 7,
+                                             2, 9, 1,
+                                             3, 24, 8,
+                                             11, 5, 0}, 4, 3);
 
-    position min = getMinValuePos(c);
-    position max = getMaxValuePos(c);
-    position minTrue = {0, 0};
-    position maxTrue = {2, 3};
-
-    assert(min.colIndex == minTrue.colIndex && min.rowIndex == minTrue.rowIndex);
-    assert(max.colIndex == maxTrue.colIndex && max.rowIndex == maxTrue.rowIndex);
+    swapMaxMinIndex(c);
+    outputMatrix(c);
 
     return 0;
 }
