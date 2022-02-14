@@ -6,19 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-// АНЕКДОТ-оскорбление сикс :
-// так так так
-// я задолжала анекдот
-// сегодня 14 февраля и вот вам:
-// - я люблю солнышко но валентинку
-// не сделала. Боюсь оно меня спалит.
-
-// анекдот севен:
-// есть два типа людей:
-//
-// умереть от старости
-//
-// умереть от старосты
+// АНЕКДОТ-оскорбление эйт :
+// как человек ты на 50% обесценился
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -153,13 +142,14 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
         }
 }
 
+// надо привести в норму индексы чот ты подзапуталась моя зайка
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int)) {
     int colsCriteria[m.nCols];
     for (int indexRow = 0; indexRow < m.nCols; indexRow++) {
         int colsMatrix[m.nRows];
-        for (int indexCol = 0; indexCol < m.nRows; ++indexCol)
-            colsMatrix[indexRow] = m.values[indexRow][indexCol];
+        for (int indexCol = 0; indexCol < m.nRows; indexCol++)
+            colsMatrix[indexCol] = m.values[indexCol][indexRow];
 
         colsCriteria[indexRow] = criteria(colsMatrix, m.nRows);
     }
