@@ -64,6 +64,21 @@ void getSquareOfMatrixIfSymmetric(matrix *m) {
         *m = mulMatrices(*m, *m);
 }
 
+//bool isUnique(long long *a, int n){
+//    for (int i = 0; i < n - 1; i++)
+//        for (int j = 0; j < n; ++j)
+//            if(a[i] == a[j])
+//                return false;
+//
+//    return true;
+//}
+
+// я ещё подумаю как написать тесты. Мне пока лень
+bool isMutuallyInverseMatrices(matrix m1, matrix m2){
+    return isEMatrix(mulMatrices(m1, m2));
+}
+
+
 int main() {
     //тестов пока нет. Напишу может быть завтра.
 
