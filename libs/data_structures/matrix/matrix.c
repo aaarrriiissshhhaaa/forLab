@@ -6,9 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// АНЕКДОТ-оскорбление эйт :
-// как человек ты на 50% обесценился
-
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
     for (int indexRows = 0; indexRows < nRows; indexRows++)
@@ -169,7 +166,7 @@ bool isSquareMatrix(matrix m){
     return m.nRows == m.nCols;
 }
 
-bool twoMatricesEqual(matrix m1, matrix m2){
+bool areTwoMatricesEqual(matrix m1, matrix m2){
     bool isEqual = m1.nRows == m2.nRows && m1.nCols == m2.nCols ? true : false;
 
     for (size_t i = 0; i <  m1.nRows && isEqual; i++) {
