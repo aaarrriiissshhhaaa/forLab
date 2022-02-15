@@ -111,7 +111,7 @@ int getMinArray(int *a, int size) {
 }
 
 
-int getMinInArea(matrix m){
+int getMinInArea(matrix m) {
     position maxElement = getMaxValuePos(m);
 
     position elemLeft = maxElement;
@@ -119,9 +119,9 @@ int getMinInArea(matrix m){
 
     int minElem = m.values[maxElement.rowIndex][maxElement.colIndex];
 
-    while(elemRight.colIndex < m.nCols && elemLeft.colIndex >= 0 ) {
+    while (elemRight.colIndex < m.nCols && elemLeft.colIndex >= 0) {
         minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
-                         elemRight.colIndex - elemLeft.colIndex + 1),
+                             elemRight.colIndex - elemLeft.colIndex + 1),
                       minElem);
         elemLeft.colIndex--;
         elemLeft.rowIndex--;
@@ -130,15 +130,33 @@ int getMinInArea(matrix m){
 
     }
 
-    if(elemRight.colIndex >= m.nCols){
+    if (elemRight.colIndex >= m.nCols) {
         elemRight.colIndex--;
+        while (elemLeft.rowIndex >= 0 && elemLeft.colIndex >= 0) {
+            minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
+                                 elemRight.colIndex - elemLeft.colIndex + 1),
+                          minElem);
+            elemLeft.colIndex--;
+            elemLeft.rowIndex--;
+            elemRight.rowIndex--;
+        }
     }
 
-    while (elemLeft.rowIndex >= 0){
-        minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
-                             elemRight.colIndex - elemLeft.colIndex + 1),
+    if (elemLeft.colIndex < 0) {
+        elemLeft.colIndex++;
+        while (elemLeft.rowIndex >= 0 && elemRight.colIndex < m.nCols) {
+            minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
+                                 elemRight.colIndex - elemLeft.colIndex + 1),
+                          minElem);
+            elemLeft.rowIndex--;
+            elemRight.rowIndex--;
+            elemRight.colIndex++;
+        }
+    }
+
+    while (elemLeft.rowIndex >= 0) {
+        minElem = min(getMin(m.values[elemLeft.rowIndex], m.nCols),
                       minElem);
-        elemLeft.colIndex--;
         elemLeft.rowIndex--;
         elemRight.rowIndex--;
     }
@@ -149,9 +167,10 @@ int getMinInArea(matrix m){
 int main() {
     //тестов пока нет. Напишу может быть завтра.
 
-    matrix c = createMatrixFromArray((int[]) {1, -2, 1, -1,
-                                              1, 1, 4, 9,
-                                              8, 3, 3, 3}, 3, 4);
+    matrix c = createMatrixFromArray((int[]) {35, 1, 3,
+                                              4, 5, 6,
+                                              7, 8, 9,
+                                              10, 56, 12}, 4, 3);
 
     printf("%d\n", getMinInArea(c));
     outputMatrix(c);
