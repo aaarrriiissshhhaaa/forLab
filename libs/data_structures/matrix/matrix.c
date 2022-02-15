@@ -1,7 +1,6 @@
 #include "matrix.h"
 #include <malloc.h>
 #include <stdio.h>
-#include <stdint.h>
 #include "../../algorithms/algorithm.h"
 #include <stdlib.h>
 #include <string.h>
