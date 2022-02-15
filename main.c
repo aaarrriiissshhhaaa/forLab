@@ -64,29 +64,47 @@ void getSquareOfMatrixIfSymmetric(matrix *m) {
         *m = mulMatrices(*m, *m);
 }
 
-//bool isUnique(long long *a, int n){
-//    for (int i = 0; i < n - 1; i++)
-//        for (int j = 0; j < n; ++j)
-//            if(a[i] == a[j])
-//                return false;
-//
-//    return true;
-//}
-
-// я ещё подумаю как написать тесты. Мне пока лень
 bool isMutuallyInverseMatrices(matrix m1, matrix m2){
     return isEMatrix(mulMatrices(m1, m2));
 }
 
 
+int max(int a, int b){
+    return a > b ? a : b;
+}
+
+int getMaxElementDiag(matrix m, int indexRow, int indexCol){
+    int maxElement = m.values[indexRow][indexCol];
+
+    while (indexRow < m.nRows && indexCol < m.nCols){
+        maxElement = max(maxElement, m.values[indexRow++][indexCol++]);
+    }
+
+    return maxElement;
+}
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m){
+    long long sumMaxDiag = 0;
+
+    // сумма ниже главной диагонали
+    for (int indexRow = 1; indexRow < m.nRows; indexRow++)
+        sumMaxDiag += getMaxElementDiag(m, indexRow, 0);
+
+    // сумма выше главной диагонали
+    for (int indexCol = 1; indexCol < m.nCols; indexCol++)
+        sumMaxDiag += getMaxElementDiag(m, 0, indexCol);
+
+    return sumMaxDiag;
+}
+
 int main() {
     //тестов пока нет. Напишу может быть завтра.
 
-    matrix c = createMatrixFromArray((int[]) {2, 0, 0,
-                                               0, 2, 0,
-                                               0, 0, 2}, 3, 3);
+    matrix c = createMatrixFromArray((int[]) {3, 2, 5, 4,
+                                              1, 3, 6, 3,
+                                              3, 2, 1, 2}, 3 , 4);
 
-    getSquareOfMatrixIfSymmetric(&c);
+    printf("%lld\n", findSumOfMaxesOfPseudoDiagonal(c));
     outputMatrix(c);
 
     freeMemMatrix(c);
