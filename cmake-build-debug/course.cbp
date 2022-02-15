@@ -194,6 +194,12 @@
 		<Unit filename="C:/untitled4/libs/algorithms/array/array.h">
 			<Option target="algorithms"/>
 		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/5dquestions/questions.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/untitled4/libs/data_structures/5dquestions/questions.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/untitled4/libs/data_structures/bitset/bitset.c">
 			<Option target="data_structures"/>
 		</Unit>

@@ -241,3 +241,22 @@ position getMaxValuePos(matrix m){
     return maxPos;
 }
 
+matrix mulMatrices(matrix m1, matrix m2) {
+    if (m1.nCols != m2.nRows) {
+        fprintf(stderr, "matrices cannot be multiplied");
+        exit(1);
+    }
+
+    matrix multiplicationMatrix = getMemMatrix(m1.nRows, m2.nCols);
+
+    for (int indexRowM1 = 0; indexRowM1 < m1.nRows; indexRowM1++)
+        for (int indexColM2 = 0; indexColM2 < m2.nCols; indexColM2++) {
+            multiplicationMatrix.values[indexRowM1][indexColM2] = 0;
+            for (int indexRowM2 = 0; indexRowM2 < m2.nRows; indexRowM2++)
+                multiplicationMatrix.values[indexRowM1][indexColM2] +=
+                        m1.values[indexRowM1][indexRowM2]
+                        * m2.values[indexRowM2][indexColM2];
+        }
+
+    return (matrix) multiplicationMatrix;
+}

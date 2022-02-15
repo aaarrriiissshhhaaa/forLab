@@ -129,6 +129,30 @@ data_structures/fast:
 	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/build
 .PHONY : data_structures/fast
 
+5dquestions/questions.obj: 5dquestions/questions.c.obj
+.PHONY : 5dquestions/questions.obj
+
+# target to build an object file
+5dquestions/questions.c.obj:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/5dquestions/questions.c.obj
+.PHONY : 5dquestions/questions.c.obj
+
+5dquestions/questions.i: 5dquestions/questions.c.i
+.PHONY : 5dquestions/questions.i
+
+# target to preprocess a source file
+5dquestions/questions.c.i:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/5dquestions/questions.c.i
+.PHONY : 5dquestions/questions.c.i
+
+5dquestions/questions.s: 5dquestions/questions.c.s
+.PHONY : 5dquestions/questions.s
+
+# target to generate assembly for a file
+5dquestions/questions.c.s:
+	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/5dquestions/questions.c.s
+.PHONY : 5dquestions/questions.c.s
+
 bitset/bitset.obj: bitset/bitset.c.obj
 .PHONY : bitset/bitset.obj
 
@@ -282,6 +306,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... data_structures
+	@echo ... 5dquestions/questions.obj
+	@echo ... 5dquestions/questions.i
+	@echo ... 5dquestions/questions.s
 	@echo ... bitset/bitset.obj
 	@echo ... bitset/bitset.i
 	@echo ... bitset/bitset.s

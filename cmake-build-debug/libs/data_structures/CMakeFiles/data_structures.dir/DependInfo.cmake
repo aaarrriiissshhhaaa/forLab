@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/untitled4/libs/data_structures/5dquestions/questions.c" "C:/untitled4/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/5dquestions/questions.c.obj"
   "C:/untitled4/libs/data_structures/bitset/bitset.c" "C:/untitled4/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj"
   "C:/untitled4/libs/data_structures/matrix/matrix.c" "C:/untitled4/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj"
   "C:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.c" "C:/untitled4/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj"

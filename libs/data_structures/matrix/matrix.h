@@ -122,4 +122,8 @@ position getMinValuePos(matrix m);
 // возвращает позицию максимального элемента матрицы m
 position getMaxValuePos(matrix m);
 
+// вовзращает матрицу
+// полученную путем умножение m1 на m2
+matrix mulMatrices(matrix m1, matrix m2);
+
 #endif
