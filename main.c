@@ -60,30 +60,30 @@ matrix mulMatrices(matrix m1, matrix m2) {
 }
 
 void getSquareOfMatrixIfSymmetric(matrix *m) {
-    if(isSymmetricMatrix(*m))
+    if (isSymmetricMatrix(*m))
         *m = mulMatrices(*m, *m);
 }
 
-bool isMutuallyInverseMatrices(matrix m1, matrix m2){
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
     return isEMatrix(mulMatrices(m1, m2));
 }
 
 
-int max(int a, int b){
+int max(int a, int b) {
     return a > b ? a : b;
 }
 
-int getMaxElementDiag(matrix m, int indexRow, int indexCol){
-    int maxElement = m.values[indexRow][indexCol];
+int getMaxElementDiag(matrix m, int indexRow, int indexCol) {
+    int maxElement = m.values[indexRow++][indexCol++];
 
-    while (indexRow < m.nRows && indexCol < m.nCols){
+    while (indexRow < m.nRows && indexCol < m.nCols) {
         maxElement = max(maxElement, m.values[indexRow++][indexCol++]);
     }
 
     return maxElement;
 }
 
-long long findSumOfMaxesOfPseudoDiagonal(matrix m){
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     long long sumMaxDiag = 0;
 
     // сумма ниже главной диагонали
@@ -97,14 +97,63 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m){
     return sumMaxDiag;
 }
 
+int min(int a, int b) {
+    return a < b ? a : b;
+}
+
+int getMinArray(int *a, int size) {
+    int minValue = a[0];
+
+    for (int i = 1; i < size; i++)
+        if (a[i] < minValue)
+            minValue = a[i];
+    return minValue;
+}
+
+
+int getMinInArea(matrix m){
+    position maxElement = getMaxValuePos(m);
+
+    position elemLeft = maxElement;
+    position elemRight = maxElement;
+
+    int minElem = m.values[maxElement.rowIndex][maxElement.colIndex];
+
+    while(elemRight.colIndex < m.nCols && elemLeft.colIndex >= 0 ) {
+        minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
+                         elemRight.colIndex - elemLeft.colIndex + 1),
+                      minElem);
+        elemLeft.colIndex--;
+        elemLeft.rowIndex--;
+        elemRight.colIndex++;
+        elemRight.rowIndex--;
+
+    }
+
+    if(elemRight.colIndex >= m.nCols){
+        elemRight.colIndex--;
+    }
+
+    while (elemLeft.rowIndex >= 0){
+        minElem = min(getMin(m.values[elemLeft.rowIndex] + elemLeft.colIndex,
+                             elemRight.colIndex - elemLeft.colIndex + 1),
+                      minElem);
+        elemLeft.colIndex--;
+        elemLeft.rowIndex--;
+        elemRight.rowIndex--;
+    }
+
+    return minElem;
+}
+
 int main() {
     //тестов пока нет. Напишу может быть завтра.
 
-    matrix c = createMatrixFromArray((int[]) {3, 2, 5, 4,
-                                              1, 3, 6, 3,
-                                              3, 2, 1, 2}, 3 , 4);
+    matrix c = createMatrixFromArray((int[]) {1, -2, 1, -1,
+                                              1, 1, 4, 9,
+                                              8, 3, 3, 3}, 3, 4);
 
-    printf("%lld\n", findSumOfMaxesOfPseudoDiagonal(c));
+    printf("%d\n", getMinInArea(c));
     outputMatrix(c);
 
     freeMemMatrix(c);
