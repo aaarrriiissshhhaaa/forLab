@@ -22,7 +22,7 @@ int getMax(int *a, int size) {
 }
 
 
-void sortRowsByMinElement(matrix m) {
+void sortRowsByMaxElement(matrix m) {
     insertionSortRowsMatrixByRowCriteria(m, getMax);
 }
 
