@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\data_structures\;CMake Files\libs\algorithms\;CMake Files\libs\test\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/untitled4/cmake-build-debug"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled4">
-				<Option output="C:/untitled4/cmake-build-debug/untitled4.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug"/>
+				<Option output="D:/untitled4/cmake-build-debug/untitled4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -29,15 +29,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled4"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled4"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled4/fast">
-				<Option output="C:/untitled4/cmake-build-debug/untitled4.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug"/>
+				<Option output="D:/untitled4/cmake-build-debug/untitled4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -47,35 +47,35 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled4/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled4/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/untitled4/cmake-build-debug"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/untitled4/cmake-build-debug"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="data_structures">
-				<Option output="C:/untitled4/cmake-build-debug/libs/data_structures/libdata_structures.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/data_structures"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/data_structures/libdata_structures.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/data_structures"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -85,15 +85,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 data_structures"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 data_structures"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="data_structures/fast">
-				<Option output="C:/untitled4/cmake-build-debug/libs/data_structures/libdata_structures.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/data_structures"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/data_structures/libdata_structures.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/data_structures"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -103,15 +103,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 data_structures/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 data_structures/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/data_structures/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithms">
-				<Option output="C:/untitled4/cmake-build-debug/libs/algorithms/libalgorithms.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/algorithms"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/algorithms/libalgorithms.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/algorithms"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -121,15 +121,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 algorithms"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 algorithms"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithms/fast">
-				<Option output="C:/untitled4/cmake-build-debug/libs/algorithms/libalgorithms.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/algorithms"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/algorithms/libalgorithms.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/algorithms"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -139,15 +139,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 algorithms/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 algorithms/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test">
-				<Option output="C:/untitled4/cmake-build-debug/libs/test/libtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/test"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/test/libtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/test"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -157,15 +157,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 test"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test/fast">
-				<Option output="C:/untitled4/cmake-build-debug/libs/test/libtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/untitled4/cmake-build-debug/libs/test"/>
+				<Option output="D:/untitled4/cmake-build-debug/libs/test/libtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/untitled4/cmake-build-debug/libs/test"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -175,89 +175,89 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 test/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/untitled4/cmake-build-debug/libs/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/untitled4/libs/algorithms/algorithm.c">
+		<Unit filename="D:/untitled4/libs/algorithms/algorithm.c">
 			<Option target="algorithms"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/algorithms/algorithm.h">
+		<Unit filename="D:/untitled4/libs/algorithms/algorithm.h">
 			<Option target="algorithms"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/algorithms/array/array.c">
+		<Unit filename="D:/untitled4/libs/algorithms/array/array.c">
 			<Option target="algorithms"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/algorithms/array/array.h">
+		<Unit filename="D:/untitled4/libs/algorithms/array/array.h">
 			<Option target="algorithms"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/5dquestions/questions.c">
+		<Unit filename="D:/untitled4/libs/data_structures/5dquestions/questions.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/5dquestions/questions.h">
+		<Unit filename="D:/untitled4/libs/data_structures/5dquestions/questions.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/bitset/bitset.c">
+		<Unit filename="D:/untitled4/libs/data_structures/bitset/bitset.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/bitset/bitset.h">
+		<Unit filename="D:/untitled4/libs/data_structures/bitset/bitset.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/matrix/matrix.c">
+		<Unit filename="D:/untitled4/libs/data_structures/matrix/matrix.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/matrix/matrix.h">
+		<Unit filename="D:/untitled4/libs/data_structures/matrix/matrix.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.c">
+		<Unit filename="D:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.h">
+		<Unit filename="D:/untitled4/libs/data_structures/ordered_array_set/ordered_array_set.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/unordered_array_set/unordered_array_set.c">
+		<Unit filename="D:/untitled4/libs/data_structures/unordered_array_set/unordered_array_set.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/unordered_array_set/unordered_array_set.h">
+		<Unit filename="D:/untitled4/libs/data_structures/unordered_array_set/unordered_array_set.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/vector/vector.c">
+		<Unit filename="D:/untitled4/libs/data_structures/vector/vector.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/vector/vector.h">
+		<Unit filename="D:/untitled4/libs/data_structures/vector/vector.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/vector/vectorVoid.c">
+		<Unit filename="D:/untitled4/libs/data_structures/vector/vectorVoid.c">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/vector/vectorVoid.h">
+		<Unit filename="D:/untitled4/libs/data_structures/vector/vectorVoid.h">
 			<Option target="data_structures"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/test/testMatrix/testMatrix.c">
+		<Unit filename="D:/untitled4/libs/test/testMatrix/testMatrix.c">
 			<Option target="test"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/test/testMatrix/testMatrix.h">
+		<Unit filename="D:/untitled4/libs/test/testMatrix/testMatrix.h">
 			<Option target="test"/>
 		</Unit>
-		<Unit filename="C:/untitled4/main.c">
+		<Unit filename="D:/untitled4/main.c">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="C:/untitled4/CMakeLists.txt">
+		<Unit filename="D:/untitled4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/CMakeLists.txt">
+		<Unit filename="D:/untitled4/libs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/data_structures/CMakeLists.txt">
+		<Unit filename="D:/untitled4/libs/data_structures/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\data_structures\"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/algorithms/CMakeLists.txt">
+		<Unit filename="D:/untitled4/libs/algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\algorithms\"/>
 		</Unit>
-		<Unit filename="C:/untitled4/libs/test/CMakeLists.txt">
+		<Unit filename="D:/untitled4/libs/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\test\"/>
 		</Unit>
 	</Project>

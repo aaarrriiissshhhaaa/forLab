@@ -49,7 +49,12 @@ void getSquareOfMatrixIfSymmetric(matrix *m) {
 
 /********************** 6 ***************************/
 bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
-    return isEMatrix(mulMatrices(m1, m2));
+    matrix m = mulMatrices(m1, m2);
+
+    bool res = isEMatrix(m);
+    freeMemMatrix(m);
+
+    return res;
 }
 
 /********************** 7 ***************************/

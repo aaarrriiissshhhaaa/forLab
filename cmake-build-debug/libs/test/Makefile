@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\untitled4
+CMAKE_SOURCE_DIR = D:\untitled4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\untitled4\cmake-build-debug
+CMAKE_BINARY_DIR = D:\untitled4\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles C:\untitled4\cmake-build-debug\libs\test\\CMakeFiles\progress.marks
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\untitled4\cmake-build-debug\CMakeFiles 0
+	cd /d D:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start D:\untitled4\cmake-build-debug\CMakeFiles D:\untitled4\cmake-build-debug\libs\test\\CMakeFiles\progress.marks
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\untitled4\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/clean
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,22 +102,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/preinstall
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/preinstall
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libs/test/CMakeFiles/test.dir/rule:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/CMakeFiles/test.dir/rule
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/test/CMakeFiles/test.dir/rule
 .PHONY : libs/test/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -126,7 +126,7 @@ test: libs/test/CMakeFiles/test.dir/rule
 
 # fast build rule for target.
 test/fast:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/build
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 testMatrix/testMatrix.obj: testMatrix/testMatrix.c.obj
@@ -134,7 +134,7 @@ testMatrix/testMatrix.obj: testMatrix/testMatrix.c.obj
 
 # target to build an object file
 testMatrix/testMatrix.c.obj:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.obj
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.obj
 .PHONY : testMatrix/testMatrix.c.obj
 
 testMatrix/testMatrix.i: testMatrix/testMatrix.c.i
@@ -142,7 +142,7 @@ testMatrix/testMatrix.i: testMatrix/testMatrix.c.i
 
 # target to preprocess a source file
 testMatrix/testMatrix.c.i:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.i
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.i
 .PHONY : testMatrix/testMatrix.c.i
 
 testMatrix/testMatrix.s: testMatrix/testMatrix.c.s
@@ -150,7 +150,7 @@ testMatrix/testMatrix.s: testMatrix/testMatrix.c.s
 
 # target to generate assembly for a file
 testMatrix/testMatrix.c.s:
-	cd /d C:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.s
+	cd /d D:\untitled4\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\test\CMakeFiles\test.dir\build.make libs/test/CMakeFiles/test.dir/testMatrix/testMatrix.c.s
 .PHONY : testMatrix/testMatrix.c.s
 
 # Help Target
@@ -176,6 +176,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\untitled4\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

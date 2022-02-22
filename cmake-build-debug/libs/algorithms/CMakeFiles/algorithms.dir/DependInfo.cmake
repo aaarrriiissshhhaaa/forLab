@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/untitled4/libs/algorithms/algorithm.c" "C:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/algorithm.c.obj"
-  "C:/untitled4/libs/algorithms/array/array.c" "C:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj"
+  "D:/untitled4/libs/algorithms/algorithm.c" "D:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/algorithm.c.obj"
+  "D:/untitled4/libs/algorithms/array/array.c" "D:/untitled4/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

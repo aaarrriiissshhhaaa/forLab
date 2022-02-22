@@ -149,6 +149,7 @@ void insertionSortColsMatrixByColCriteria(matrix m,
 
         colsCriteria[indexRow] = criteria(colsMatrix, m.nRows);
     }
+
     for (int indexRow = 1; indexRow < m.nCols; indexRow++)
         for (int indexCriteria = indexRow; indexCriteria > 0 &&
                                            colsCriteria[indexCriteria - 1]
@@ -166,14 +167,15 @@ bool isSquareMatrix(matrix m){
 }
 
 bool areTwoMatricesEqual(matrix m1, matrix m2){
-    bool isEqual = m1.nRows == m2.nRows && m1.nCols == m2.nCols ? true : false;
+    if(m1.nRows == m2.nRows && m1.nCols == m2.nCols)
+        return false;
 
-    for (size_t i = 0; i <  m1.nRows && isEqual; i++) {
+    for (size_t i = 0; i <  m1.nRows; i++)
         if (memcmp(m1.values[i], m2.values[i], sizeof(int) * m1.nCols) != 0)
-            isEqual = false;
-    }
+            return false;
 
-    return isEqual;
+
+    return true;
 }
 
 bool isEMatrix(matrix m){

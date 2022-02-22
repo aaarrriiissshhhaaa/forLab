@@ -1,8 +1,8 @@
-# Install script for directory: C:/untitled4/libs
+# Install script for directory: D:/untitled4/libs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/untitled4")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/course")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/untitled4/cmake-build-debug/libs/data_structures/cmake_install.cmake")
+  include("D:/untitled4/cmake-build-debug/libs/data_structures/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/untitled4/cmake-build-debug/libs/algorithms/cmake_install.cmake")
+  include("D:/untitled4/cmake-build-debug/libs/algorithms/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/untitled4/cmake-build-debug/libs/test/cmake_install.cmake")
+  include("D:/untitled4/cmake-build-debug/libs/test/cmake_install.cmake")
 endif()
 

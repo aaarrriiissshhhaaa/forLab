@@ -6,15 +6,29 @@
 
 #IncludeRegexTransform: 
 
-C:/untitled4/libs/algorithms/algorithm.c
+D:/untitled4/libs/algorithms/algorithm.c
 algorithm.h
-C:/untitled4/libs/algorithms/algorithm.h
+D:/untitled4/libs/algorithms/algorithm.h
 stdio.h
 -
 stdlib.h
 -
 
-C:/untitled4/libs/algorithms/algorithm.h
+D:/untitled4/libs/algorithms/algorithm.h
 stdio.h
+-
+
+D:/untitled4/libs/algorithms/array/array.c
+stdio.h
+-
+limits.h
+-
+assert.h
+-
+array.h
+D:/untitled4/libs/algorithms/array/array.h
+
+D:/untitled4/libs/algorithms/array/array.h
+stddef.h
 -
 
