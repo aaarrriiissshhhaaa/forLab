@@ -18,4 +18,6 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m);
 
 int getMinInArea(matrix m);
 
+long long getSpecialScalarProduct();
+
 #endif //COURSE_QUESTIONS_H

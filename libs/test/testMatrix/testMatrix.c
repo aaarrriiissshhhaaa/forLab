@@ -1648,6 +1648,55 @@ void test_getMinInArea() {
     test_getMinInArea_lowerRightCorner();
 }
 
+void test_getSpecialScalarProduct_classicSquarMatrix() {
+    matrix c = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9
+            }, 3, 3
+    );
+
+    assert(getSpecialScalarProduct(c) == 7 * 1 + 4 * 8 + 9 * 7);
+
+    freeMemMatrix(c);
+}
+
+void test_getSpecialScalarProduct_SquarMatrixNegativElemnt() {
+    matrix c = createMatrixFromArray(
+            (int[]) {
+                    -1, -2, -3,
+                    -4, -5, -6,
+                    -7, -8, -9
+            }, 3, 3
+    );
+
+    assert(getSpecialScalarProduct(c) == -3 * -1 +  -6 * -2 + -9 * -3);
+
+    freeMemMatrix(c);
+}
+
+void test_getSpecialScalarProduct_minAndMaxInOneRow() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    1, 9, 3,
+                    4, 5, 6,
+                    7, 8, 2
+            }, 3, 3
+    );
+
+    assert(getSpecialScalarProduct(m) == 1 * 1 + 4 * 9 + 7 * 3);
+
+    freeMemMatrix(m);
+}
+
+
+void test_getSpecialScalarProduct() {
+    test_getSpecialScalarProduct_classicSquarMatrix();
+    test_getSpecialScalarProduct_SquarMatrixNegativElemnt();
+    test_getSpecialScalarProduct_minAndMaxInOneRow();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -1656,4 +1705,5 @@ void test_ques() {
     test_isMutuallyInverseMatrices();
     test_findSumOfMaxesOfPseudoDiagonal();
     test_getMinInArea();
+    test_getSpecialScalarProduct();
 }

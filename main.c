@@ -2,78 +2,107 @@
 #include <assert.h>
 #include "libs/data_structures/matrix/matrix.h"
 #include <memory.h>
+#include <math.h>
 
-long long getScalarProductRowAndCol(matrix m, int indexRow, int indexCol) {
-    int elemCol[m.nRows];
-    for (int rowNumber = 0; rowNumber < m.nRows; rowNumber++)
-        elemCol[rowNumber] = m.values[rowNumber][indexCol];
+double getScalarProduct(const int *a, const int *b, int countV) {
+    double scalarProduct = 0;
+    for (int i = 0; i < countV; i++)
+        scalarProduct += a[i] * b[i];
 
-    long long productRowAndCol = 0;
-    for (int colNumber = 0; colNumber < m.nRows; colNumber++)
-        productRowAndCol += elemCol[colNumber] * m.values[indexRow][colNumber];
-
-    return productRowAndCol;
+    return scalarProduct;
 }
 
-long long getSpecialScalarProduct(matrix m) {
-    position maxElem = getMaxValuePos(m);
-    position minElem = getMinValuePos(m);
+double getVectorLength(const int *a, int n) {
+    double length = 0;
+    for (int i = 0; i < n; i++)
+        length += a[i] * a[i];
 
-    return getScalarProductRowAndCol(m, maxElem.rowIndex, minElem.colIndex);
+    return sqrt(length);
 }
 
-void test_getSpecialScalarProduct_classicSquarMatrix() {
-    matrix c = createMatrixFromArray(
-            (int[]) {
-                    1, 2, 3,
-                    4, 5, 6,
-                    7, 8, 9
-            }, 3, 3
-    );
+double getCosine(int *a, int *b, int n) {
+    double lengthA = getVectorLength(a, n);
+    double lengthB = getVectorLength(b, n);
 
-    assert(getSpecialScalarProduct(c) == 7 * 1 + 4 * 8 + 9 * 7);
+    if (lengthA == 0 || lengthB == 0) {
+        fprintf(stderr, "vector Null");
+        exit(1);
+    }
 
-    freeMemMatrix(c);
+    return getScalarProduct(a, b, n) / (lengthA * lengthB);
 }
 
-void test_getSpecialScalarProduct_SquarMatrixNegativElemnt() {
-    matrix c = createMatrixFromArray(
-            (int[]) {
-                    -1, -2, -3,
-                    -4, -5, -6,
-                    -7, -8, -9
-            }, 3, 3
-    );
+int getVectorIndexWithMaxAngle(matrix m, int *vector) {
+    double cornerMax = getCosine(m.values[0], vector, m.nCols);
+    int cornerMaxPos = 0;
+    for (int i = 0; i < m.nRows; i++) {
+        double cornNuw = getCosine(m.values[i], vector, m.nCols);
+        if (cornNuw < cornerMax) {
+            cornerMax = cornNuw;
+            cornerMaxPos = i;
+        }
+    }
 
-    assert(getSpecialScalarProduct(c) == -3 * -1 +  -6 * -2 + -9 * -3);
-
-    freeMemMatrix(c);
+    return cornerMaxPos;
 }
 
-void test_getSpecialScalarProduct_minAndMaxInOneRow() {
+void test_getVectorIndexWithMaxAngle_oneRow() {
     matrix m = createMatrixFromArray(
             (int[]) {
-                    1, 9, 3,
-                    4, 5, 6,
-                    7, 8, 2
-            }, 3, 3
-    );
+                    1, 7, 11
+            },
+            1, 3);
 
-    assert(getSpecialScalarProduct(m) == 1 * 1 + 4 * 9 + 7 * 3);
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 0);
 
     freeMemMatrix(m);
 }
 
 
-void test_getSpecialScalarProduct() {
-    test_getSpecialScalarProduct_classicSquarMatrix();
-    test_getSpecialScalarProduct_SquarMatrixNegativElemnt();
-    test_getSpecialScalarProduct_minAndMaxInOneRow();
+void test_getVectorIndexWithMaxAngle_negativeCos() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    -1, 7, -11,
+                    4, -13, -10,
+                    7, -1, -1,
+                    12, 1, -56
+            },
+            4, 3);
+
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 1);
+
+    freeMemMatrix(m);
 }
 
+void test_getVectorIndexWithMaxAngle_classicMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    -1, 7, -11,
+                    4, 13, 10,
+                    7, 1, 1,
+                    12, 1, -6
+            },
+            4, 3);
+
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 0);
+
+    freeMemMatrix(m);
+}
+
+void test_getVectorIndexWithMaxAngle() {
+    test_getVectorIndexWithMaxAngle_negativeCos();
+    test_getVectorIndexWithMaxAngle_classicMatrix();
+    test_getVectorIndexWithMaxAngle_oneRow();
+}
 
 int main() {
-    test_getSpecialScalarProduct();
+    test_getVectorIndexWithMaxAngle();
 
     return 0;
 }

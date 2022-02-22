@@ -194,3 +194,26 @@ void transposeIfMatrixHasEqualSumOfRows(matrix m, int nRows, int nCols){
     if (isUnique(rowsSums, m.nRows))
         transposeSquareMatrix(m);
 }
+
+
+/********************** 18 ***************************/
+long long getScalarProductRowAndCol(matrix m, int indexRow, int indexCol) {
+    int elemCol[m.nRows];
+    for (int rowNumber = 0; rowNumber < m.nRows; rowNumber++)
+        elemCol[rowNumber] = m.values[rowNumber][indexCol];
+
+    long long productRowAndCol = 0;
+    for (int colNumber = 0; colNumber < m.nRows; colNumber++)
+        productRowAndCol += elemCol[colNumber] * m.values[indexRow][colNumber];
+
+    return productRowAndCol;
+}
+
+long long getSpecialScalarProduct(matrix m) {
+    position maxElem = getMaxValuePos(m);
+    position minElem = getMinValuePos(m);
+
+    return getScalarProductRowAndCol(m, maxElem.rowIndex, minElem.colIndex);
+}
+
+
