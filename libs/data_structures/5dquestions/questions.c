@@ -1,6 +1,14 @@
+#include <math.h>
 #include "questions.h"
 #include "../../algorithms/algorithm.h"
 #include "../../data_structures/matrix/matrix.h"
+
+long long getSum(int *a, int size){
+    long long sum = 0;
+    for (size_t i = 0; i < size; i++)
+        sum += a[i];
+    return sum;
+}
 
 /********************** 1 ***************************/
 
@@ -61,7 +69,7 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
 int max(int a, int b) {
     return a > b ? a : b;
 }
-
+/*
 int getMaxElementDiag(matrix m, int indexRow, int indexCol) {
     int maxElement = m.values[indexRow++][indexCol++];
 
@@ -85,6 +93,28 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
 
     return sumMaxDiag;
 }
+ */
+
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
+    int n = m.nRows + m.nCols - 1;
+    int elemPseudoDiagonal[n];
+
+    for (int i = 0; i < n; i++)
+        elemPseudoDiagonal[i] = INT_MIN;
+
+    elemPseudoDiagonal[m.nRows - 1] = 0;
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        for (int indexCol = 0; indexCol < m.nCols; indexCol++)
+            if (indexCol != indexRow) {
+                int diagNumber = indexCol - indexRow + m.nRows - 1;
+                elemPseudoDiagonal[diagNumber] = max(elemPseudoDiagonal[diagNumber], m.values[indexRow][indexCol]);
+            }
+
+    return getSum(elemPseudoDiagonal, n);
+}
+
 
 
 /********************** 8 ***************************/
@@ -179,12 +209,7 @@ bool isUnique(long long *a, int size){
     return isUnique;
 }
 
-long long getSum(int *a, int size){
-    long long sum = 0;
-    for (size_t i = 0; i < size; i++)
-        sum += a[i];
-    return sum;
-}
+
 
 void transposeIfMatrixHasEqualSumOfRows(matrix m, int nRows, int nCols){
     long long rowsSums[m.nRows];
@@ -197,6 +222,7 @@ void transposeIfMatrixHasEqualSumOfRows(matrix m, int nRows, int nCols){
 
 
 /********************** 18 ***************************/
+
 long long getScalarProductRowAndCol(matrix m, int indexRow, int indexCol) {
     int elemCol[m.nRows];
     for (int rowNumber = 0; rowNumber < m.nRows; rowNumber++)
@@ -216,4 +242,60 @@ long long getSpecialScalarProduct(matrix m) {
     return getScalarProductRowAndCol(m, maxElem.rowIndex, minElem.colIndex);
 }
 
+/********************** 17 ***************************/
 
+double getScalarProduct(const int *a, const int *b, int countV) {
+    double scalarProduct = 0;
+    for (int i = 0; i < countV; i++)
+        scalarProduct += a[i] * b[i];
+
+    return scalarProduct;
+}
+
+double getVectorLength(const int *a, int n) {
+    double length = 0;
+    for (int i = 0; i < n; i++)
+        length += a[i] * a[i];
+
+    return sqrt(length);
+}
+
+double getCosine(int *a, int *b, int n) {
+    double lengthA = getVectorLength(a, n);
+    double lengthB = getVectorLength(b, n);
+
+    if (lengthA == 0 || lengthB == 0) {
+        fprintf(stderr, "vector Null");
+        exit(1);
+    }
+
+    return getScalarProduct(a, b, n) / (lengthA * lengthB);
+}
+
+int getVectorIndexWithMaxAngle(matrix m, int *vector) {
+    double cornerMax = getCosine(m.values[0], vector, m.nCols);
+    int cornerMaxPos = 0;
+    for (int i = 0; i < m.nRows; i++) {
+        double cornNuw = getCosine(m.values[i], vector, m.nCols);
+        if (cornNuw < cornerMax) {
+            cornerMax = cornNuw;
+            cornerMaxPos = i;
+        }
+    }
+
+    return cornerMaxPos;
+}
+
+/********************** 9 ***************************/
+
+float getDistance(int *a, int n) {
+    float distance = 0;
+    for (int i = 0; i < n; i++)
+        distance += (float) (a[i] * a[i]);
+
+    return sqrtf(distance);
+}
+
+void sortByDistances(matrix m) {
+    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}

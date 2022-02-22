@@ -261,3 +261,16 @@ matrix mulMatrices(matrix m1, matrix m2) {
 
     return (matrix) multiplicationMatrix;
 }
+
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, int)) {
+    float rowsCriteria[m.nRows];
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        rowsCriteria[indexRow] = criteria(m.values[indexRow], m.nCols);
+
+    for (int indexRow = 1; indexRow < m.nRows; indexRow++)
+        for (int indexCol = indexRow; indexCol > 0 && rowsCriteria[indexCol - 1] > rowsCriteria[indexCol]; indexCol--) {
+            swap(&rowsCriteria[indexCol - 1], &rowsCriteria[indexCol], sizeof(float));
+            swapRowsWithoutVerificationIndex(m, indexCol, indexCol - 1);
+        }
+}

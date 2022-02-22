@@ -18,6 +18,12 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m);
 
 int getMinInArea(matrix m);
 
-long long getSpecialScalarProduct();
+int getVectorIndexWithMaxAngle(matrix m, int *vector);
+
+long long getSpecialScalarProduct(matrix m);
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, int));
+
+void sortByDistances(matrix m);
 
 #endif //COURSE_QUESTIONS_H

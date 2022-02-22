@@ -1697,6 +1697,139 @@ void test_getSpecialScalarProduct() {
     test_getSpecialScalarProduct_minAndMaxInOneRow();
 }
 
+
+void test_sortByDistances_classicSquarMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    5, 7, 9,
+                    9, 9, 5,
+                    1, 2, 4
+            },
+            3, 3);
+
+    sortByDistances(m);
+
+    matrix mTrue = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 4,
+                    5, 7, 9,
+                    9, 9, 5
+            },
+            3, 3);
+
+    assert(areTwoMatricesEqual(m, mTrue));
+
+    freeMemMatrix(m);
+    freeMemMatrix(mTrue);
+}
+
+void test_sortByDistances_classicNonSquar() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    8, 9, 10, 11,
+                    0, 1, 2, 3,
+                    4, 5, 6, 7
+            },
+            3, 4);
+
+    sortByDistances(m);
+
+    matrix mTrue = createMatrixFromArray(
+            (int[]) {
+                    0, 1, 2, 3,
+                    4, 5, 6, 7,
+                    8, 9, 10, 11,
+            },
+            3, 4);
+
+    assert(areTwoMatricesEqual(m, mTrue));
+
+    freeMemMatrix(m);
+    freeMemMatrix(mTrue);
+}
+
+void test_sortByDistances_oneCols() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    9, 9, 5, 1
+            },
+            4, 1);
+
+    sortByDistances(m);
+
+    matrix mTrue = createMatrixFromArray(
+            (int[]) {
+                   1, 5, 9, 9
+            },
+            4, 1);
+
+    assert(areTwoMatricesEqual(m, mTrue));
+
+    freeMemMatrix(m);
+    freeMemMatrix(mTrue);
+}
+
+void test_sortByDistances() {
+    test_sortByDistances_classicSquarMatrix();
+    test_sortByDistances_classicNonSquar();
+    test_sortByDistances_oneCols();
+}
+
+void test_getVectorIndexWithMaxAngle_oneRow() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    1, 7, 11
+            },
+            1, 3);
+
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 0);
+
+    freeMemMatrix(m);
+}
+
+
+void test_getVectorIndexWithMaxAngle_negativeCos() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    -1, 7, -11,
+                    4, -13, -10,
+                    7, -1, -1,
+                    12, 1, -56
+            },
+            4, 3);
+
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 1);
+
+    freeMemMatrix(m);
+}
+
+void test_getVectorIndexWithMaxAngle_classicMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    -1, 7, -11,
+                    4, 13, 10,
+                    7, 1, 1,
+                    12, 1, -6
+            },
+            4, 3);
+
+    int v[] = {1, 2, 3};
+
+    assert(getVectorIndexWithMaxAngle(m, v) == 0);
+
+    freeMemMatrix(m);
+}
+
+void test_getVectorIndexWithMaxAngle() {
+    test_getVectorIndexWithMaxAngle_negativeCos();
+    test_getVectorIndexWithMaxAngle_classicMatrix();
+    test_getVectorIndexWithMaxAngle_oneRow();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -1706,4 +1839,6 @@ void test_ques() {
     test_findSumOfMaxesOfPseudoDiagonal();
     test_getMinInArea();
     test_getSpecialScalarProduct();
+    test_sortByDistances();
+    test_getVectorIndexWithMaxAngle();
 }
