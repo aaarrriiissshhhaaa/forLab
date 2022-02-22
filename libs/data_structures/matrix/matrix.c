@@ -138,7 +138,6 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
         }
 }
 
-// надо привести в норму индексы чот ты подзапуталась моя зайка
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int)) {
     int colsCriteria[m.nCols];
@@ -161,6 +160,29 @@ void insertionSortColsMatrixByColCriteria(matrix m,
                                                 indexCriteria - 1);
         }
 }
+
+
+void selecSortColsMatrixByColCriteria(matrix m,
+                                          int (*criteria)(int *, int)) {
+    int colsCriteria[m.nCols];
+    for (int indexRow = 0; indexRow < m.nCols; indexRow++) {
+        int colsMatrix[m.nRows];
+        for (int indexCol = 0; indexCol < m.nRows; indexCol++)
+            colsMatrix[indexCol] = m.values[indexCol][indexRow];
+
+        colsCriteria[indexRow] = criteria(colsMatrix, m.nRows);
+    }
+
+    for (int i = 0; i < m.nCols - 1; i++) {
+        int minPos = i;
+        for (int j = i + 1 ; j < m.nCols; j++)
+            if (colsCriteria[j] < colsCriteria[minPos])
+                minPos = j;
+        swap(&colsCriteria[i], &colsCriteria[minPos], sizeof(long long));
+        swapColumnsWithoutVerificationIndex(m, i, minPos);
+    }
+}
+
 
 bool isSquareMatrix(matrix m){
     return m.nRows == m.nCols;

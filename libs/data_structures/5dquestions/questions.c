@@ -296,6 +296,43 @@ float getDistance(int *a, int n) {
     return sqrtf(distance);
 }
 
+
 void sortByDistances(matrix m) {
     insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
+
+/********* 10 ********************/
+
+int cmp_long_long(const void *pa, const void *pb) {
+    long long a = *(const long long *) pa;
+    long long b = *(const long long *) pb;
+
+    if (a < b)
+        return -1;
+    if (a > b)
+        return 1;
+    return 0;
+}
+
+int countNUnique(long long *a, int n) {
+    if (n == 1)
+        return 1;
+
+    qsort(a, n, sizeof(long long), cmp_long_long);
+
+    int counterOfUnique = 1;
+    for (int i = 1; i < n; i++) {
+        if (a[i] != a[i - 1])
+            counterOfUnique++;
+    }
+
+    return counterOfUnique;
+}
+
+int countEqClassesByRowsSum(matrix m) {
+    long long rowSums[m.nRows];
+    for (int i = 0; i < m.nRows; i++)
+        rowSums[i] = getSum(m.values[i], m.nCols);
+
+    return countNUnique(rowSums, m.nRows);
 }
