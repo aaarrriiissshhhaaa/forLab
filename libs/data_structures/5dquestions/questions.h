@@ -32,6 +32,12 @@ void swapPenultimateRow(matrix m);
 
 int countNonDescendingRowsMatrices(matrix *ms, int nMatrix);
 
+void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix);
+
+int countZeroRows(matrix m);
+
+int getMatrixNorm();
+
 int getNSpecialElement(matrix m);
 
 int getNSpecialElement2(matrix m);

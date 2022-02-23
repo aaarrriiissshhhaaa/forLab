@@ -1110,12 +1110,7 @@ void test_sortRowsByMaxElement_qualMax() {
     freeMemMatrix(cTrue);
 }
 
-void test_sortRowsByMaxElement() {
-    test_sortRowsByMaxElement_classic();
-    test_sortRowsByMaxElement_oneRow();
-    test_sortRowsByMaxElement_oneCol();
-    test_sortRowsByMaxElement_qualMax();
-}
+
 
 void test_sortColsByMinElement_classic() {
     matrix c = createMatrixFromArray(
@@ -1209,12 +1204,7 @@ void test_sortColsByMinElement_qualMin() {
     freeMemMatrix(cTrue);
 }
 
-void test_sortColsByMinElement() {
-    test_sortColsByMinElement_classic();
-    test_sortColsByMinElement_oneRow();
-    test_sortColsByMinElement_oneCol();
-    test_sortColsByMinElement_qualMin();
-}
+
 
 void test_getSquareOfMatrixIfSymmetric_SymmetricMatrix() {
     matrix c = createMatrixFromArray(
@@ -1405,14 +1395,6 @@ void test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder4() {
     freeMemMatrix(c2);
 }
 
-void test_isMutuallyInverseMatrices() {
-    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder2();
-    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder3();
-    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder4();
-    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder2();
-    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder3();
-    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder4();
-}
 
 void test_findSumOfMaxesOfPseudoDiagonal_positiveHorizontalRectangleMatrix() {
     matrix m1 = createMatrixFromArray(
@@ -1547,18 +1529,7 @@ void test_findSumOfMaxesOfPseudoDiagonal_oneElem() {
 }
 
 
-void test_findSumOfMaxesOfPseudoDiagonal() {
-    test_findSumOfMaxesOfPseudoDiagonal_positiveHorizontalRectangleMatrix();
-    test_findSumOfMaxesOfPseudoDiagonal_negativeHorizontalRectangleMatrix();
-    test_findSumOfMaxesOfPseudoDiagonal_positiveVerticalRectangleMatrix();
-    test_findSumOfMaxesOfPseudoDiagonal_negativeVerticalRectangleMatrix();
-    test_findSumOfMaxesOfPseudoDiagonal_oneRow();
-    test_findSumOfMaxesOfPseudoDiagonal_oneCol();
-    test_findSumOfMaxesOfPseudoDiagonal_oneElem();
-    test_findSumOfMaxesOfPseudoDiagonal_negativeSquareMatrix();
-    test_findSumOfMaxesOfPseudoDiagonal_positiveSquareMatrix();
 
-}
 
 void test_getMinInArea_topLeftCorner() {
     matrix c = createMatrixFromArray((int[]) {99, 1, 2, 3,
@@ -1639,14 +1610,7 @@ void test_getMinInArea_lowerRightCorner() {
     freeMemMatrix(c);
 }
 
-void test_getMinInArea() {
-    test_getMinInArea_topLeftCorner();
-    test_getMinInArea_upperRightCorner();
-    test_getMinInArea_centerBottom4x4();
-    test_getMinInArea_verticalMatrixCenterBottomRow();
-    test_getMinInArea_bottoLeftCorner();
-    test_getMinInArea_lowerRightCorner();
-}
+
 
 void test_getSpecialScalarProduct_classicSquarMatrix() {
     matrix c = createMatrixFromArray(
@@ -1691,11 +1655,7 @@ void test_getSpecialScalarProduct_minAndMaxInOneRow() {
 }
 
 
-void test_getSpecialScalarProduct() {
-    test_getSpecialScalarProduct_classicSquarMatrix();
-    test_getSpecialScalarProduct_SquarMatrixNegativElemnt();
-    test_getSpecialScalarProduct_minAndMaxInOneRow();
-}
+
 
 
 void test_sortByDistances_classicSquarMatrix() {
@@ -1769,11 +1729,6 @@ void test_sortByDistances_oneCols() {
     freeMemMatrix(mTrue);
 }
 
-void test_sortByDistances() {
-    test_sortByDistances_classicSquarMatrix();
-    test_sortByDistances_classicNonSquar();
-    test_sortByDistances_oneCols();
-}
 
 void test_getVectorIndexWithMaxAngle_oneRow() {
     matrix m = createMatrixFromArray(
@@ -1824,11 +1779,7 @@ void test_getVectorIndexWithMaxAngle_classicMatrix() {
     freeMemMatrix(m);
 }
 
-void test_getVectorIndexWithMaxAngle() {
-    test_getVectorIndexWithMaxAngle_negativeCos();
-    test_getVectorIndexWithMaxAngle_classicMatrix();
-    test_getVectorIndexWithMaxAngle_oneRow();
-}
+
 
 void test_swapPenultimateRow_squareMatrix() {
     matrix m = createMatrixFromArray(
@@ -1905,11 +1856,7 @@ void test_swapPenultimateRow_EMatrix() {
     freeMemMatrix(m2);
 }
 
-void test_swapPenultimateRow() {
-    test_swapPenultimateRow_squareMatrix();
-    test_swapPenultimateRow_someMinimums();
-    test_swapPenultimateRow_EMatrix();
-}
+
 
 void test_getNSpecialElement_rectangleMatrix() {
     matrix m1 = createMatrixFromArray(
@@ -1997,13 +1944,7 @@ void test_getNSpecialElement_oneCol() {
 }
 
 
-void test_getNSpecialElement() {
-    test_getNSpecialElement_rectangleMatrix();
-    test_getNSpecialElement_rectangleMatrixHasNotSpecial();
-    test_getNSpecialElement_rectangleVerticalMatrixHasNotSpecial();
-    test_getNSpecialElement_allElementsEqual();
-    test_getNSpecialElement_oneCol();
-}
+
 
 void test_getNSpecialElement2_leftAndRightElemIsSpecial() {
     matrix testMatrix = createMatrixFromArray(
@@ -2073,13 +2014,7 @@ void test_getNSpecialElement2_oneCol() {
     freeMemMatrix(testMatrix);
 }
 
-void test_getNSpecialElement2() {
-    test_getNSpecialElement2_leftAndRightElemIsSpecial();
-    test_getNSpecialElement2_notSpecialElement();
-    test_getNSpecialElement2_oneElement();
-    test_getNSpecialElement2_oneRow();
-    test_getNSpecialElement2_oneCol();
-}
+
 
 void test_countNonDescendingRowsMatrices_SquareMatrixHasSuitableMatrix() {
     matrix *ms = createArrayOfMatrixFromArray(
@@ -2187,6 +2122,173 @@ void test_countNonDescendingRowsMatrices_oneElem() {
     freeMemMatrices(ms, 4);
 }
 
+
+
+void test_countZeroRows_rectangleMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0,
+                    4, 0, 1,
+                    7, 0, 0,
+                    0, 0, 0
+            },
+            4, 3);
+
+    assert(countZeroRows(m) == 2);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows_squareZeroMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0,
+                    0, 0, 0,
+                    0, 0, 0,
+            },
+            3, 3);
+
+    assert(countZeroRows(m) == 3);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows_oneRow() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0,
+                    0,
+                    1
+            },
+            3, 1);
+
+    assert(countZeroRows(m) == 2);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows_oneCol() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 1
+            },
+            1, 3);
+
+    assert(countZeroRows(m) == 0);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows_oneColZero() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0
+            },
+            1, 3);
+
+    assert(countZeroRows(m) == 1);
+
+    freeMemMatrix(m);
+}
+
+
+
+void test_getMatrixNorm_rectangleMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    1, -7, 11,
+                    4, 13, 10,
+                    7, -17, 16,
+                    12, 1, -56
+            },
+            4, 3);
+
+    assert(getMatrixNorm(m) == 56);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm_squareZeroMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0,
+                    0, 0, 0,
+                    0, 0, 0,
+            },
+            3, 3);
+
+    assert(getMatrixNorm(m) == 0);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm_oneRow() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    2,
+                    0,
+                    1
+            },
+            3, 1);
+
+    assert(getMatrixNorm(m) == 2);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm_oneCol() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 1
+            },
+            1, 3);
+
+    assert(getMatrixNorm(m) == 1);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm_oneColZero() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 1, -12
+            },
+            1, 3);
+
+    assert(getMatrixNorm(m) == 12);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm_oneElem() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    -12
+            },
+            1, 1);
+
+    assert(getMatrixNorm(m) == 12);
+
+    freeMemMatrix(m);
+}
+
+void test_getMatrixNorm() {
+    test_getMatrixNorm_rectangleMatrix();
+    test_getMatrixNorm_oneElem();
+    test_getMatrixNorm_oneColZero();
+    test_getMatrixNorm_oneRow();
+    test_getMatrixNorm_squareZeroMatrix();
+    test_getMatrixNorm_oneCol();
+}
+
+void test_countZeroRows() {
+    test_countZeroRows_rectangleMatrix();
+    test_countZeroRows_squareZeroMatrix();
+    test_countZeroRows_oneRow();
+    test_countZeroRows_oneCol();
+    test_countZeroRows_oneColZero();
+}
+
 void test_countNonDescendingRowsMatrices() {
     test_countNonDescendingRowsMatrices_SquareMatrixHasSuitableMatrix();
     test_countNonDescendingRowsMatrices_RectangleMatrixHasSuitableMatrix();
@@ -2194,6 +2296,94 @@ void test_countNonDescendingRowsMatrices() {
     test_countNonDescendingRowsMatrices_oneCol();
     test_countNonDescendingRowsMatrices_oneElem();
 }
+
+void test_getNSpecialElement2() {
+    test_getNSpecialElement2_leftAndRightElemIsSpecial();
+    test_getNSpecialElement2_notSpecialElement();
+    test_getNSpecialElement2_oneElement();
+    test_getNSpecialElement2_oneRow();
+    test_getNSpecialElement2_oneCol();
+}
+
+void test_getNSpecialElement() {
+    test_getNSpecialElement_rectangleMatrix();
+    test_getNSpecialElement_rectangleMatrixHasNotSpecial();
+    test_getNSpecialElement_rectangleVerticalMatrixHasNotSpecial();
+    test_getNSpecialElement_allElementsEqual();
+    test_getNSpecialElement_oneCol();
+}
+
+void test_swapPenultimateRow() {
+    test_swapPenultimateRow_squareMatrix();
+    test_swapPenultimateRow_someMinimums();
+    test_swapPenultimateRow_EMatrix();
+}
+
+void test_getVectorIndexWithMaxAngle() {
+    test_getVectorIndexWithMaxAngle_negativeCos();
+    test_getVectorIndexWithMaxAngle_classicMatrix();
+    test_getVectorIndexWithMaxAngle_oneRow();
+}
+
+void test_sortRowsByMaxElement() {
+    test_sortRowsByMaxElement_classic();
+    test_sortRowsByMaxElement_oneRow();
+    test_sortRowsByMaxElement_oneCol();
+    test_sortRowsByMaxElement_qualMax();
+}
+
+
+void test_sortColsByMinElement() {
+    test_sortColsByMinElement_classic();
+    test_sortColsByMinElement_oneRow();
+    test_sortColsByMinElement_oneCol();
+    test_sortColsByMinElement_qualMin();
+}
+
+void test_isMutuallyInverseMatrices() {
+    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder2();
+    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder3();
+    test_isMutuallyInverseMatrices_MatrixProduceIsEMatrixOrder4();
+    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder2();
+    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder3();
+    test_isMutuallyInverseMatrices_MatrixProduceIsNotEMatrixOrder4();
+}
+
+void test_findSumOfMaxesOfPseudoDiagonal() {
+    test_findSumOfMaxesOfPseudoDiagonal_positiveHorizontalRectangleMatrix();
+    test_findSumOfMaxesOfPseudoDiagonal_negativeHorizontalRectangleMatrix();
+    test_findSumOfMaxesOfPseudoDiagonal_positiveVerticalRectangleMatrix();
+    test_findSumOfMaxesOfPseudoDiagonal_negativeVerticalRectangleMatrix();
+    test_findSumOfMaxesOfPseudoDiagonal_oneRow();
+    test_findSumOfMaxesOfPseudoDiagonal_oneCol();
+    test_findSumOfMaxesOfPseudoDiagonal_oneElem();
+    test_findSumOfMaxesOfPseudoDiagonal_negativeSquareMatrix();
+    test_findSumOfMaxesOfPseudoDiagonal_positiveSquareMatrix();
+
+}
+
+void test_getMinInArea() {
+    test_getMinInArea_topLeftCorner();
+    test_getMinInArea_upperRightCorner();
+    test_getMinInArea_centerBottom4x4();
+    test_getMinInArea_verticalMatrixCenterBottomRow();
+    test_getMinInArea_bottoLeftCorner();
+    test_getMinInArea_lowerRightCorner();
+}
+
+void test_getSpecialScalarProduct() {
+    test_getSpecialScalarProduct_classicSquarMatrix();
+    test_getSpecialScalarProduct_SquarMatrixNegativElemnt();
+    test_getSpecialScalarProduct_minAndMaxInOneRow();
+}
+
+
+void test_sortByDistances() {
+    test_sortByDistances_classicSquarMatrix();
+    test_sortByDistances_classicNonSquar();
+    test_sortByDistances_oneCols();
+}
+
 
 void test_ques() {
     test_swapRowsMaxMinElement();
@@ -2210,4 +2400,5 @@ void test_ques() {
     test_getNSpecialElement();
     test_getNSpecialElement2();
     test_countNonDescendingRowsMatrices();
+    test_getMatrixNorm();
 }
