@@ -2081,6 +2081,120 @@ void test_getNSpecialElement2() {
     test_getNSpecialElement2_oneCol();
 }
 
+void test_countNonDescendingRowsMatrices_SquareMatrixHasSuitableMatrix() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    7, 1,
+                    1, 1,
+
+                    1, 6,
+                    2, 2,
+
+                    5, 4,
+                    2, 3,
+
+                    1, 3,
+                    7, 9
+            },
+            4, 2, 2);
+
+    assert(countNonDescendingRowsMatrices(ms, 4) == 2);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_countNonDescendingRowsMatrices_RectangleMatrixHasSuitableMatrix() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    0, 0, 1,
+                    1, 3, 2,
+
+                    1, 6, 7,
+                    2, 2, 2,
+
+                    -1, 0, 1,
+                    2, 1, 2,
+
+                    1, 2, 3,
+                    1, 2, 3
+            },
+            4, 2, 3);
+
+    assert(countNonDescendingRowsMatrices(ms, 4) == 2);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_countNonDescendingRowsMatrices_oneRow() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    0, 0, 1,
+
+                    1, 6, 7,
+
+                    -1, 0, 1,
+
+                    1, 2, 3,
+            },
+            4, 1, 3);
+
+    assert(countNonDescendingRowsMatrices(ms, 4) == 4);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_countNonDescendingRowsMatrices_oneCol() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    0,
+                    0,
+                    1,
+
+                    1,
+                    6,
+                    7,
+
+                    -1,
+                    0,
+                    1,
+
+                    1,
+                    2,
+                    3,
+            },
+            4, 3, 1);
+
+    assert(countNonDescendingRowsMatrices(ms, 4) == 4);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_countNonDescendingRowsMatrices_oneElem() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    0,
+
+                    1,
+
+                    -1,
+
+                    1
+            },
+            4, 1, 1);
+
+    assert(countNonDescendingRowsMatrices(ms, 4) == 4);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_countNonDescendingRowsMatrices() {
+    test_countNonDescendingRowsMatrices_SquareMatrixHasSuitableMatrix();
+    test_countNonDescendingRowsMatrices_RectangleMatrixHasSuitableMatrix();
+    test_countNonDescendingRowsMatrices_oneRow();
+    test_countNonDescendingRowsMatrices_oneCol();
+    test_countNonDescendingRowsMatrices_oneElem();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -2095,4 +2209,5 @@ void test_ques() {
     test_swapPenultimateRow();
     test_getNSpecialElement();
     test_getNSpecialElement2();
+    test_countNonDescendingRowsMatrices();
 }

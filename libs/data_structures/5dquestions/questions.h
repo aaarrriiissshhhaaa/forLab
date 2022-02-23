@@ -30,6 +30,7 @@ int countEqClassesByRowsSum(matrix m);
 
 void swapPenultimateRow(matrix m);
 
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix);
 
 int getNSpecialElement(matrix m);
 

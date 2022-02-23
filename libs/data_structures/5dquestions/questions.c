@@ -415,3 +415,27 @@ int getNSpecialElement2(matrix m) {
     }
     return specElemCount;
 }
+// 13
+
+bool isNonDescendingSorted(int *a, int n) {
+    for (int i = 1; i < n; i++)
+        if (a[i] < a[i - 1])
+            return false;
+    return true;
+}
+
+bool hasAllNonDescendingRows(matrix m) {
+    for (int i = 0; i < m.nRows; i++)
+        if (!isNonDescendingSorted(m.values[i], m.nCols))
+            return false;
+    return true;
+}
+
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
+    int countRows = 0;
+    for (int indexMatrix = 0; indexMatrix < nMatrix; indexMatrix++)
+        if (hasAllNonDescendingRows(ms[indexMatrix]))
+            countRows++;
+
+    return countRows;
+}
