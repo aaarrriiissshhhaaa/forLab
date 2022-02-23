@@ -2005,6 +2005,82 @@ void test_getNSpecialElement() {
     test_getNSpecialElement_oneCol();
 }
 
+void test_getNSpecialElement2_leftAndRightElemIsSpecial() {
+    matrix testMatrix = createMatrixFromArray(
+            (int[]) {
+                    2, 3, 5, 5, 4,
+                    6, 2, 3, 8, 12,
+                    12, 12, 2, 1, 2
+            }, 3, 5
+    );
+
+    assert(getNSpecialElement2(testMatrix) == 4);
+
+    freeMemMatrix(testMatrix);
+}
+
+void test_getNSpecialElement2_notSpecialElement() {
+    matrix testMatrix = createMatrixFromArray(
+            (int[]) {
+                    4, 3, 5, 5, 4,
+                    6, 2, 3, 8, 7,
+                    12, 12, 2, 1, 2
+            }, 3, 5
+    );
+
+    assert(getNSpecialElement2(testMatrix) == 0);
+
+    freeMemMatrix(testMatrix);
+}
+
+void test_getNSpecialElement2_oneElement() {
+    matrix testMatrix = createMatrixFromArray(
+            (int[]) {
+                    4
+            }, 1, 1
+    );
+
+    assert(getNSpecialElement2(testMatrix) == 1);
+
+    freeMemMatrix(testMatrix);
+}
+
+void test_getNSpecialElement2_oneRow() {
+    matrix testMatrix = createMatrixFromArray(
+            (int[]) {
+                    4, 3, 5, 7, 6
+            }, 1, 5
+    );
+
+    assert(getNSpecialElement2(testMatrix) == 1);
+
+    freeMemMatrix(testMatrix);
+}
+
+void test_getNSpecialElement2_oneCol() {
+    matrix testMatrix = createMatrixFromArray(
+            (int[]) {
+                    4,
+                    3,
+                    5,
+                    7,
+                    6
+            }, 5, 1
+    );
+
+    assert(getNSpecialElement2(testMatrix) == 5);
+
+    freeMemMatrix(testMatrix);
+}
+
+void test_getNSpecialElement2() {
+    test_getNSpecialElement2_leftAndRightElemIsSpecial();
+    test_getNSpecialElement2_notSpecialElement();
+    test_getNSpecialElement2_oneElement();
+    test_getNSpecialElement2_oneRow();
+    test_getNSpecialElement2_oneCol();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -2018,4 +2094,5 @@ void test_ques() {
     test_getVectorIndexWithMaxAngle();
     test_swapPenultimateRow();
     test_getNSpecialElement();
+    test_getNSpecialElement2();
 }

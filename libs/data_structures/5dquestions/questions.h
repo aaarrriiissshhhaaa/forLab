@@ -33,4 +33,6 @@ void swapPenultimateRow(matrix m);
 
 int getNSpecialElement(matrix m);
 
+int getNSpecialElement2(matrix m);
+
 #endif //COURSE_QUESTIONS_H

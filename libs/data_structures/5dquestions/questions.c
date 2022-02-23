@@ -385,3 +385,33 @@ int getNSpecialElement(matrix m) {
     }
     return specialElemCount;
 }
+
+// 16
+
+int getNSpecialElement2(matrix m) {
+    int specElemCount = 0;
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++) {
+        int maxElemInRow = m.values[indexRow][0];
+        for (int indexCol = 0; indexCol < m.nCols; indexCol++) {
+            bool left = indexCol == 0;
+
+            if (!left && m.values[indexRow][indexCol] > maxElemInRow) {
+                left = true;
+                maxElemInRow = m.values[indexRow][indexCol];
+            }
+
+            bool right = m.nCols - 1 == indexCol;
+
+            if (!right) {
+                int min = getMin(m.values[indexRow] + indexCol + 1,
+                                 m.nCols - indexCol - 1);
+                right = min > m.values[indexRow][indexCol];
+
+            }
+            if (left && right)
+                specElemCount++;
+        }
+    }
+    return specElemCount;
+}
