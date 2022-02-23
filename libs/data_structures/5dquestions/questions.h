@@ -26,4 +26,8 @@ void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, in
 
 void sortByDistances(matrix m);
 
+int countEqClassesByRowsSum(matrix m);
+
+void swapPenultimateRow(matrix m);
+
 #endif //COURSE_QUESTIONS_H

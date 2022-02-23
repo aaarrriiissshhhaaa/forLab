@@ -11,16 +11,34 @@ stdio.h
 -
 
 D:/untitled4/libs/data_structures/5dquestions/questions.c
+math.h
+-
 questions.h
 D:/untitled4/libs/data_structures/5dquestions/questions.h
 ../../algorithms/algorithm.h
 D:/untitled4/libs/algorithms/algorithm.h
 ../../data_structures/matrix/matrix.h
 D:/untitled4/libs/data_structures/matrix/matrix.h
+memory.h
+-
 
 D:/untitled4/libs/data_structures/5dquestions/questions.h
 ../matrix/matrix.h
 D:/untitled4/libs/data_structures/matrix/matrix.h
+
+D:/untitled4/libs/data_structures/matrix/matrix.c
+matrix.h
+D:/untitled4/libs/data_structures/matrix/matrix.h
+malloc.h
+-
+stdio.h
+-
+../../algorithms/algorithm.h
+D:/untitled4/libs/algorithms/algorithm.h
+stdlib.h
+-
+string.h
+-
 
 D:/untitled4/libs/data_structures/matrix/matrix.h
 stdlib.h

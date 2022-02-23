@@ -1830,6 +1830,87 @@ void test_getVectorIndexWithMaxAngle() {
     test_getVectorIndexWithMaxAngle_oneRow();
 }
 
+void test_swapPenultimateRow_squareMatrix() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 1,
+            },
+            3, 3);
+
+    swapPenultimateRow(m);
+
+    matrix mTrue = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    1, 4, 7,
+                    7, 8, 1,
+            },
+            3, 3);
+
+    assert(areTwoMatricesEqual(m, mTrue));
+
+    freeMemMatrix(m);
+    freeMemMatrix(mTrue);
+}
+
+void test_swapPenultimateRow_someMinimums() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    4, 2, 1,
+                    4, 5, 4,
+                    1, 6, 7
+            },
+            3, 3);
+
+    swapPenultimateRow(m);
+
+    matrix mTrue = createMatrixFromArray(
+            (int[]) {
+                    4, 2, 1,
+                    4, 4, 1,
+                    1, 6, 7
+            },
+            3, 3);
+
+    assert(areTwoMatricesEqual(m, mTrue));
+
+    freeMemMatrix(m);
+    freeMemMatrix(mTrue);
+}
+
+void test_swapPenultimateRow_EMatrix() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    1, 0, 0,
+                    0, 1, 0,
+                    0, 0, 1
+            },
+            3, 3);
+
+    swapPenultimateRow(m1);
+
+    matrix m2 = createMatrixFromArray(
+            (int[]) {
+                    1, 0, 0,
+                    1, 0, 0,
+                    0, 0, 1
+            },
+            3, 3);
+
+    assert(areTwoMatricesEqual(m1, m2));
+
+    freeMemMatrix(m1);
+    freeMemMatrix(m2);
+}
+
+void test_swapPenultimateRow() {
+    test_swapPenultimateRow_squareMatrix();
+    test_swapPenultimateRow_someMinimums();
+    test_swapPenultimateRow_EMatrix();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -1841,4 +1922,5 @@ void test_ques() {
     test_getSpecialScalarProduct();
     test_sortByDistances();
     test_getVectorIndexWithMaxAngle();
+    test_swapPenultimateRow();
 }

@@ -2,6 +2,7 @@
 #include "questions.h"
 #include "../../algorithms/algorithm.h"
 #include "../../data_structures/matrix/matrix.h"
+#include <memory.h>
 
 long long getSum(int *a, int size){
     long long sum = 0;
@@ -335,4 +336,31 @@ int countEqClassesByRowsSum(matrix m) {
         rowSums[i] = getSum(m.values[i], m.nCols);
 
     return countNUnique(rowSums, m.nRows);
+}
+
+/******* 12 *******/
+
+position getLeftMin(matrix m) {
+    int min = m.values[0][0];
+    position minPos = {0, 0};
+
+    for (int indexCol = 0; indexCol < m.nCols; indexCol++)
+        for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+            if (m.values[indexRow][indexCol] < min) {
+                minPos.colIndex = indexCol;
+                minPos.rowIndex = indexRow;
+                min = m.values[indexRow][indexCol];
+            }
+
+    return minPos;
+}
+
+void swapPenultimateRow(matrix m) {
+    position min = getLeftMin(m);
+
+    int colElem[m.nRows];
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        colElem[indexRow] = m.values[indexRow][min.colIndex];
+
+    memcpy(m.values[m.nRows - 2], colElem, sizeof(int) * m.nCols);
 }
