@@ -4,7 +4,7 @@
 #include "../../data_structures/matrix/matrix.h"
 #include <memory.h>
 
-long long getSum(int *a, int size){
+long long getSum(int *a, int size) {
     long long sum = 0;
     for (size_t i = 0; i < size; i++)
         sum += a[i];
@@ -70,6 +70,7 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
 int max(int a, int b) {
     return a > b ? a : b;
 }
+
 /*
 int getMaxElementDiag(matrix m, int indexRow, int indexCol) {
     int maxElement = m.values[indexRow++][indexCol++];
@@ -115,7 +116,6 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
 
     return getSum(elemPseudoDiagonal, n);
 }
-
 
 
 /********************** 8 ***************************/
@@ -193,14 +193,14 @@ int getMinInArea(matrix m) {
 void selectionSort(long long *a, const int size) {
     for (int i = 0; i < size - 1; i++) {
         int minPos = i;
-        for (int j = i + 1 ; j < size; j++)
+        for (int j = i + 1; j < size; j++)
             if (a[j] < a[minPos])
                 minPos = j;
         swap(&a[i], &a[minPos], sizeof(long long));
     }
 }
 
-bool isUnique(long long *a, int size){
+bool isUnique(long long *a, int size) {
     selectionSort(a, size);
     bool isUnique = true;
 
@@ -211,8 +211,7 @@ bool isUnique(long long *a, int size){
 }
 
 
-
-void transposeIfMatrixHasEqualSumOfRows(matrix m, int nRows, int nCols){
+void transposeIfMatrixHasEqualSumOfRows(matrix m, int nRows, int nCols) {
     long long rowsSums[m.nRows];
     for (int i = 0; i < m.nRows; i++)
         rowsSums[i] = getSum(m.values[i], m.nCols);
@@ -467,5 +466,31 @@ void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
 
     for (int i = 0; i < nMatrix; i++)
         if (zeroCount[i] == max)
+            outputMatrix(ms[i]);
+}
+
+
+// 15
+
+int getMatrixNorm(matrix m) {
+    int matOkey = abs(m.values[0][0]);
+
+    for (int indexRow = 0; indexRow < m.nRows; indexRow++)
+        for (int indexCol = 0; indexCol < m.nCols; indexCol++)
+            if (abs(m.values[indexRow][indexCol]) > matOkey)
+                matOkey = abs(m.values[indexRow][indexCol]);
+
+    return matOkey;
+}
+
+void printMatrixWithMaxNorm(matrix *ms, int nMatrix) {
+    int matOkey[nMatrix];
+    for (int indexMatrix = 0; indexMatrix < nMatrix; indexMatrix++)
+        matOkey[indexMatrix] = getMatrixNorm(ms[indexMatrix]);
+
+    int min = getMin(matOkey, nMatrix);
+
+    for (int i = 0; i < nMatrix; i++)
+        if (matOkey[i] == min)
             outputMatrix(ms[i]);
 }

@@ -126,9 +126,15 @@ position getMaxValuePos(matrix m);
 // полученную путем умножение m1 на m2
 matrix mulMatrices(matrix m1, matrix m2);
 
+
+// сортирует матрицу m  по неубыванию значения
+// creteria у элементов столбцов
 void selecSortColsMatrixByColCriteria(matrix m,
                                       int (*criteria)(int *, int));
 
+
+// сортирует строки матрицы m по неубыванию значения
+// criteria применёные к ним
 void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, int));
 
 #endif

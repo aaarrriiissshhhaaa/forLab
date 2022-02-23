@@ -36,7 +36,7 @@ void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix);
 
 int countZeroRows(matrix m);
 
-int getMatrixNorm();
+int getMatrixNorm(matrix m);
 
 int getNSpecialElement(matrix m);
 
