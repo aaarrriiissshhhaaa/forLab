@@ -130,7 +130,7 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
         for (int indexCriteria = indexRow; indexCriteria > 0 &&
                                            rowsCriteria[indexCriteria - 1]
                                            > rowsCriteria[indexCriteria];
-                                            indexCriteria--) {
+             indexCriteria--) {
             swap(&rowsCriteria[indexCriteria - 1],
                  &rowsCriteria[indexCriteria], sizeof(int));
             swapRowsWithoutVerificationIndex(m, indexCriteria,
@@ -153,7 +153,7 @@ void insertionSortColsMatrixByColCriteria(matrix m,
         for (int indexCriteria = indexRow; indexCriteria > 0 &&
                                            colsCriteria[indexCriteria - 1]
                                            > colsCriteria[indexCriteria];
-                                                indexCriteria--) {
+             indexCriteria--) {
             swap(&colsCriteria[indexCriteria - 1],
                  &colsCriteria[indexCriteria], sizeof(int));
             swapColumnsWithoutVerificationIndex(m, indexCriteria,
@@ -163,7 +163,7 @@ void insertionSortColsMatrixByColCriteria(matrix m,
 
 
 void selecSortColsMatrixByColCriteria(matrix m,
-                                          int (*criteria)(int *, int)) {
+                                      int (*criteria)(int *, int)) {
     int colsCriteria[m.nCols];
     for (int indexRow = 0; indexRow < m.nCols; indexRow++) {
         int colsMatrix[m.nRows];
@@ -175,7 +175,7 @@ void selecSortColsMatrixByColCriteria(matrix m,
 
     for (int i = 0; i < m.nCols - 1; i++) {
         int minPos = i;
-        for (int j = i + 1 ; j < m.nCols; j++)
+        for (int j = i + 1; j < m.nCols; j++)
             if (colsCriteria[j] < colsCriteria[minPos])
                 minPos = j;
         swap(&colsCriteria[i], &colsCriteria[minPos], sizeof(long long));
@@ -184,15 +184,15 @@ void selecSortColsMatrixByColCriteria(matrix m,
 }
 
 
-bool isSquareMatrix(matrix m){
+bool isSquareMatrix(matrix m) {
     return m.nRows == m.nCols;
 }
 
-bool areTwoMatricesEqual(matrix m1, matrix m2){
-    if(m1.nRows == m2.nRows && m1.nCols == m2.nCols)
+bool areTwoMatricesEqual(matrix m1, matrix m2) {
+    if (m1.nRows == m2.nRows && m1.nCols == m2.nCols)
         return false;
 
-    for (size_t i = 0; i <  m1.nRows; i++)
+    for (size_t i = 0; i < m1.nRows; i++)
         if (memcmp(m1.values[i], m2.values[i], sizeof(int) * m1.nCols) != 0)
             return false;
 
@@ -200,18 +200,19 @@ bool areTwoMatricesEqual(matrix m1, matrix m2){
     return true;
 }
 
-bool isEMatrix(matrix m){
+bool isEMatrix(matrix m) {
     bool isEMatrix = isSquareMatrix(m) ? true : false;
 
     for (int indexRow = 0; indexRow < m.nRows && isEMatrix; indexRow++)
         for (int indexCol = 0; indexCol < m.nCols && isEMatrix; indexCol++)
             if (indexRow != indexCol && m.values[indexRow][indexCol] != 0
-            || indexRow == indexCol && m.values[indexRow][indexRow] != 1)
+                || indexRow == indexCol && m.values[indexRow][indexRow] != 1)
                 isEMatrix = false;
 
     return isEMatrix;
 }
-bool isSymmetricMatrix(matrix m){
+
+bool isSymmetricMatrix(matrix m) {
     bool isSymmetric = isSquareMatrix(m) ? true : false;
 
     for (int indexRow = 0; indexRow < m.nRows && isSymmetric; indexRow++)
@@ -222,19 +223,19 @@ bool isSymmetricMatrix(matrix m){
     return isSymmetric;
 }
 
-void transposeSquareMatrix(matrix m){
-    if(isSquareMatrix(m) == 0){
+void transposeSquareMatrix(matrix m) {
+    if (isSquareMatrix(m) == 0) {
         fprintf(stderr, "not square matrix :( ");
         exit(1);
     }
 
     for (int indexRow = 0; indexRow < m.nRows; indexRow++)
         for (int indexCol = 0; indexCol < indexRow; indexCol++)
-            swap(&m.values[indexRow][indexCol],&m.values[indexCol][indexRow],
+            swap(&m.values[indexRow][indexCol], &m.values[indexCol][indexRow],
                  sizeof(int));
 }
 
-position getMinValuePos(matrix m){
+position getMinValuePos(matrix m) {
     int minValues = m.values[0][0];
     position minPos = {0, 0};
 
@@ -249,7 +250,7 @@ position getMinValuePos(matrix m){
     return minPos;
 }
 
-position getMaxValuePos(matrix m){
+position getMaxValuePos(matrix m) {
     int maxValues = m.values[0][0];
     position maxPos = {0, 0};
 

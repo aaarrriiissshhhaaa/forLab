@@ -1671,7 +1671,7 @@ void test_getSpecialScalarProduct_SquarMatrixNegativElemnt() {
             }, 3, 3
     );
 
-    assert(getSpecialScalarProduct(c) == -3 * -1 +  -6 * -2 + -9 * -3);
+    assert(getSpecialScalarProduct(c) == -3 * -1 + -6 * -2 + -9 * -3);
 
     freeMemMatrix(c);
 }
@@ -1759,7 +1759,7 @@ void test_sortByDistances_oneCols() {
 
     matrix mTrue = createMatrixFromArray(
             (int[]) {
-                   1, 5, 9, 9
+                    1, 5, 9, 9
             },
             4, 1);
 
@@ -1911,6 +1911,100 @@ void test_swapPenultimateRow() {
     test_swapPenultimateRow_EMatrix();
 }
 
+void test_getNSpecialElement_rectangleMatrix() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5, 4,
+                    2, 3, 6, 7,
+                    12, 2, 1, 2
+            },
+            3, 4);
+
+    assert(getNSpecialElement(m1) == 2);
+
+    freeMemMatrix(m1);
+}
+
+void test_getNSpecialElement_rectangleMatrixHasNotSpecial() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5, 4,
+                    2, 3, 6, 4,
+                    1, 2, 1, 2
+            },
+            3, 4);
+
+    assert(getNSpecialElement(m1) == 0);
+
+    freeMemMatrix(m1);
+}
+
+void test_getNSpecialElement_rectangleVerticalMatrixHasNotSpecial() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5,
+                    4, 2, 3,
+                    6, 4, 1,
+                    2, 1, 2
+            },
+            4, 3);
+
+    assert(getNSpecialElement(m1) == 0);
+
+    freeMemMatrix(m1);
+}
+
+void test_getNSpecialElement_allElementsEqual() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    5, 5, 5,
+                    5, 5, 5,
+                    5, 5, 5,
+                    5, 5, 5
+            },
+            4, 3);
+
+    assert(getNSpecialElement(m1) == 0);
+
+    freeMemMatrix(m1);
+}
+
+void test_getNSpecialElement_oneRow() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    1,
+                    2,
+                    3,
+                    7
+            },
+            4, 1);
+
+    assert(getNSpecialElement(m1) == 1);
+
+    freeMemMatrix(m1);
+}
+
+void test_getNSpecialElement_oneCol() {
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3, 7
+            },
+            1, 4);
+
+    assert(getNSpecialElement(m1) == 4);
+
+    freeMemMatrix(m1);
+}
+
+
+void test_getNSpecialElement() {
+    test_getNSpecialElement_rectangleMatrix();
+    test_getNSpecialElement_rectangleMatrixHasNotSpecial();
+    test_getNSpecialElement_rectangleVerticalMatrixHasNotSpecial();
+    test_getNSpecialElement_allElementsEqual();
+    test_getNSpecialElement_oneCol();
+}
+
 void test_ques() {
     test_swapRowsMaxMinElement();
     test_sortRowsByMaxElement();
@@ -1923,4 +2017,5 @@ void test_ques() {
     test_sortByDistances();
     test_getVectorIndexWithMaxAngle();
     test_swapPenultimateRow();
+    test_getNSpecialElement();
 }

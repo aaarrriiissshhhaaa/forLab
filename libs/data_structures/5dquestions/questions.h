@@ -30,4 +30,7 @@ int countEqClassesByRowsSum(matrix m);
 
 void swapPenultimateRow(matrix m);
 
+
+int getNSpecialElement(matrix m);
+
 #endif //COURSE_QUESTIONS_H

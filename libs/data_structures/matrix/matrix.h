@@ -126,4 +126,9 @@ position getMaxValuePos(matrix m);
 // полученную путем умножение m1 на m2
 matrix mulMatrices(matrix m1, matrix m2);
 
+void selecSortColsMatrixByColCriteria(matrix m,
+                                      int (*criteria)(int *, int));
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, int));
+
 #endif

@@ -364,3 +364,24 @@ void swapPenultimateRow(matrix m) {
 
     memcpy(m.values[m.nRows - 2], colElem, sizeof(int) * m.nCols);
 }
+
+// 11
+
+int getNSpecialElement(matrix m) {
+    int specialElemCount = 0;
+
+    for (int indexCol = 0; indexCol < m.nCols; indexCol++) {
+        int specElement = m.values[0][indexCol];
+        int sumCol = 0;
+        for (int indexRow = 1; indexRow < m.nRows; indexRow++) {
+            if (m.values[indexRow][indexCol] > specElement) {
+                sumCol += specElement;
+                specElement = m.values[indexRow][indexCol];
+            } else
+                sumCol += m.values[indexRow][indexCol];
+        }
+        if (specElement > sumCol)
+            specialElemCount++;
+    }
+    return specialElemCount;
+}
