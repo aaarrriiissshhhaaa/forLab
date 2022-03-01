@@ -11,6 +11,7 @@
 #include "string/tasks/removeAdjacentEqualLetters.h"
 #include "string/tasks/removeExtraSpaces.h"
 #include "string/tasks/digitToStart.h"
+#include "string/tasks/digitToStartSymbolEnd.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -493,11 +494,54 @@ void test_digitToStartString() {
     test_digitToStartString_complexWordString();
 }
 
+void test_digitToEndSymbolToStartString_classic(){
+    char s[] = "2345abc";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("abc2345", s);
+}
+void test_digitToEndSymbolToStartString_onlyDigit(){
+    char s[] = "23 45";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("23 45", s);
+}
+void test_digitToEndSymbolToStartString_onlySymbol(){
+    char s[] = "ba ku";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("ba ku", s);
+}
+void test_digitToEndSymbolToStartString_complexString(){
+    char s[] = "4a1b23   56hu7l9  iko8  ";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("ab4123   hul5679  iko8  ", s);
+}
+
+void test_digitToEndSymbolToStartString_nullString(){
+    char s[] = "";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_digitToEndSymbolToStartString_veryDifferentWordInString(){
+    char s[] = "4a1b23   56hu7l9  iko8  6565 1k1o1k1o12";
+    digitToEndSymbolToStartString(s);
+    ASSERT_STRING("ab4123   hul5679  iko8  6565 koko111112", s);
+}
+
+void test_digitToEndSymbolToStartString() {
+    test_digitToEndSymbolToStartString_classic();
+    test_digitToEndSymbolToStartString_onlyDigit();
+    test_digitToEndSymbolToStartString_onlySymbol();
+    test_digitToEndSymbolToStartString_complexString();
+    test_digitToEndSymbolToStartString_nullString();
+    test_digitToEndSymbolToStartString_veryDifferentWordInString();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
     test_removeExtraSpaces();
     test_digitToStartString();
+    test_digitToEndSymbolToStartString();
 }
 
 
