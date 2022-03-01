@@ -359,6 +359,38 @@ void test_copy() {
     test_copy_fullStr();
 }
 
+void test_getWordReverse_lastWord(){
+    char s[] = "Lizi Lolita Margarita ";
+    WordDescriptor word;
+    assert(getWordReverse(&s[11], s, &word));
+    assert(word.begin == &s[4] && word.end == &s[10]);
+}
+
+void test_getWordReverse_firstWord(){
+    char s[] = "Liza Lolita Margarita";
+    WordDescriptor word;
+    assert(getWordReverse(&s[4], s, &word));
+}
+
+void test_getWordReverse_NonWord(){
+    char s[10] = "";
+    WordDescriptor word;
+    assert(!getWordReverse(&s[4], s, &word));
+}
+
+void test_getWordReverse_fullWord(){
+    char s[] = "Liza Lolita Margarita";
+    WordDescriptor word;
+    assert(getWordReverse(&s[4], s, &word));
+}
+
+void test_getWordReverse(){
+    test_getWordReverse_lastWord();
+    test_getWordReverse_firstWord();
+    test_getWordReverse_NonWord();
+    test_getWordReverse_fullWord();
+}
+
 void testB() {
     test_strlen();
     test_find();
@@ -368,6 +400,7 @@ void testB() {
     test_findSpaceReverse();
     test_strcmp();
     test_copy();
+    test_getWordReverse();
 }
 
 /////////// taks ////////
@@ -653,6 +686,36 @@ void test_reverseWordInString() {
 
 }
 
+#include "string/tasks/digitSpace.h"
+
+void test_getDigitCountSpace_onlyDigit(){
+    char s[] ="123";
+    getDigitCountSpace(s);
+    ASSERT_STRING("      ", s);
+
+}
+void test_getDigitCountSpace_onlySymbol(){
+    char s[] ="abs";
+    getDigitCountSpace(s);
+    ASSERT_STRING("abs", s);
+}
+void test_getDigitCountSpace_nullStr(){
+    char s[] ="";
+    getDigitCountSpace(s);
+    ASSERT_STRING("", s);
+}
+void test_getDigitCountSpace_complexStr(){
+    char s[] ="ab1 2bs 3lkik5";
+    getDigitCountSpace(s);
+    ASSERT_STRING("ab    bs    lkik     ", s);
+}
+
+void test_getDigitCountSpace(){
+    test_getDigitCountSpace_onlyDigit();
+    test_getDigitCountSpace_onlySymbol();
+    test_getDigitCountSpace_nullStr();
+    test_getDigitCountSpace_complexStr();
+}
 
 void testTask() {
     test_removeNonLetters();
@@ -663,8 +726,8 @@ void testTask() {
     test_digitToEndReversSymbolToStartString();
     test_digitToStartNonReversString();
     test_reverseWordInString();
+    test_getDigitCountSpace();
 }
-
 
 int main() {
     testB();

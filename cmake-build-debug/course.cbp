@@ -287,6 +287,9 @@
 		<Unit filename="D:/untitled4/string/string_.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/digitSpace.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/digitToEndReversSymbolToStartString.h">
 			<Option target="str"/>
 		</Unit>

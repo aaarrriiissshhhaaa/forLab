@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <memory.h>
-
+#include <stdbool.h>
 
 // возвращает количество символов в строке begin
 size_t strlen_(const char *begin) {
@@ -158,5 +158,14 @@ int getWord(char *beginSearch, WordDescriptor *word) {
         return 0;
 
     word->end = findSpace(word->begin);
+    return 1;
+}
+
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word){
+    word->end = findNonSpaceReverse(rbegin, rend);
+    if (word->end == rend || *word->end == '\0')
+        return 0;
+
+    word->begin = findSpaceReverse(word->end, rend);
     return 1;
 }

@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+
 
 #define MAX_STRING_SIZE 100
 #define MAX_N_WORDS_IN_STRING 100
@@ -53,5 +55,7 @@ int getWord(char *beginSearch, WordDescriptor *word);
 
 char *copyNonIfReverse(char *rbeginSource, const char *rendSource,
                        char *beginDestination, int (*f)(int));
+
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 #endif //MAIN_C_STRING__H
