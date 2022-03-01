@@ -39,11 +39,23 @@ string/tasks/removeAdjacentEqualLetters.h
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
 string/tasks/removeExtraSpaces.h
 D:/untitled4/string/tasks/removeExtraSpaces.h
+string/tasks/digitToStart.h
+D:/untitled4/string/tasks/digitToStart.h
 
 D:/untitled4/string/string_.h
 stdio.h
 -
 stdlib.h
+-
+string.h
+-
+
+D:/untitled4/string/tasks/digitToStart.h
+../string_.h
+D:/untitled4/string/string_.h
+stdio.h
+-
+ctype.h
 -
 
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h

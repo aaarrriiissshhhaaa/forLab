@@ -9,7 +9,9 @@ add_library(str string/string_.h string/string_.c
         string/tasks/removeNonLetters.h
         string/tasks/removeAdjacentEqualLetters.h
         string/tasks/removeExtraSpaces.h
+        string/tasks/digitToStart.h
         )
+
 add_subdirectory(libs)
 target_link_libraries(untitled4 str)
 target_link_libraries(untitled4 data_structures)

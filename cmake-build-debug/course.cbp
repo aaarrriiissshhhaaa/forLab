@@ -287,6 +287,9 @@
 		<Unit filename="D:/untitled4/string/string_.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/digitToStart.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/removeAdjacentEqualLetters.h">
 			<Option target="str"/>
 		</Unit>

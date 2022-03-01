@@ -3,8 +3,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+#define MAX_STRING_SIZE 100
+#define MAX_N_WORDS_IN_STRING 100
+#define MAX_WORD_SIZE 20
+
+char _stringBuffer [MAX_STRING_SIZE + 1];
+
 #define  ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
+
+typedef struct WordDescriptor {
+    char *begin;   // позиция начала слова
+    char *end;     // позиция первого символа, после последнего символа слова
+} WordDescriptor;
+
 
 void assertString(const char *expected, char *got,
                   char const *fileName, char const *funcName,
@@ -34,5 +48,8 @@ char *copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int));
 
 char *getEndOfString(char *s);
+
+int getWord(char *beginSearch, WordDescriptor *word);
+
 
 #endif //MAIN_C_STRING__H

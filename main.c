@@ -10,6 +10,7 @@
 #include "string/tasks/removeNonLetters.h"
 #include "string/tasks/removeAdjacentEqualLetters.h"
 #include "string/tasks/removeExtraSpaces.h"
+#include "string/tasks/digitToStart.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -413,12 +414,19 @@ void test_removeAdjacentEqualLetters_complexStringt() {
     ASSERT_STRING("a abc c ", s);
 }
 
-void test_removeAdjacentEqualLetters(){
+void test_removeAdjacentEqualLetters_nullStr() {
+    char s[] = "";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("", s);
+}
+
+void test_removeAdjacentEqualLetters() {
     test_removeAdjacentEqualLetters_noSpaceSymbol();
     test_removeAdjacentEqualLetters_SpaceSymbol();
     test_removeAdjacentEqualLetters_onlyEqualSymbol();
     test_removeAdjacentEqualLetters_onlyNonEqualSymbol();
     test_removeAdjacentEqualLetters_complexStringt();
+    test_removeAdjacentEqualLetters_nullStr();
 }
 
 void test_removeExtraSpaces_spaceLast() {
@@ -433,18 +441,64 @@ void test_removeExtraSpaces_spaceFirstAndLast() {
     ASSERT_STRING("a b c ", s);
 }
 
+void test_removeExtraSpaces_nullStr() {
+    char s[] = "";
+    removeExtraSpaces(s);
+    ASSERT_STRING("", s);
+}
 
-void test_removeExtraSpaces(){
+
+void test_removeExtraSpaces() {
     test_removeExtraSpaces_spaceLast();
     test_removeExtraSpaces_spaceFirstAndLast();
+    test_removeExtraSpaces_nullStr();
+}
+
+void test_digitToStartString_nonDigit() {
+    char s[] = "Hello";
+    digitToStartString(s);
+    ASSERT_STRING("Hello", s);
+}
+
+void test_digitToStartString_onlyDigit() {
+    char s[] = "123";
+    digitToStartString(s);
+    ASSERT_STRING("321", s);
+}
+
+void test_digitToStartString_classicString() {
+    char s[] = "Hi123 45Jo89";
+    digitToStartString(s);
+    ASSERT_STRING("321Hi 9854Jo", s);
+}
+
+
+void test_digitToStartString_complexWordString() {
+    char s[] = "Hi123 45J80o89";
+    digitToStartString(s);
+    ASSERT_STRING("321Hi 980854Jo", s);
+}
+
+void test_digitToStartString_nullStr() {
+    char s[] = "";
+    digitToStartString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_digitToStartString() {
+    test_digitToStartString_nonDigit();
+    test_digitToStartString_onlyDigit();
+    test_digitToStartString_classicString();
+    test_digitToStartString_nullStr();
+    test_digitToStartString_complexWordString();
 }
 
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
     test_removeExtraSpaces();
+    test_digitToStartString();
 }
-
 
 
 int main() {
