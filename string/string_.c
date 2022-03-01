@@ -107,8 +107,8 @@ char *copyIf(char *beginSource, const char *endSource,
 // destination. Записывает по адресу beginDestination
 // фрагмент памяти, начиная с адреса rendSource до rbeginSource
 // все элементы удовлетворяющие функции-предикату f
-char* copyIfReverse(char *rbeginSource, const char *rendSource,
-                    char *beginDestination, int (*f)(int)){
+char *copyIfReverse(char *rbeginSource, const char *rendSource,
+                    char *beginDestination, int (*f)(int)) {
     while (rbeginSource != rendSource) {
         if (f(*rbeginSource))
             *(beginDestination++) = *rbeginSource;
@@ -118,9 +118,21 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource,
 
     return beginDestination;
 }
+char *copyNonIfReverse(char *rbeginSource, const char *rendSource,
+                    char *beginDestination, int (*f)(int)) {
+    while (rbeginSource != rendSource) {
+        if (!f(*rbeginSource))
+            *(beginDestination++) = *rbeginSource;
+
+        rbeginSource--;
+    }
+
+    return beginDestination;
+}
+
 
 // Возвращает указатель на первый ноль символ строки s
-char * getEndOfString(char *s){
+char *getEndOfString(char *s) {
     while (*s != '\0')
         s++;
 

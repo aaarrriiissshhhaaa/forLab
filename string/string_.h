@@ -9,7 +9,7 @@
 #define MAX_N_WORDS_IN_STRING 100
 #define MAX_WORD_SIZE 20
 
-char _stringBuffer [MAX_STRING_SIZE + 1];
+char _stringBuffer[MAX_STRING_SIZE + 1];
 
 #define  ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
@@ -51,5 +51,7 @@ char *getEndOfString(char *s);
 
 int getWord(char *beginSearch, WordDescriptor *word);
 
+char *copyNonIfReverse(char *rbeginSource, const char *rendSource,
+                       char *beginDestination, int (*f)(int));
 
 #endif //MAIN_C_STRING__H

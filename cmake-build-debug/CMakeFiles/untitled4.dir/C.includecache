@@ -47,6 +47,8 @@ string/tasks/digitToEndReversSymbolToStartString.h
 D:/untitled4/string/tasks/digitToEndReversSymbolToStartString.h
 string/tasks/digitToStartNonReversString.h
 D:/untitled4/string/tasks/digitToStartNonReversString.h
+string/tasks/reverseWordInString.h
+D:/untitled4/string/tasks/reverseWordInString.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -97,4 +99,6 @@ D:/untitled4/string/tasks/removeNonLetters.h
 D:/untitled4/string/string_.h
 ctype.h
 -
+
+D:/untitled4/string/tasks/reverseWordInString.h
 

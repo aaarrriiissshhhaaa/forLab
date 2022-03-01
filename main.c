@@ -14,6 +14,7 @@
 #include "string/tasks/digitToStartSymbolEnd.h"
 #include "string/tasks/digitToEndReversSymbolToStartString.h"
 #include "string/tasks/digitToStartNonReversString.h"
+#include "string/tasks/reverseWordInString.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -347,7 +348,9 @@ void test_copy_fullStr() {
     char a[6] = "Hello";
     char b[9];
 
-    assert (copy(a, &a[4], b) == &b[4]);
+    *copy(a, &a[4], b) = '\0';
+
+    ASSERT_STRING("Hell", b); // оу....
 }
 
 void test_copy() {
@@ -496,34 +499,37 @@ void test_digitToStartString() {
     test_digitToStartString_complexWordString();
 }
 
-void test_digitToEndSymbolToStartString_classic(){
+void test_digitToEndSymbolToStartString_classic() {
     char s[] = "2345abc";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("abc2345", s);
 }
-void test_digitToEndSymbolToStartString_onlyDigit(){
+
+void test_digitToEndSymbolToStartString_onlyDigit() {
     char s[] = "23 45";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("23 45", s);
 }
-void test_digitToEndSymbolToStartString_onlySymbol(){
+
+void test_digitToEndSymbolToStartString_onlySymbol() {
     char s[] = "ba ku";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("ba ku", s);
 }
-void test_digitToEndSymbolToStartString_complexString(){
+
+void test_digitToEndSymbolToStartString_complexString() {
     char s[] = "4a1b23   56hu7l9  iko8  ";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("ab4123   hul5679  iko8  ", s);
 }
 
-void test_digitToEndSymbolToStartString_nullString(){
+void test_digitToEndSymbolToStartString_nullString() {
     char s[] = "";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("", s);
 }
 
-void test_digitToEndSymbolToStartString_veryDifferentWordInString(){
+void test_digitToEndSymbolToStartString_veryDifferentWordInString() {
     char s[] = "4a1b23   56hu7l9  iko8  6565 1k1o1k1o12";
     digitToEndSymbolToStartString(s);
     ASSERT_STRING("ab4123   hul5679  iko8  6565 koko111112", s);
@@ -538,31 +544,31 @@ void test_digitToEndSymbolToStartString() {
     test_digitToEndSymbolToStartString_veryDifferentWordInString();
 }
 
-void test_digitToEndReversSymbolToStartString_classic(){
+void test_digitToEndReversSymbolToStartString_classic() {
     char s[] = "a1b2c3 a1b2c3";
     digitToEndReversSymbolToStartString(s);
     ASSERT_STRING("abc321 abc321", s);
 }
 
-void test_digitToEndReversSymbolToStartString_onlyDigit(){
+void test_digitToEndReversSymbolToStartString_onlyDigit() {
     char s[] = "123 123";
     digitToEndReversSymbolToStartString(s);
     ASSERT_STRING("321 321", s);
 }
 
-void test_digitToEndReversSymbolToStartString_onlySymbol(){
+void test_digitToEndReversSymbolToStartString_onlySymbol() {
     char s[] = "abc abc";
     digitToEndReversSymbolToStartString(s);
     ASSERT_STRING("abc abc", s);
 }
 
-void test_digitToEndReversSymbolToStartString_complexString(){
+void test_digitToEndReversSymbolToStartString_complexString() {
     char s[] = "2a56b1c a987b1c2";
     digitToEndReversSymbolToStartString(s);
     ASSERT_STRING("abc1652 abc21789", s);
 }
 
-void test_digitToEndReversSymbolToStartString_nullString(){
+void test_digitToEndReversSymbolToStartString_nullString() {
     char s[] = "";
     digitToEndReversSymbolToStartString(s);
     ASSERT_STRING("", s);
@@ -615,6 +621,38 @@ void test_digitToStartNonReversString() {
     test_digitToStartNonReversString_complexWordString();
 }
 
+void test_reverseWordInString_oneWord(){
+    char s[] ="    bibaAndBoba   ";
+    reverseWordInString(s);
+    ASSERT_STRING("    aboBdnAabib   ", s);
+}
+
+void test_reverseWordInString_bigString(){
+    char s[] ="    bibaAndBoba   h1i2s3t4o5r6i";
+    reverseWordInString(s);
+    ASSERT_STRING("    aboBdnAabib   i6r5o4t3s2i1h", s);
+}
+
+void test_reverseWordInString_nullString(){
+    char s[] ="";
+    reverseWordInString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_reverseWordInString_onlySymbolOrOnlyDigit(){
+    char s[] ="    bibaAndBoba   123456";
+    reverseWordInString(s);
+    ASSERT_STRING("    aboBdnAabib   654321", s);
+}
+
+void test_reverseWordInString() {
+    test_reverseWordInString_oneWord();
+    test_reverseWordInString_bigString();
+    test_reverseWordInString_nullString();
+    test_reverseWordInString_onlySymbolOrOnlyDigit();
+
+}
+
 
 void testTask() {
     test_removeNonLetters();
@@ -624,6 +662,7 @@ void testTask() {
     test_digitToEndSymbolToStartString();
     test_digitToEndReversSymbolToStartString();
     test_digitToStartNonReversString();
+    test_reverseWordInString();
 }
 
 

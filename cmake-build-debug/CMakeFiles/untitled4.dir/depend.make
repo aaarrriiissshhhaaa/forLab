@@ -12,4 +12,5 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/digitToStartSymbolEnd.h \
  ../string/tasks/removeAdjacentEqualLetters.h \
  ../string/tasks/removeExtraSpaces.h \
- ../string/tasks/removeNonLetters.h
+ ../string/tasks/removeNonLetters.h \
+ ../string/tasks/reverseWordInString.h
