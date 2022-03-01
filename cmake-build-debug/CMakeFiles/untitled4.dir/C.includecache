@@ -43,6 +43,8 @@ string/tasks/digitToStart.h
 D:/untitled4/string/tasks/digitToStart.h
 string/tasks/digitToStartSymbolEnd.h
 D:/untitled4/string/tasks/digitToStartSymbolEnd.h
+string/tasks/digitToEndReversSymbolToStartString.h
+D:/untitled4/string/tasks/digitToEndReversSymbolToStartString.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -50,6 +52,14 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+
+D:/untitled4/string/tasks/digitToEndReversSymbolToStartString.h
+../string_.h
+D:/untitled4/string/string_.h
+stdio.h
+-
+ctype.h
 -
 
 D:/untitled4/string/tasks/digitToStart.h

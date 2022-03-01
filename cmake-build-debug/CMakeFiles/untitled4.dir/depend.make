@@ -6,6 +6,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../libs/data_structures/matrix/matrix.h \
  ../main.c \
  ../string/string_.h \
+ ../string/tasks/digitToEndReversSymbolToStartString.h \
  ../string/tasks/digitToStart.h \
  ../string/tasks/digitToStartSymbolEnd.h \
  ../string/tasks/removeAdjacentEqualLetters.h \

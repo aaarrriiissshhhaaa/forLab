@@ -12,6 +12,7 @@
 #include "string/tasks/removeExtraSpaces.h"
 #include "string/tasks/digitToStart.h"
 #include "string/tasks/digitToStartSymbolEnd.h"
+#include "string/tasks/digitToEndReversSymbolToStartString.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -536,12 +537,52 @@ void test_digitToEndSymbolToStartString() {
     test_digitToEndSymbolToStartString_veryDifferentWordInString();
 }
 
+void test_digitToEndReversSymbolToStartString_classic(){
+    char s[] = "a1b2c3 a1b2c3";
+    digitToEndReversSymbolToStartString(s);
+    ASSERT_STRING("abc321 abc321", s);
+}
+
+void test_digitToEndReversSymbolToStartString_onlyDigit(){
+    char s[] = "123 123";
+    digitToEndReversSymbolToStartString(s);
+    ASSERT_STRING("321 321", s);
+}
+
+void test_digitToEndReversSymbolToStartString_onlySymbol(){
+    char s[] = "abc abc";
+    digitToEndReversSymbolToStartString(s);
+    ASSERT_STRING("abc abc", s);
+}
+
+void test_digitToEndReversSymbolToStartString_complexString(){
+    char s[] = "2a56b1c a987b1c2";
+    digitToEndReversSymbolToStartString(s);
+    ASSERT_STRING("abc1652 abc21789", s);
+}
+
+void test_digitToEndReversSymbolToStartString_nullString(){
+    char s[] = "";
+    digitToEndReversSymbolToStartString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_digitToEndReversSymbolToStartString() {
+    test_digitToEndReversSymbolToStartString_classic();
+    test_digitToEndReversSymbolToStartString_onlyDigit();
+    test_digitToEndReversSymbolToStartString_onlySymbol();
+    test_digitToEndReversSymbolToStartString_complexString();
+    test_digitToEndReversSymbolToStartString_nullString();
+}
+
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
     test_removeExtraSpaces();
     test_digitToStartString();
     test_digitToEndSymbolToStartString();
+    test_digitToEndReversSymbolToStartString();
 }
 
 
