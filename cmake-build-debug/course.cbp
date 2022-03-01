@@ -290,6 +290,9 @@
 		<Unit filename="D:/untitled4/string/tasks/removeAdjacentEqualLetters.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/removeExtraSpaces.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/removeNonLetters.h">
 			<Option target="str"/>
 		</Unit>

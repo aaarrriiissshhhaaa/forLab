@@ -37,6 +37,8 @@ string/tasks/removeNonLetters.h
 D:/untitled4/string/tasks/removeNonLetters.h
 string/tasks/removeAdjacentEqualLetters.h
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
+string/tasks/removeExtraSpaces.h
+D:/untitled4/string/tasks/removeExtraSpaces.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -45,6 +47,8 @@ stdlib.h
 -
 
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
+
+D:/untitled4/string/tasks/removeExtraSpaces.h
 
 D:/untitled4/string/tasks/removeNonLetters.h
 ../string_.h

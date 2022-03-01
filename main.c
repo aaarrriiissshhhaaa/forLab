@@ -9,7 +9,7 @@
 #include <ctype.h>
 #include "string/tasks/removeNonLetters.h"
 #include "string/tasks/removeAdjacentEqualLetters.h"
-
+#include "string/tasks/removeExtraSpaces.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -421,14 +421,35 @@ void test_removeAdjacentEqualLetters(){
     test_removeAdjacentEqualLetters_complexStringt();
 }
 
+void test_removeExtraSpaces_spaceLast() {
+    char s[] = "aa    b       c       ";
+    removeExtraSpaces(s);
+    ASSERT_STRING("aa b c ", s);
+}
+
+void test_removeExtraSpaces_spaceFirstAndLast() {
+    char s[] = "      a    b       c       ";
+    removeExtraSpaces(s);
+    ASSERT_STRING("a b c ", s);
+}
+
+
+void test_removeExtraSpaces(){
+    test_removeExtraSpaces_spaceLast();
+    test_removeExtraSpaces_spaceFirstAndLast();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
+    test_removeExtraSpaces();
 }
+
 
 
 int main() {
     testB();
+    testTask();
 
     return 0;
 }
