@@ -87,6 +87,7 @@ untitled4_EXTERNAL_OBJECTS =
 
 untitled4.exe: CMakeFiles/untitled4.dir/main.c.obj
 untitled4.exe: CMakeFiles/untitled4.dir/build.make
+untitled4.exe: libstr.a
 untitled4.exe: libs/data_structures/libdata_structures.a
 untitled4.exe: libs/algorithms/libalgorithms.a
 untitled4.exe: CMakeFiles/untitled4.dir/linklibs.rsp

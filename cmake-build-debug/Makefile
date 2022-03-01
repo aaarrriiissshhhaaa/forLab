@@ -129,6 +129,19 @@ untitled4/fast:
 .PHONY : untitled4/fast
 
 #=============================================================================
+# Target rules for targets named str
+
+# Build rule for target.
+str: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 str
+.PHONY : str
+
+# fast build rule for target.
+str/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\str.dir\build.make CMakeFiles/str.dir/build
+.PHONY : str/fast
+
+#=============================================================================
 # Target rules for targets named data_structures
 
 # Build rule for target.
@@ -191,6 +204,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled4.dir\build.make CMakeFiles/untitled4.dir/main.c.s
 .PHONY : main.c.s
 
+string/string_.obj: string/string_.c.obj
+.PHONY : string/string_.obj
+
+# target to build an object file
+string/string_.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\str.dir\build.make CMakeFiles/str.dir/string/string_.c.obj
+.PHONY : string/string_.c.obj
+
+string/string_.i: string/string_.c.i
+.PHONY : string/string_.i
+
+# target to preprocess a source file
+string/string_.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\str.dir\build.make CMakeFiles/str.dir/string/string_.c.i
+.PHONY : string/string_.c.i
+
+string/string_.s: string/string_.c.s
+.PHONY : string/string_.s
+
+# target to generate assembly for a file
+string/string_.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\str.dir\build.make CMakeFiles/str.dir/string/string_.c.s
+.PHONY : string/string_.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -201,11 +238,15 @@ help:
 	@echo ... rebuild_cache
 	@echo ... algorithms
 	@echo ... data_structures
+	@echo ... str
 	@echo ... test
 	@echo ... untitled4
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... string/string_.obj
+	@echo ... string/string_.i
+	@echo ... string/string_.s
 .PHONY : help
 
 

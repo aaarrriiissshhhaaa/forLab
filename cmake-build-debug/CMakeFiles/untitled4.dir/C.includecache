@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/untitled4/libs/data_structures/5dquestions/questions.h
+../matrix/matrix.h
+D:/untitled4/libs/data_structures/matrix/matrix.h
+
 D:/untitled4/libs/data_structures/matrix/matrix.h
 stdlib.h
 -
@@ -22,5 +26,15 @@ D:/untitled4/libs/data_structures/matrix/matrix.h
 memory.h
 -
 math.h
+-
+libs/data_structures/5dquestions/questions.h
+D:/untitled4/libs/data_structures/5dquestions/questions.h
+string/string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/string_.h
+stdio.h
+-
+stdlib.h
 -
 
