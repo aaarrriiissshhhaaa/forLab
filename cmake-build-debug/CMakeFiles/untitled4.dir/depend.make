@@ -5,4 +5,6 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../libs/data_structures/5dquestions/questions.h \
  ../libs/data_structures/matrix/matrix.h \
  ../main.c \
- ../string/string_.h
+ ../string/string_.h \
+ ../string/tasks/removeAdjacentEqualLetters.h \
+ ../string/tasks/removeNonLetters.h

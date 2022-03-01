@@ -31,10 +31,24 @@ libs/data_structures/5dquestions/questions.h
 D:/untitled4/libs/data_structures/5dquestions/questions.h
 string/string_.h
 D:/untitled4/string/string_.h
+ctype.h
+-
+string/tasks/removeNonLetters.h
+D:/untitled4/string/tasks/removeNonLetters.h
+string/tasks/removeAdjacentEqualLetters.h
+D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
 
 D:/untitled4/string/string_.h
 stdio.h
 -
 stdlib.h
+-
+
+D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
+
+D:/untitled4/string/tasks/removeNonLetters.h
+../string_.h
+D:/untitled4/string/string_.h
+ctype.h
 -
 

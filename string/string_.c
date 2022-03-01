@@ -66,7 +66,7 @@ char *findSpaceReverse(char *rbegin, const char *rend) {
 // возвращает отрицательное значение, если lhs располагается до rhs
 // в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs
 // равны, иначе – положительное значение.
-int strcmp(const char *lhs, const char *rhs) {
+int strcmp_(const char *lhs, const char *rhs) {
     while (*lhs != '\0' && *rhs != '\0' && *lhs == *rhs) {
         lhs++;
         rhs++;
@@ -117,4 +117,25 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource,
     }
 
     return beginDestination;
+}
+
+// Возвращает указатель на первый ноль символ строки s
+char * getEndOfString(char *s){
+    while (*s != '\0')
+        s++;
+
+    return s;
+}
+
+void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName,
+                  int line) {
+    int x = strcmp_(expected, got);
+    if (x) {
+        fprintf(stderr, " File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, " Expected : \"%s\"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
 }

@@ -6,6 +6,9 @@
 #include "libs/data_structures/5dquestions/questions.h"
 //#include <string.h>
 #include "string/string_.h"
+#include <ctype.h>
+#include "string/tasks/removeNonLetters.h"
+#include "string/tasks/removeAdjacentEqualLetters.h"
 
 
 void test_strlen_fullStr() {
@@ -291,28 +294,28 @@ void test_strcmp_eqaulStr() {
     char a[6] = "Hello";
     char b[6] = "Hello";
 
-    assert(strcmp(a, b) == 0);
+    assert(strcmp_(a, b) == 0);
 }
 
 void test_strcmp_negativValue() {
     char a[6] = "Aello";
     char b[6] = "Bello";
 
-    assert(strcmp(a, b) < 0);
+    assert(strcmp_(a, b) < 0);
 }
 
-void test_strcmp_positivValue(){
+void test_strcmp_positivValue() {
     char a[6] = "Aello";
     char b[6] = "Bello";
 
-    assert(strcmp(b, a) > 0);
+    assert(strcmp_(b, a) > 0);
 }
 
-void test_strcmp_positivValueLast(){
+void test_strcmp_positivValueLast() {
     char a[6] = "HellA";
     char b[6] = "HellB";
 
-    assert(strcmp(b, a) > 0);
+    assert(strcmp_(b, a) > 0);
 }
 
 void test_strcmp() {
@@ -322,21 +325,21 @@ void test_strcmp() {
     test_strcmp_positivValueLast();
 }
 
-void test_copy_nullStrBigDiapozon(){
+void test_copy_nullStrBigDiapozon() {
     char a[6] = "";
     char b[9];
 
     assert (copy(a, &a[4], b) == &b[4]);
 }
 
-void test_copy_nullStrNullDiapozon(){
+void test_copy_nullStrNullDiapozon() {
     char a[6] = "";
     char b[9];
 
     assert (copy(a, a, b) == b);
 }
 
-void test_copy_fullStr(){
+void test_copy_fullStr() {
     char a[6] = "Hello";
     char b[9];
 
@@ -359,6 +362,63 @@ void testB() {
     test_strcmp();
     test_copy();
 }
+
+/////////// taks ////////
+
+void test_removeNonLetters_noSpace() {
+    char s[] = "abcdefg";
+    removeNonLetters(s);
+    ASSERT_STRING("abcdefg", s);
+}
+
+void test_removeNonLetters_Space() {
+    char s[] = " a b c d e f g ";
+    removeNonLetters(s);
+    ASSERT_STRING("abcdefg", s);
+}
+
+void test_removeNonLetters() {
+    test_removeNonLetters_noSpace();
+    test_removeNonLetters_Space();
+}
+
+
+void test_removeAdjacentEqualLetters_noSpaceSymbol() {
+    char s[] = "aaa111";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("aa11", s);
+}
+
+void test_removeAdjacentEqualLetters_SpaceSymbol() {
+    char s[] = "a   a   a";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("a  a  a", s);
+}
+
+void test_removeAdjacentEqualLetters_onlyEqualSymbol() {
+    char s[] = "aaa";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("aa", s);
+}
+
+void test_removeAdjacentEqualLetters_onlyNonEqualSymbol() {
+    char s[] = "abc";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("abc", s);
+}
+
+void test_removeAdjacentEqualLetters(){
+    test_removeAdjacentEqualLetters_noSpaceSymbol();
+    test_removeAdjacentEqualLetters_SpaceSymbol();
+    test_removeAdjacentEqualLetters_onlyEqualSymbol();
+    test_removeAdjacentEqualLetters_onlyNonEqualSymbol();
+}
+
+void testTask() {
+    test_removeNonLetters();
+    test_removeAdjacentEqualLetters();
+}
+
 
 int main() {
     testB();
