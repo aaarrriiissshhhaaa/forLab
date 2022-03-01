@@ -13,6 +13,7 @@
 #include "string/tasks/digitToStart.h"
 #include "string/tasks/digitToStartSymbolEnd.h"
 #include "string/tasks/digitToEndReversSymbolToStartString.h"
+#include "string/tasks/digitToStartNonReversString.h"
 
 void test_strlen_fullStr() {
     char a[11] = "ABCDEFGHIJ";
@@ -575,6 +576,45 @@ void test_digitToEndReversSymbolToStartString() {
     test_digitToEndReversSymbolToStartString_nullString();
 }
 
+void test_digitToStartNonReversString_nonDigit() {
+    char s[] = "Hello";
+    digitToStartNonReversString(s);
+    ASSERT_STRING("Hello", s);
+}
+
+void test_digitToStartNonReversString_onlyDigit() {
+    char s[] = "123";
+    digitToStartNonReversString(s);
+    ASSERT_STRING("123", s);
+}
+
+void test_digitToStartNonReversString_classicString() {
+    char s[] = "Hi123 45Jo89";
+    digitToStartNonReversString(s);
+    ASSERT_STRING("123Hi 4589Jo", s);
+}
+
+
+void test_digitToStartNonReversString_complexWordString() {
+    char s[] = "Hi123 45J80o89";
+    digitToStartNonReversString(s);
+    ASSERT_STRING("123Hi 458089Jo", s);
+}
+
+void test_digitToStartNonReversString_nullStr() {
+    char s[] = "";
+    digitToStartNonReversString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_digitToStartNonReversString() {
+    test_digitToStartNonReversString_nonDigit();
+    test_digitToStartNonReversString_onlyDigit();
+    test_digitToStartNonReversString_classicString();
+    test_digitToStartNonReversString_nullStr();
+    test_digitToStartNonReversString_complexWordString();
+}
+
 
 void testTask() {
     test_removeNonLetters();
@@ -583,6 +623,7 @@ void testTask() {
     test_digitToStartString();
     test_digitToEndSymbolToStartString();
     test_digitToEndReversSymbolToStartString();
+    test_digitToStartNonReversString();
 }
 
 

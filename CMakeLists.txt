@@ -12,6 +12,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/digitToStart.h
         string/tasks/digitToStartSymbolEnd.h
         string/tasks/digitToEndReversSymbolToStartString.h
+        string/tasks/digitToStartNonReversString.h
         )
 
 add_subdirectory(libs)

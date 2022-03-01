@@ -293,6 +293,9 @@
 		<Unit filename="D:/untitled4/string/tasks/digitToStart.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/digitToStartNonReversString.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/digitToStartSymbolEnd.h">
 			<Option target="str"/>
 		</Unit>
