@@ -386,19 +386,19 @@ void test_removeNonLetters() {
 void test_removeAdjacentEqualLetters_noSpaceSymbol() {
     char s[] = "aaa111";
     removeAdjacentEqualLetters(s);
-    ASSERT_STRING("aa11", s);
+    ASSERT_STRING("a1", s);
 }
 
 void test_removeAdjacentEqualLetters_SpaceSymbol() {
     char s[] = "a   a   a";
     removeAdjacentEqualLetters(s);
-    ASSERT_STRING("a  a  a", s);
+    ASSERT_STRING("a a a", s);
 }
 
 void test_removeAdjacentEqualLetters_onlyEqualSymbol() {
     char s[] = "aaa";
     removeAdjacentEqualLetters(s);
-    ASSERT_STRING("aa", s);
+    ASSERT_STRING("a", s);
 }
 
 void test_removeAdjacentEqualLetters_onlyNonEqualSymbol() {
@@ -407,11 +407,18 @@ void test_removeAdjacentEqualLetters_onlyNonEqualSymbol() {
     ASSERT_STRING("abc", s);
 }
 
+void test_removeAdjacentEqualLetters_complexStringt() {
+    char s[] = "aaaaaa aaabbbbbbbbccccc c ";
+    removeAdjacentEqualLetters(s);
+    ASSERT_STRING("a abc c ", s);
+}
+
 void test_removeAdjacentEqualLetters(){
     test_removeAdjacentEqualLetters_noSpaceSymbol();
     test_removeAdjacentEqualLetters_SpaceSymbol();
     test_removeAdjacentEqualLetters_onlyEqualSymbol();
     test_removeAdjacentEqualLetters_onlyNonEqualSymbol();
+    test_removeAdjacentEqualLetters_complexStringt();
 }
 
 void testTask() {
