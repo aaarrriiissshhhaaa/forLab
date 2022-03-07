@@ -10,7 +10,7 @@ bool isPallendrom(WordDescriptor w) {
     while (w.begin < w.end) {
         if (*w.begin != *w.end)
             return false;
-        else{
+        else {
             w.begin++;
             w.end--;
         }
@@ -21,10 +21,10 @@ bool isPallendrom(WordDescriptor w) {
 
 
 // работает только для строки с одинаковым регистром
-int getCountPallendrom(char *s){
+int getCountPallendrom(char *s) {
     WordDescriptor w;
     int cntP = 0;
-    while(*s and getWordSeparatedByCommas(s, &w)){
+    while (*s and getWordSeparatedByCommas(s, &w)) {
         cntP += isPallendrom(w);
         s = w.end;
     }

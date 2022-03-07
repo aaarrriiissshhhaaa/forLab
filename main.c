@@ -1107,6 +1107,94 @@ void test_getCountPallendrom() {
     test_getCountPallendrom_commaApocalypse();
 }
 
+#include "string/tasks/getStringMerging.h"
+
+void test_getStringMerging_nullStrFirst() {
+    char s1[] = "";
+    char s2[] = "string";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s1, s2, s);
+
+    ASSERT_STRING("string", s);
+}
+
+void test_getStringMerging_nullStrSecond() {
+    char s1[] = "";
+    char s2[] = "string";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s2, s1, s);
+
+    ASSERT_STRING("string", s);
+}
+
+void test_getStringMerging_nullTwoStr() {
+    char s1[] = "";
+    char s2[] = "";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s1, s2, s);
+
+    ASSERT_STRING("", s);
+}
+
+void test_getStringMerging_someStr() {
+    char s2[] = "string";
+    int size = strlen_(s2) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s2, s2, s);
+
+    ASSERT_STRING("string string", s);
+}
+
+void test_getStringMerging_complexStr() {
+    char s1[] = "I'm funny it hurts";
+    char s2[] = "always and  never ";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s1, s2, s);
+
+    ASSERT_STRING("I'm always funny and it never hurts", s);
+}
+
+void test_getStringMerging_bigStrFirstAndSmallStrSecond() {
+    char s1[] = "It's to work when you're dumb";
+    char s2[] = "hard";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s1, s2, s);
+
+    ASSERT_STRING("It's hard to work when you're dumb", s);
+}
+
+void test_getStringMerging_bigStrSecondAndSmallStrFirst() {
+    char s1[] = "It's to work when you're dumb";
+    char s2[] = "hard";
+    int size = strlen_(s1) + strlen_(s2);
+    char s[size];
+
+    getStringMerging(s2, s1, s);
+
+    ASSERT_STRING("hard It's to work when you're dumb", s);
+}
+
+void test_getStringMerging() {
+    test_getStringMerging_nullStrFirst();
+    test_getStringMerging_nullStrSecond();
+    test_getStringMerging_nullTwoStr();
+    test_getStringMerging_someStr();
+    test_getStringMerging_complexStr();
+    test_getStringMerging_bigStrFirstAndSmallStrSecond();
+    test_getStringMerging_bigStrSecondAndSmallStrFirst();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1120,6 +1208,7 @@ void testTask() {
     test_isOrderWordInStr();
     test_reverseWords();
     test_getCountPallendrom();
+    test_getStringMerging();
     //   test_replace();
 }
 
