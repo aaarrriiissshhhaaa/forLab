@@ -58,4 +58,8 @@ char *copyNonIfReverse(char *rbeginSource, const char *rendSource,
 
 bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2);
+
+int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2);
+
 #endif //MAIN_C_STRING__H

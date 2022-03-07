@@ -1,9 +1,5 @@
 #include <stdio.h>
 #include <assert.h>
-#include "libs/data_structures/matrix/matrix.h"
-#include <memory.h>
-#include <math.h>
-#include "libs/data_structures/5dquestions/questions.h"
 //#include <string.h>
 #include "string/string_.h"
 #include <ctype.h>
@@ -359,32 +355,32 @@ void test_copy() {
     test_copy_fullStr();
 }
 
-void test_getWordReverse_lastWord(){
+void test_getWordReverse_lastWord() {
     char s[] = "Lizi Lolita Margarita ";
     WordDescriptor word;
     assert(getWordReverse(&s[11], s, &word));
     assert(word.begin == &s[4] && word.end == &s[10]);
 }
 
-void test_getWordReverse_firstWord(){
+void test_getWordReverse_firstWord() {
     char s[] = "Liza Lolita Margarita";
     WordDescriptor word;
     assert(getWordReverse(&s[4], s, &word));
 }
 
-void test_getWordReverse_NonWord(){
+void test_getWordReverse_NonWord() {
     char s[10] = "";
     WordDescriptor word;
     assert(!getWordReverse(&s[4], s, &word));
 }
 
-void test_getWordReverse_fullWord(){
+void test_getWordReverse_fullWord() {
     char s[] = "Liza Lolita Margarita";
     WordDescriptor word;
     assert(getWordReverse(&s[4], s, &word));
 }
 
-void test_getWordReverse(){
+void test_getWordReverse() {
     test_getWordReverse_lastWord();
     test_getWordReverse_firstWord();
     test_getWordReverse_NonWord();
@@ -654,26 +650,26 @@ void test_digitToStartNonReversString() {
     test_digitToStartNonReversString_complexWordString();
 }
 
-void test_reverseWordInString_oneWord(){
-    char s[] ="    bibaAndBoba   ";
+void test_reverseWordInString_oneWord() {
+    char s[] = "    bibaAndBoba   ";
     reverseWordInString(s);
     ASSERT_STRING("    aboBdnAabib   ", s);
 }
 
-void test_reverseWordInString_bigString(){
-    char s[] ="    bibaAndBoba   h1i2s3t4o5r6i";
+void test_reverseWordInString_bigString() {
+    char s[] = "    bibaAndBoba   h1i2s3t4o5r6i";
     reverseWordInString(s);
     ASSERT_STRING("    aboBdnAabib   i6r5o4t3s2i1h", s);
 }
 
-void test_reverseWordInString_nullString(){
-    char s[] ="";
+void test_reverseWordInString_nullString() {
+    char s[] = "";
     reverseWordInString(s);
     ASSERT_STRING("", s);
 }
 
-void test_reverseWordInString_onlySymbolOrOnlyDigit(){
-    char s[] ="    bibaAndBoba   123456";
+void test_reverseWordInString_onlySymbolOrOnlyDigit() {
+    char s[] = "    bibaAndBoba   123456";
     reverseWordInString(s);
     ASSERT_STRING("    aboBdnAabib   654321", s);
 }
@@ -688,34 +684,324 @@ void test_reverseWordInString() {
 
 #include "string/tasks/digitSpace.h"
 
-void test_getDigitCountSpace_onlyDigit(){
-    char s[] ="123";
+void test_getDigitCountSpace_onlyDigit() {
+    char s[] = "123";
     getDigitCountSpace(s);
     ASSERT_STRING("      ", s);
 
 }
-void test_getDigitCountSpace_onlySymbol(){
-    char s[] ="abs";
+
+void test_getDigitCountSpace_onlySymbol() {
+    char s[] = "abs";
     getDigitCountSpace(s);
     ASSERT_STRING("abs", s);
 }
-void test_getDigitCountSpace_nullStr(){
-    char s[] ="";
+
+void test_getDigitCountSpace_nullStr() {
+    char s[] = "";
     getDigitCountSpace(s);
     ASSERT_STRING("", s);
 }
-void test_getDigitCountSpace_complexStr(){
-    char s[] ="ab1 2bs 3lkik5";
+
+void test_getDigitCountSpace_complexStr() {
+    char s[] = "ab1 2bs 3lkik5";
     getDigitCountSpace(s);
     ASSERT_STRING("ab    bs    lkik     ", s);
 }
 
-void test_getDigitCountSpace(){
+void test_getDigitCountSpace() {
     test_getDigitCountSpace_onlyDigit();
     test_getDigitCountSpace_onlySymbol();
     test_getDigitCountSpace_nullStr();
     test_getDigitCountSpace_complexStr();
 }
+
+
+// очень поздно сажусь делать 5 задание
+// кажется меня ждёт -0.5 балла.
+// но знаете 3.5 за экз это почти как 5.3 только наоборот
+
+
+#include "string/tasks/replace.h"
+
+void test_replace_wordsEqual() {
+    char s[] = "The more I see the less I know";
+    char w1[] = "know";
+    char w2[] = "know";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("The more I see the less I know", s);
+}
+
+void test_replace_w1BigW2Small() {
+    char s[] = "The more I see the less I know";
+    char w1[] = "know";
+    char w2[] = "love";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("The more I see the less I love", s);
+}
+
+void test_replace_w1SmallW2Big() {
+    char s[] = "The more I see the less I know";
+    char w1[] = "know";
+    char w2[] = "love";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("The more I see the less I love", s);
+}
+
+void test_replace_spaceApocalypse() {
+    char s[] = "heroine \t       of           \n three-volume \t      novels";
+    char w1[] = "three";
+    char w2[] = "five";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("heroine \t       of           \n five-volume \t      novels", s);
+}
+
+void test_replace_complexStr() {
+    char s[] = "I've been acting stupid\n"
+               "I didn't follow the speech\n"
+               "I want to apologize\n"
+               "But I dont know how";
+    char w1[] = "I";
+    char w2[] = "You";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("You've been acting stupid\n"
+                  "You didn't follow the speech\n"
+                  "You want to apologize\n"
+                  "But You dont know how", s);
+}
+
+// ничего интересного больше не будет
+
+void test_replace_nullStr() {
+    char s[] = "";
+    char w1[] = "i'm";
+    char w2[] = "sorry";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("", s);
+}
+
+void test_replace_onlySpace() {
+    char s[] = "                       ";
+    char w1[] = "i'm";
+    char w2[] = "sorry";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("                       ", s);
+}
+
+void test_replace_onlyW1InStr() {
+    char s[] = "frog frog frog frog frog";
+    char w1[] = "frog";
+    char w2[] = "green frog";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("green frog green frog green frog green frog green frog", s);
+}
+
+void test_replace_onlyW2Str() {
+    char s[] = "frog frog frog frog frog";
+    char w2[] = "frog";
+    char w1[] = "green frog";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("frog frog frog frog frog", s);
+}
+
+void test_replace_w1InsideW2() {
+    char s[] = "frog frog frog frog frog";
+    char w1[] = "frog";
+    char w2[] = "greenfrogs";
+
+    replace(s, w1, w2);
+
+    ASSERT_STRING("greenfrogs greenfrogs greenfrogs greenfrogs greenfrogs", s);
+}
+
+void test_replace_repeat() {
+    char s[] = "the frog says qua-qua\n but I say \"I'm stupid\"";
+    char w1[] = "frog";
+    char w2[] = "dog";
+    char w3[] = "qua-qua";
+    char w4[] = "woof-woof";
+
+    replace(s, w1, w2);
+    replace(s, w3, w4);
+
+    ASSERT_STRING("the dog says woof-woof\n but I say \"I'm stupid\"", s);
+}
+
+
+//12 тестов на функцию. Матушки боже.
+// а нет 11. Я не умею считать. (и думать)
+void test_replace() {
+    test_replace_wordsEqual();
+    test_replace_w1BigW2Small();
+    test_replace_w1SmallW2Big();
+    test_replace_spaceApocalypse();
+    test_replace_complexStr();
+    test_replace_nullStr();
+    test_replace_onlySpace();
+    test_replace_onlyW1InStr();
+    test_replace_onlyW2Str();
+    test_replace_w1InsideW2();
+    test_replace_repeat();
+}
+
+void test_areWordsEqual_wordEqual() {
+    char s[] = "I am couch potato";
+    WordDescriptor word1;
+    WordDescriptor word2;
+    getWord(&s[5], &word1);
+    getWord(&s[5], &word2);
+
+    assert(areWordsEqual(word1, word2));
+}
+
+void test_areWordsEqual_wordNonEqual() {
+    char s[] = "I am couch potato";
+    WordDescriptor word1;
+    WordDescriptor word2;
+    getWord(&s[5], &word1);
+    getWord(s, &word2);
+
+    assert(!areWordsEqual(word1, word2));
+}
+
+void test_areWordsEqual() {
+    test_areWordsEqual_wordEqual();
+    test_areWordsEqual_wordNonEqual();
+}
+
+void test_getOrderTwoWord_order() {
+    char s[] = "abcde abefg";
+    WordDescriptor word1;
+    WordDescriptor word2;
+    getWord(s, &word1);
+    getWord(&s[5], &word2);
+
+    assert(getOrderTwoWord(word1, word2));
+
+}
+
+void test_getOrderTwoWord_nonOrder() {
+    char s[] = "abcde abefg";
+    WordDescriptor word1;
+    WordDescriptor word2;
+    getWord(s, &word1);
+    getWord(&s[5], &word2);
+
+    assert(!getOrderTwoWord(word2, word1));
+}
+
+void test_getOrderTwoWord_equal() {
+    char s[] = "abcde abefg";
+    WordDescriptor word1;
+    WordDescriptor word2;
+    getWord(s, &word1);
+    getWord(s, &word2);
+
+    assert(getOrderTwoWord(word1, word2));
+}
+
+void test_getOrderTwoWord() {
+    test_getOrderTwoWord_order();
+    test_getOrderTwoWord_nonOrder();
+    test_getOrderTwoWord_equal();
+}
+
+#include "string/tasks/isOrderWord.h"
+
+void test_isOrderWordInStr_nullStr() {
+    char s[] = "";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_onlySpaceStr(){
+    char s[] = "                     ";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_oneWord(){
+    char s[] = "sad";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_twoWordOrder(){
+    char s[] = "abcd adc";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_twoWordNonOrder(){
+    char s[] = "abcd adcc";
+
+    assert(!isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_manySpaceInEndStr(){
+    char s[] = "abcd adc         \n \n \t";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_spaceApocalypse(){
+    char s[] = "  \n \n \t   abcd \n \n \t adc         \n \n \t";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_wordOrder(){
+    char s[] = "abcd adc klmn mnop";
+
+    assert(isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_wordNonOrder(){
+    char s[] = "abcd adc mnop  klmn";
+
+    assert(!isOrderWordInStr(s));
+}
+
+void test_isOrderWordInStr_wordVeryDifferentLengths(){
+    char s[] = "a abcdefg mn klmnqrstu";
+
+    assert(!isOrderWordInStr(s));
+}
+
+//ещё 12 тестов. Елки-иголки....
+void test_isOrderWordInStr() {
+    test_areWordsEqual();
+    test_getOrderTwoWord();
+    test_isOrderWordInStr_nullStr();
+    test_isOrderWordInStr_onlySpaceStr();
+    test_isOrderWordInStr_oneWord();
+    test_isOrderWordInStr_twoWordOrder();
+    test_isOrderWordInStr_twoWordNonOrder();
+    test_isOrderWordInStr_manySpaceInEndStr();
+    test_isOrderWordInStr_spaceApocalypse();
+    test_isOrderWordInStr_wordOrder();
+    test_isOrderWordInStr_wordNonOrder();
+    test_isOrderWordInStr_wordVeryDifferentLengths();
+}
+
 
 void testTask() {
     test_removeNonLetters();
@@ -727,7 +1013,10 @@ void testTask() {
     test_digitToStartNonReversString();
     test_reverseWordInString();
     test_getDigitCountSpace();
+    test_isOrderWordInStr();
+    //   test_replace();
 }
+
 
 int main() {
     testB();

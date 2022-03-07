@@ -15,6 +15,8 @@ add_library(str string/string_.h string/string_.c
         string/tasks/digitToStartNonReversString.h
         string/tasks/reverseWordInString.h
         string/tasks/digitSpace.h
+        string/tasks/replace.h
+        string/tasks/isOrderWord.h
         )
 
 add_subdirectory(libs)

@@ -6,29 +6,11 @@
 
 #IncludeRegexTransform: 
 
-D:/untitled4/libs/data_structures/5dquestions/questions.h
-../matrix/matrix.h
-D:/untitled4/libs/data_structures/matrix/matrix.h
-
-D:/untitled4/libs/data_structures/matrix/matrix.h
-stdlib.h
--
-stdbool.h
--
-
 D:/untitled4/main.c
 stdio.h
 -
 assert.h
 -
-libs/data_structures/matrix/matrix.h
-D:/untitled4/libs/data_structures/matrix/matrix.h
-memory.h
--
-math.h
--
-libs/data_structures/5dquestions/questions.h
-D:/untitled4/libs/data_structures/5dquestions/questions.h
 string/string_.h
 D:/untitled4/string/string_.h
 ctype.h
@@ -51,6 +33,10 @@ string/tasks/reverseWordInString.h
 D:/untitled4/string/tasks/reverseWordInString.h
 string/tasks/digitSpace.h
 D:/untitled4/string/tasks/digitSpace.h
+string/tasks/replace.h
+D:/untitled4/string/tasks/replace.h
+string/tasks/isOrderWord.h
+D:/untitled4/string/tasks/isOrderWord.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -98,6 +84,12 @@ stdio.h
 ctype.h
 -
 
+D:/untitled4/string/tasks/isOrderWord.h
+../string_.h
+D:/untitled4/string/string_.h
+iso646.h
+D:/untitled4/string/tasks/iso646.h
+
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
 
 D:/untitled4/string/tasks/removeExtraSpaces.h
@@ -107,6 +99,10 @@ D:/untitled4/string/tasks/removeNonLetters.h
 D:/untitled4/string/string_.h
 ctype.h
 -
+
+D:/untitled4/string/tasks/replace.h
+../string_.h
+D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/reverseWordInString.h
 
