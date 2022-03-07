@@ -5,6 +5,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../main.c \
  ../string/string_.h \
  ../string/tasks/ReverseWords.h \
+ ../string/tasks/countPallendrom.h \
  ../string/tasks/digitSpace.h \
  ../string/tasks/digitToEndReversSymbolToStartString.h \
  ../string/tasks/digitToStart.h \

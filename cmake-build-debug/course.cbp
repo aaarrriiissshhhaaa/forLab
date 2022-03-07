@@ -290,6 +290,9 @@
 		<Unit filename="D:/untitled4/string/tasks/ReverseWords.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/countPallendrom.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/digitSpace.h">
 			<Option target="str"/>
 		</Unit>

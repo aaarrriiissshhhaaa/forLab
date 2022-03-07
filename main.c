@@ -932,55 +932,55 @@ void test_isOrderWordInStr_nullStr() {
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_onlySpaceStr(){
+void test_isOrderWordInStr_onlySpaceStr() {
     char s[] = "                     ";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_oneWord(){
+void test_isOrderWordInStr_oneWord() {
     char s[] = "sad";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_twoWordOrder(){
+void test_isOrderWordInStr_twoWordOrder() {
     char s[] = "abcd adc";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_twoWordNonOrder(){
+void test_isOrderWordInStr_twoWordNonOrder() {
     char s[] = "abcd adcc";
 
     assert(!isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_manySpaceInEndStr(){
+void test_isOrderWordInStr_manySpaceInEndStr() {
     char s[] = "abcd adc         \n \n \t";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_spaceApocalypse(){
+void test_isOrderWordInStr_spaceApocalypse() {
     char s[] = "  \n \n \t   abcd \n \n \t adc         \n \n \t";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_wordOrder(){
+void test_isOrderWordInStr_wordOrder() {
     char s[] = "abcd adc klmn mnop";
 
     assert(isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_wordNonOrder(){
+void test_isOrderWordInStr_wordNonOrder() {
     char s[] = "abcd adc mnop  klmn";
 
     assert(!isOrderWordInStr(s));
 }
 
-void test_isOrderWordInStr_wordVeryDifferentLengths(){
+void test_isOrderWordInStr_wordVeryDifferentLengths() {
     char s[] = "a abcdefg mn klmnqrstu";
 
     assert(!isOrderWordInStr(s));
@@ -1005,27 +1005,28 @@ void test_isOrderWordInStr() {
 
 #include "string/tasks/ReverseWords.h"
 
-void test_reverseWords_nullStr(){
+void test_reverseWords_nullStr() {
     char s[] = "";
     reverseWords(s);
 
     ASSERT_STRING("", s);
 }
-void test_reverseWords_oneWord(){
+
+void test_reverseWords_oneWord() {
     char s[] = "pain";
     reverseWords(s);
 
     ASSERT_STRING("pain", s);
 }
 
-void test_reverseWords_twoWord(){
+void test_reverseWords_twoWord() {
     char s[] = "women's holiday";
     reverseWords(s);
 
     ASSERT_STRING("holiday women's", s);
 }
 
-void test_reverseWords_complexStr(){
+void test_reverseWords_complexStr() {
     char s[] = "many names mean nothing to me. But I like your name.";
     reverseWords(s);
     // ради рофла расскажу если вводить name на русской раскладке получится тфьу
@@ -1033,7 +1034,7 @@ void test_reverseWords_complexStr(){
     ASSERT_STRING("name. your like I But me. to nothing mean names many", s);
 }
 
-void test_reverseWords_spaceApocalypse(){
+void test_reverseWords_spaceApocalypse() {
     char s[] = "many   \n    \t     \t    names"
                "\n \n mean \t \t \n nothing \n to \n \t \n me.";
     reverseWords(s);
@@ -1041,12 +1042,69 @@ void test_reverseWords_spaceApocalypse(){
     ASSERT_STRING("me. to nothing mean names many", s);
 }
 
-void test_reverseWords(){
+void test_reverseWords() {
     test_reverseWords_nullStr();
     test_reverseWords_oneWord();
     test_reverseWords_twoWord();
     test_reverseWords_complexStr();
     test_reverseWords_spaceApocalypse();
+}
+
+
+#include "string/tasks/countPallendrom.h"
+
+void test_getCountPallendrom_nullStr() {
+    char s[] = "";
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 0);
+}
+
+void test_getCountPallendrom_onlySpace() {
+    char s[] = "                 ";
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 0);
+}
+
+void test_getCountPallendrom_wordSeparatedSpace() {
+    char s[] = "Madame Anna made Bob a dad at noon";
+
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 0);
+}
+
+void test_getCountPallendrom_nonWordPallendrom() {
+    char s[] = "abcffgcba abffgba  biba boba";
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 0);
+}
+
+void test_getCountPallendrom_complexStr() {
+    char s[] = "madam, anna, made, bob, a, dad, at, noon";
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 6);
+}
+
+void test_getCountPallendrom_commaApocalypse() {
+    char s[] = "madam,,,,,, , , , , , , ,,, , anna,, ,, , , , ,"
+               "\n\n\n,,,,,,\n    made,"
+               "\n,,,,, bob,,,,,, a,,,,, dad,, , , , , , , at,, , , , , noon";
+    int cntP = getCountPallendrom(s);
+
+    assert(cntP == 6);
+}
+
+void test_getCountPallendrom() {
+    test_getCountPallendrom_nullStr();
+    test_getCountPallendrom_onlySpace();
+    test_getCountPallendrom_wordSeparatedSpace();
+    test_getCountPallendrom_nonWordPallendrom();
+    test_getCountPallendrom_complexStr();
+    test_getCountPallendrom_commaApocalypse();
 }
 
 void testTask() {
@@ -1061,6 +1119,7 @@ void testTask() {
     test_getDigitCountSpace();
     test_isOrderWordInStr();
     test_reverseWords();
+    test_getCountPallendrom();
     //   test_replace();
 }
 

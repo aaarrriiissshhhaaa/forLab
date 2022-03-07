@@ -200,15 +200,15 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     return 1;
 }
 
-int areWordsEqual(WordDescriptor w1, WordDescriptor w2){
-    if(w1.end - w1.begin != w2.end - w2.begin)
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
+    if (w1.end - w1.begin != w2.end - w2.begin)
         return 0;
 
-    while(w1.begin != w1.end){
-        if(*w1.begin == *w2.begin){
+    while (w1.begin != w1.end) {
+        if (*w1.begin == *w2.begin) {
             w1.begin++;
             w2.begin++;
-        }else
+        } else
             return 0;
     }
 
@@ -216,18 +216,18 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2){
 }
 
 
-int getOrderChar(char *w1, char *w2){
+int getOrderChar(char *w1, char *w2) {
     return *w2 - *w1;
 }
 
-int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2){
-   while (w1.begin != w1.end and w2.begin!=w2.end
-            and getOrderChar(w1.begin, w2.begin) >= 0){
-       w1.begin++;
-       w2.begin++;
-   }
+int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2) {
+    while (w1.begin != w1.end and w2.begin != w2.end
+           and getOrderChar(w1.begin, w2.begin) >= 0) {
+        w1.begin++;
+        w2.begin++;
+    }
 
-   return w1.begin == w1.end or w2.begin == w2.end;
+    return w1.begin == w1.end or w2.begin == w2.end;
 
 }
 
@@ -240,4 +240,27 @@ void getBagOfWords(BagOfWords *bag, char *s) {
         bag->size++;
         s = word.end;
     }
+}
+
+char *findNonComma(char *begin) {
+    while (*begin and (*begin == ',' or isspace(*begin)))
+        begin++;
+
+    return begin;
+}
+
+char *findComma(char *begin) {
+    while (*begin and *begin != ',')
+        begin++;
+
+    return begin;
+}
+
+int getWordSeparatedByCommas(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonComma(beginSearch);
+    if (*word->begin == '\0')
+        return 0;
+
+    word->end = findComma(word->begin);
+    return 1;
 }

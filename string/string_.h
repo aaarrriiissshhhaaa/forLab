@@ -70,6 +70,8 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2);
 
 int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2);
 
+int getWordSeparatedByCommas(char *beginSearch, WordDescriptor *word);
+
 void getBagOfWords(BagOfWords *bag, char *s);
 
 #endif //MAIN_C_STRING__H

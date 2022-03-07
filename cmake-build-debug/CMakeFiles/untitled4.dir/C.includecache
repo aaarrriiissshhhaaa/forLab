@@ -39,6 +39,8 @@ string/tasks/isOrderWord.h
 D:/untitled4/string/tasks/isOrderWord.h
 string/tasks/ReverseWords.h
 D:/untitled4/string/tasks/ReverseWords.h
+string/tasks/countPallendrom.h
+D:/untitled4/string/tasks/countPallendrom.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -53,6 +55,14 @@ stdbool.h
 D:/untitled4/string/tasks/ReverseWords.h
 ../string_.h
 D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/countPallendrom.h
+../string_.h
+D:/untitled4/string/string_.h
+stdbool.h
+D:/untitled4/string/tasks/stdbool.h
+iso646.h
+D:/untitled4/string/tasks/iso646.h
 
 D:/untitled4/string/tasks/digitSpace.h
 ../string_.h
