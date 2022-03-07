@@ -1003,6 +1003,52 @@ void test_isOrderWordInStr() {
 }
 
 
+#include "string/tasks/ReverseWords.h"
+
+void test_reverseWords_nullStr(){
+    char s[] = "";
+    reverseWords(s);
+
+    ASSERT_STRING("", s);
+}
+void test_reverseWords_oneWord(){
+    char s[] = "pain";
+    reverseWords(s);
+
+    ASSERT_STRING("pain", s);
+}
+
+void test_reverseWords_twoWord(){
+    char s[] = "women's holiday";
+    reverseWords(s);
+
+    ASSERT_STRING("holiday women's", s);
+}
+
+void test_reverseWords_complexStr(){
+    char s[] = "many names mean nothing to me. But I like your name.";
+    reverseWords(s);
+    // ради рофла расскажу если вводить name на русской раскладке получится тфьу
+
+    ASSERT_STRING("name. your like I But me. to nothing mean names many", s);
+}
+
+void test_reverseWords_spaceApocalypse(){
+    char s[] = "many   \n    \t     \t    names"
+               "\n \n mean \t \t \n nothing \n to \n \t \n me.";
+    reverseWords(s);
+
+    ASSERT_STRING("me. to nothing mean names many", s);
+}
+
+void test_reverseWords(){
+    test_reverseWords_nullStr();
+    test_reverseWords_oneWord();
+    test_reverseWords_twoWord();
+    test_reverseWords_complexStr();
+    test_reverseWords_spaceApocalypse();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1014,6 +1060,7 @@ void testTask() {
     test_reverseWordInString();
     test_getDigitCountSpace();
     test_isOrderWordInStr();
+    test_reverseWords();
     //   test_replace();
 }
 

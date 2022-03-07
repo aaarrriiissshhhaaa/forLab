@@ -13,6 +13,7 @@
 
 char _stringBuffer[MAX_STRING_SIZE + 1];
 
+
 #define  ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
 
@@ -21,6 +22,13 @@ typedef struct WordDescriptor {
     char *end;     // позиция первого символа, после последнего символа слова
 } WordDescriptor;
 
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+BagOfWords _bag;
+BagOfWords _bag2;
 
 void assertString(const char *expected, char *got,
                   char const *fileName, char const *funcName,
@@ -61,5 +69,7 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 int areWordsEqual(WordDescriptor w1, WordDescriptor w2);
 
 int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2);
+
+void getBagOfWords(BagOfWords *bag, char *s);
 
 #endif //MAIN_C_STRING__H

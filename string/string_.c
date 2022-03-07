@@ -230,3 +230,14 @@ int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2){
    return w1.begin == w1.end or w2.begin == w2.end;
 
 }
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    bag->size = 0;
+    WordDescriptor word;
+    while (getWord(s, &word)) {
+        bag->words[bag->size] = word;
+
+        bag->size++;
+        s = word.end;
+    }
+}
