@@ -4,7 +4,7 @@
 void deleteWordPallendrom(char *s) {
     char *pread = s;
     char *precord = s;
-    int *size = getEndOfString(s);
+    char *size = getEndOfString(s);
     WordDescriptor word1;
     while (pread != size && getWord(pread, &word1)) {
         pread = word1.end;

@@ -49,6 +49,8 @@ string/tasks/deleteEqualLastWord.h
 D:/untitled4/string/tasks/deleteEqualLastWord.h
 string/tasks/deleteWordPallendrom.h
 D:/untitled4/string/tasks/deleteWordPallendrom.h
+string/tasks/deleteSequenceInWord.h
+D:/untitled4/string/tasks/deleteSequenceInWord.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -73,6 +75,10 @@ iso646.h
 D:/untitled4/string/tasks/iso646.h
 
 D:/untitled4/string/tasks/deleteEqualLastWord.h
+../string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/deleteSequenceInWord.h
 ../string_.h
 D:/untitled4/string/string_.h
 

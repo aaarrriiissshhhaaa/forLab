@@ -1374,64 +1374,67 @@ void test_deleteWordPallendrom(){
     test_deleteWordPallendrom_allWordsPall();
 
 }
-//
-//void test_deleteSequenceInWord_nullStr(){
-//    char s1[] = "";
-//    char s2[] = "nn";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("", s1);
-//}
-//void test_deleteSequenceInWord_onlySpace(){
-//    char s1[] = "          ";
-//    char s2[] = "nn";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("          ", s1);
-//}
-//void test_deleteSequenceInWord_complex(){
-//    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
-//    char s2[] = "SUS";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("anna train bob butter everyone dad me", s1);
-//}
-//void test_deleteSequenceInWord_noSeqWords(){
-//    char s1[] = "red and Blue";
-//    char s2[] = "nn";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("red and Blue", s1);
-//}
-//void test_deleteSequenceInWord_nullSeq(){
-//    char s1[] = "red and Blue";
-//    char s2[] = "";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("red and Blue", s1);
-//}
-//void test_deleteSequenceInWord_allWordsSeq(){
-//    char s1[] = "aaa aaaaa aaa aaaaa";
-//    char s2[] = "a";
-//
-//    deleteSequenceInWord(&s1, s2);
-//
-//    ASSERT_STRING("", s1);
-//}
-//
-//void test_deleteSequenceInWord(){
-//    test_deleteSequenceInWord_nullStr();
-//    test_deleteSequenceInWord_onlySpace();
-//    test_deleteSequenceInWord_complex();
-//    test_deleteSequenceInWord_noSeqWords();
-//    test_deleteSequenceInWord_nullSeq();
-//    test_deleteSequenceInWord_allWordsSeq();
-//}
+
+#include "string/tasks/deleteSequenceInWord.h"
+
+void test_deleteSequenceInWord_nullStr(){
+    char s1[] = "";
+    char s2[] = "nn";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("", s1);
+}
+void test_deleteSequenceInWord_onlySpace(){
+    char s1[] = "          ";
+    char s2[] = "nn";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("", s1);
+}
+void test_deleteSequenceInWord_complex(){
+    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
+    char s2[] = "SUS";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("anna train bob butter everyone dad me ", s1);
+}
+void test_deleteSequenceInWord_noSeqWords(){
+    char s1[] = "red and Blue";
+    char s2[] = "nn";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("red and Blue ", s1);
+}
+void test_deleteSequenceInWord_nullSeq(){
+    char s1[] = "red and Blue";
+    char s2[] = "";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("red and Blue ", s1);
+}
+void test_deleteSequenceInWord_allWordsSeq(){
+    char s1[] = "aaa aaaaa aaa aaaaa";
+    char s2[] = "a";
+
+    deleteSequenceInWord(s1, s2);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteSequenceInWord(){
+    test_deleteSequenceInWord_nullStr();
+    test_deleteSequenceInWord_onlySpace();
+    test_deleteSequenceInWord_complex();
+    test_deleteSequenceInWord_noSeqWords();
+    test_deleteSequenceInWord_nullSeq();
+    test_deleteSequenceInWord_allWordsSeq();
+}
+
 //
 //void test_deleteRepeatingCharinWord_nullStr(){
 //    char s1[] = "";
@@ -1488,7 +1491,7 @@ void testTask() {
     test_isWordLettersSubsetStr();
     test_deleteEqualLastWord();
     test_deleteWordPallendrom();
-//    test_deleteSequenceInWord();
+   test_deleteSequenceInWord();
 //    test_deleteRepeatingCharinWord();
     //   test_replace();
 }

@@ -296,6 +296,9 @@
 		<Unit filename="D:/untitled4/string/tasks/deleteEqualLastWord.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/deleteSequenceInWord.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/deleteWordPallendrom.h">
 			<Option target="str"/>
 		</Unit>
