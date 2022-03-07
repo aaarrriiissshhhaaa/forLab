@@ -20,6 +20,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/ReverseWords.h
         string/tasks/countPallendrom.h
         string/tasks/getStringMerging.h
+        string/tasks/isWordLettersSubsetStr.h
         )
 
 add_subdirectory(libs)

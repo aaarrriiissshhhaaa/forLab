@@ -43,6 +43,8 @@ string/tasks/countPallendrom.h
 D:/untitled4/string/tasks/countPallendrom.h
 string/tasks/getStringMerging.h
 D:/untitled4/string/tasks/getStringMerging.h
+string/tasks/isWordLettersSubsetStr.h
+D:/untitled4/string/tasks/isWordLettersSubsetStr.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -111,6 +113,10 @@ D:/untitled4/string/tasks/isOrderWord.h
 D:/untitled4/string/string_.h
 iso646.h
 D:/untitled4/string/tasks/iso646.h
+
+D:/untitled4/string/tasks/isWordLettersSubsetStr.h
+../string_.h
+D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/removeAdjacentEqualLetters.h
 

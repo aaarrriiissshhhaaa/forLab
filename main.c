@@ -1195,6 +1195,61 @@ void test_getStringMerging() {
     test_getStringMerging_bigStrSecondAndSmallStrFirst();
 }
 
+#include "string/tasks/isWordLettersSubsetStr.h"
+
+void test_isWordLettersSubsetStr_nullStr(){
+    char s[] = "";
+    char w[] = "oh";
+    WordDescriptor word;
+    getWord(w, &word);
+
+    assert(!isWordLettersSubsetStr(s, word));
+}
+
+void test_isWordLettersSubsetStr_subset(){
+    char s[] = "Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark!";
+    // жду сообщения в лс если кто-то пропел
+
+    char w[] = "shark";
+    WordDescriptor word;
+    getWord(w, &word);
+
+    assert(isWordLettersSubsetStr(s, word));
+}
+
+void test_isWordLettersSubsetStr_nonSubset(){
+    char s[] = "Baby shark, doo doo doo doo doo doo."
+//               " Baby shark, doo doo doo doo doo doo."
+//               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark!";
+    char w[] = "ohno";
+    WordDescriptor word;
+    getWord(w, &word);
+
+    assert(!isWordLettersSubsetStr(s, word));
+}
+void test_isWordLettersSubsetStr_difficultSubset(){
+    char s[] = "Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark!";
+    char w[] = "ohbBaykr";
+    WordDescriptor word;
+    getWord(w, &word);
+
+    assert(isWordLettersSubsetStr(s, word));
+}
+
+void test_isWordLettersSubsetStr(){
+    test_isWordLettersSubsetStr_nullStr();
+    test_isWordLettersSubsetStr_subset();
+    test_isWordLettersSubsetStr_nonSubset();
+    test_isWordLettersSubsetStr_difficultSubset();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1209,6 +1264,7 @@ void testTask() {
     test_reverseWords();
     test_getCountPallendrom();
     test_getStringMerging();
+    test_isWordLettersSubsetStr();
     //   test_replace();
 }
 

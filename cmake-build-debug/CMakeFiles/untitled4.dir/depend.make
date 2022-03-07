@@ -13,6 +13,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/digitToStartSymbolEnd.h \
  ../string/tasks/getStringMerging.h \
  ../string/tasks/isOrderWord.h \
+ ../string/tasks/isWordLettersSubsetStr.h \
  ../string/tasks/removeAdjacentEqualLetters.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h \

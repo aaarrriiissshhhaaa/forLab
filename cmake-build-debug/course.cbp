@@ -314,6 +314,9 @@
 		<Unit filename="D:/untitled4/string/tasks/isOrderWord.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/isWordLettersSubsetStr.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/removeAdjacentEqualLetters.h">
 			<Option target="str"/>
 		</Unit>
