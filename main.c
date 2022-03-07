@@ -1306,70 +1306,74 @@ void test_deleteEqualLastWord(){
     test_deleteEqualLastWord_lonelyLastWord();
     test_deleteEqualLastWord_onlyLastWordInComplexStr();
 }
-//void test_deleteWordPallendrom_nullStr(){
-//    char s1[] = "";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("", s1);
-//}
-//
-//void test_deleteWordPallendrom_onlySpaceStr(){
-//    char s1[] = "    ";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("    ", s1);
-//}
-//
-//void test_deleteWordPallendrom_complexStr(){
-//    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("verSUS train verSUS butter jesSUS verSUS everyone verSUS me", s1);
-//}
-//
-//void test_deleteWordPallendrom_noPall(){
-//    char s1[] = "somebody ones told me the world is gonna roll me";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("somebody ones told me the world is gonna roll me", s1);
-//}
-//
-//void test_deleteWordPallendrom_onlyOneWord(){
-//    char s1[] = "anna";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("", s1);
-//}
-//void test_deleteWordPallendrom_onlyOneWordNonPall(){
-//    char s1[] = "train";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("train", s1);
-//}
-//void test_deleteWordPallendrom_allWordsPall(){
-//    char s1[] = "anna mom dad bob anna mom dad dad";
-//
-//    deleteWordPallendrom(&s1);
-//
-//    ASSERT_STRING("", s1);
-//}
-//
-//void test_deleteWordPallendrom(){
-//    test_deleteWordPallendrom_nullStr();
-//    test_deleteWordPallendrom_onlySpaceStr();
-//    test_deleteWordPallendrom_complexStr();
-//    test_deleteWordPallendrom_noPall();
-//    test_deleteWordPallendrom_onlyOneWord();
-//    test_deleteWordPallendrom_onlyOneWordNonPall();
-//    test_deleteWordPallendrom_allWordsPall();
-//
-//}
+
+
+#include "string/tasks/deleteWordPallendrom.h"
+
+void test_deleteWordPallendrom_nullStr(){
+    char s1[] = "";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteWordPallendrom_onlySpaceStr(){
+    char s1[] = "    ";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteWordPallendrom_complexStr(){
+    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("verSUS train verSUS butter jesSUS verSUS everyone verSUS me ", s1);
+}
+
+void test_deleteWordPallendrom_noPall(){
+    char s1[] = "somebody ones told me the world is gonna roll me";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("somebody ones told me the world is gonna roll me ", s1);
+}
+
+void test_deleteWordPallendrom_onlyOneWord(){
+    char s1[] = "anna";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("", s1);
+}
+void test_deleteWordPallendrom_onlyOneWordNonPall(){
+    char s1[] = "train";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("train ", s1);
+}
+void test_deleteWordPallendrom_allWordsPall(){
+    char s1[] = "anna mom dad bob anna mom dad dad";
+
+    deleteWordPallendrom(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteWordPallendrom(){
+    test_deleteWordPallendrom_nullStr();
+    test_deleteWordPallendrom_onlySpaceStr();
+    test_deleteWordPallendrom_complexStr();
+    test_deleteWordPallendrom_noPall();
+    test_deleteWordPallendrom_onlyOneWord();
+    test_deleteWordPallendrom_onlyOneWordNonPall();
+    test_deleteWordPallendrom_allWordsPall();
+
+}
 //
 //void test_deleteSequenceInWord_nullStr(){
 //    char s1[] = "";
@@ -1483,7 +1487,7 @@ void testTask() {
     test_getStringMerging();
     test_isWordLettersSubsetStr();
     test_deleteEqualLastWord();
-//    test_deleteWordPallendrom();
+    test_deleteWordPallendrom();
 //    test_deleteSequenceInWord();
 //    test_deleteRepeatingCharinWord();
     //   test_replace();
