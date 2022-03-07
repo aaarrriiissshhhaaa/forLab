@@ -21,6 +21,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/countPallendrom.h
         string/tasks/getStringMerging.h
         string/tasks/isWordLettersSubsetStr.h
+        string/tasks/deleteEqualLastWord.h
         )
 
 add_subdirectory(libs)

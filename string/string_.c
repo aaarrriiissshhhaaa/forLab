@@ -197,10 +197,17 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
         return 0;
 
     word->begin = findSpaceReverse(word->end, rend);
+    if(*word->begin)
+        word->begin++;
     return 1;
 }
 
 int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
+    if(isspace(*w1.end) or *w1.end == '\0')
+        w1.end--;
+    if(isspace(*w2.end)or *w2.end == '\0')
+        w2.end--;
+
     if (w1.end - w1.begin != w2.end - w2.begin)
         return 0;
 

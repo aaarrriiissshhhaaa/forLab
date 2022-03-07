@@ -359,7 +359,7 @@ void test_getWordReverse_lastWord() {
     char s[] = "Lizi Lolita Margarita ";
     WordDescriptor word;
     assert(getWordReverse(&s[11], s, &word));
-    assert(word.begin == &s[4] && word.end == &s[10]);
+    assert(word.begin == &s[5] && word.end == &s[10]);
 }
 
 void test_getWordReverse_firstWord() {
@@ -1222,8 +1222,8 @@ void test_isWordLettersSubsetStr_subset(){
 
 void test_isWordLettersSubsetStr_nonSubset(){
     char s[] = "Baby shark, doo doo doo doo doo doo."
-//               " Baby shark, doo doo doo doo doo doo."
-//               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
+               " Baby shark, doo doo doo doo doo doo."
                " Baby shark!";
     char w[] = "ohno";
     WordDescriptor word;
@@ -1249,6 +1249,223 @@ void test_isWordLettersSubsetStr(){
     test_isWordLettersSubsetStr_nonSubset();
     test_isWordLettersSubsetStr_difficultSubset();
 }
+#include "string/tasks/deleteEqualLastWord.h"
+
+void test_deleteEqualLastWord_nullStr(){
+    char s1[] = "";
+
+    deleteEqualLastWord(&s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteEqualLastWord_onlySpaceInStr(){
+    char s1[] = "     ";
+
+    deleteEqualLastWord(&s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteEqualLastWord_complexStr(){
+    char s1[] = " aaa bbb nn aaa nn aaa";
+
+    deleteEqualLastWord(s1);
+
+    ASSERT_STRING("bbb nn nn ", s1);
+}
+
+void test_deleteEqualLastWord_oneWord(){
+    char s1[] = " based";
+
+    deleteEqualLastWord(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteEqualLastWord_lonelyLastWord(){
+    char s1[] = "never gonna give you up";
+
+    deleteEqualLastWord(s1);
+
+    ASSERT_STRING("never gonna give you ", s1);
+}
+void test_deleteEqualLastWord_onlyLastWordInComplexStr(){
+    char s1[] = "criminal criminal criminal criminal";
+
+    deleteEqualLastWord(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteEqualLastWord(){
+    test_deleteEqualLastWord_nullStr();
+    test_deleteEqualLastWord_onlySpaceInStr();
+    test_deleteEqualLastWord_complexStr();
+    test_deleteEqualLastWord_oneWord();
+    test_deleteEqualLastWord_lonelyLastWord();
+    test_deleteEqualLastWord_onlyLastWordInComplexStr();
+}
+//void test_deleteWordPallendrom_nullStr(){
+//    char s1[] = "";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("", s1);
+//}
+//
+//void test_deleteWordPallendrom_onlySpaceStr(){
+//    char s1[] = "    ";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("    ", s1);
+//}
+//
+//void test_deleteWordPallendrom_complexStr(){
+//    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("verSUS train verSUS butter jesSUS verSUS everyone verSUS me", s1);
+//}
+//
+//void test_deleteWordPallendrom_noPall(){
+//    char s1[] = "somebody ones told me the world is gonna roll me";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("somebody ones told me the world is gonna roll me", s1);
+//}
+//
+//void test_deleteWordPallendrom_onlyOneWord(){
+//    char s1[] = "anna";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("", s1);
+//}
+//void test_deleteWordPallendrom_onlyOneWordNonPall(){
+//    char s1[] = "train";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("train", s1);
+//}
+//void test_deleteWordPallendrom_allWordsPall(){
+//    char s1[] = "anna mom dad bob anna mom dad dad";
+//
+//    deleteWordPallendrom(&s1);
+//
+//    ASSERT_STRING("", s1);
+//}
+//
+//void test_deleteWordPallendrom(){
+//    test_deleteWordPallendrom_nullStr();
+//    test_deleteWordPallendrom_onlySpaceStr();
+//    test_deleteWordPallendrom_complexStr();
+//    test_deleteWordPallendrom_noPall();
+//    test_deleteWordPallendrom_onlyOneWord();
+//    test_deleteWordPallendrom_onlyOneWordNonPall();
+//    test_deleteWordPallendrom_allWordsPall();
+//
+//}
+//
+//void test_deleteSequenceInWord_nullStr(){
+//    char s1[] = "";
+//    char s2[] = "nn";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("", s1);
+//}
+//void test_deleteSequenceInWord_onlySpace(){
+//    char s1[] = "          ";
+//    char s2[] = "nn";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("          ", s1);
+//}
+//void test_deleteSequenceInWord_complex(){
+//    char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
+//    char s2[] = "SUS";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("anna train bob butter everyone dad me", s1);
+//}
+//void test_deleteSequenceInWord_noSeqWords(){
+//    char s1[] = "red and Blue";
+//    char s2[] = "nn";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("red and Blue", s1);
+//}
+//void test_deleteSequenceInWord_nullSeq(){
+//    char s1[] = "red and Blue";
+//    char s2[] = "";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("red and Blue", s1);
+//}
+//void test_deleteSequenceInWord_allWordsSeq(){
+//    char s1[] = "aaa aaaaa aaa aaaaa";
+//    char s2[] = "a";
+//
+//    deleteSequenceInWord(&s1, s2);
+//
+//    ASSERT_STRING("", s1);
+//}
+//
+//void test_deleteSequenceInWord(){
+//    test_deleteSequenceInWord_nullStr();
+//    test_deleteSequenceInWord_onlySpace();
+//    test_deleteSequenceInWord_complex();
+//    test_deleteSequenceInWord_noSeqWords();
+//    test_deleteSequenceInWord_nullSeq();
+//    test_deleteSequenceInWord_allWordsSeq();
+//}
+//
+//void test_deleteRepeatingCharinWord_nullStr(){
+//    char s1[] = "";
+//
+//    deleteRepeatingCharinWord(&s1);
+//
+//    ASSERT_STRING("", s1);
+//}
+//
+//void test_deleteRepeatingCharinWord_equalWord(){
+//    char s1[] = "Rus  Rus Rus Rus   Rus Rus  Rus ";
+//
+//    deleteRepeatingCharinWord(&s1);
+//
+//    ASSERT_STRING("Rus Rus Rus Rus Rus Rus Rus ", s1);
+//}
+//
+//void test_deleteRepeatingCharinWord_repeatChar(){
+//    char s1[] = "Russ  Russ Russ Russ   Russ Russ  Russ ";
+//
+//    deleteRepeatingCharinWord(&s1);
+//
+//    ASSERT_STRING("", s1);
+//}
+//void test_deleteRepeatingCharinWord_onlySpace(){
+//    char s1[] = "     ";
+//
+//    deleteRepeatingCharinWord(&s1);
+//
+//    ASSERT_STRING("     ", s1);
+//}
+//
+//void test_deleteRepeatingCharinWord(){
+//    test_deleteRepeatingCharinWord_nullStr();
+//    test_deleteRepeatingCharinWord_equalWord();
+//    test_deleteRepeatingCharinWord_repeatChar();
+//    test_deleteRepeatingCharinWord_onlySpace();
+//}
 
 void testTask() {
     test_removeNonLetters();
@@ -1265,6 +1482,10 @@ void testTask() {
     test_getCountPallendrom();
     test_getStringMerging();
     test_isWordLettersSubsetStr();
+    test_deleteEqualLastWord();
+//    test_deleteWordPallendrom();
+//    test_deleteSequenceInWord();
+//    test_deleteRepeatingCharinWord();
     //   test_replace();
 }
 
