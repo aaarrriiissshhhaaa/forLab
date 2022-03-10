@@ -53,6 +53,8 @@ string/tasks/deleteSequenceInWord.h
 D:/untitled4/string/tasks/deleteSequenceInWord.h
 string/tasks/deleteRepeatingCharinWord.h
 D:/untitled4/string/tasks/deleteRepeatingCharinWord.h
+string/tasks/reverseWordOrder.h
+D:/untitled4/string/tasks/reverseWordOrder.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -155,4 +157,8 @@ D:/untitled4/string/tasks/replace.h
 D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/reverseWordInString.h
+
+D:/untitled4/string/tasks/reverseWordOrder.h
+../string_.h
+D:/untitled4/string/string_.h
 

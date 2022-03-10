@@ -344,6 +344,9 @@
 		<Unit filename="D:/untitled4/string/tasks/reverseWordInString.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/reverseWordOrder.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

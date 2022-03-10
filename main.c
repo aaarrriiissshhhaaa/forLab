@@ -1197,7 +1197,7 @@ void test_getStringMerging() {
 
 #include "string/tasks/isWordLettersSubsetStr.h"
 
-void test_isWordLettersSubsetStr_nullStr(){
+void test_isWordLettersSubsetStr_nullStr() {
     char s[] = "";
     char w[] = "oh";
     WordDescriptor word;
@@ -1206,7 +1206,7 @@ void test_isWordLettersSubsetStr_nullStr(){
     assert(!isWordLettersSubsetStr(s, word));
 }
 
-void test_isWordLettersSubsetStr_subset(){
+void test_isWordLettersSubsetStr_subset() {
     char s[] = "Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
@@ -1220,7 +1220,7 @@ void test_isWordLettersSubsetStr_subset(){
     assert(isWordLettersSubsetStr(s, word));
 }
 
-void test_isWordLettersSubsetStr_nonSubset(){
+void test_isWordLettersSubsetStr_nonSubset() {
     char s[] = "Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
@@ -1231,7 +1231,8 @@ void test_isWordLettersSubsetStr_nonSubset(){
 
     assert(!isWordLettersSubsetStr(s, word));
 }
-void test_isWordLettersSubsetStr_difficultSubset(){
+
+void test_isWordLettersSubsetStr_difficultSubset() {
     char s[] = "Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
                " Baby shark, doo doo doo doo doo doo."
@@ -1243,15 +1244,16 @@ void test_isWordLettersSubsetStr_difficultSubset(){
     assert(isWordLettersSubsetStr(s, word));
 }
 
-void test_isWordLettersSubsetStr(){
+void test_isWordLettersSubsetStr() {
     test_isWordLettersSubsetStr_nullStr();
     test_isWordLettersSubsetStr_subset();
     test_isWordLettersSubsetStr_nonSubset();
     test_isWordLettersSubsetStr_difficultSubset();
 }
+
 #include "string/tasks/deleteEqualLastWord.h"
 
-void test_deleteEqualLastWord_nullStr(){
+void test_deleteEqualLastWord_nullStr() {
     char s1[] = "";
 
     deleteEqualLastWord(&s1);
@@ -1259,7 +1261,7 @@ void test_deleteEqualLastWord_nullStr(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteEqualLastWord_onlySpaceInStr(){
+void test_deleteEqualLastWord_onlySpaceInStr() {
     char s1[] = "     ";
 
     deleteEqualLastWord(&s1);
@@ -1267,7 +1269,7 @@ void test_deleteEqualLastWord_onlySpaceInStr(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteEqualLastWord_complexStr(){
+void test_deleteEqualLastWord_complexStr() {
     char s1[] = " aaa bbb nn aaa nn aaa";
 
     deleteEqualLastWord(s1);
@@ -1275,7 +1277,7 @@ void test_deleteEqualLastWord_complexStr(){
     ASSERT_STRING("bbb nn nn ", s1);
 }
 
-void test_deleteEqualLastWord_oneWord(){
+void test_deleteEqualLastWord_oneWord() {
     char s1[] = " based";
 
     deleteEqualLastWord(s1);
@@ -1283,14 +1285,15 @@ void test_deleteEqualLastWord_oneWord(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteEqualLastWord_lonelyLastWord(){
+void test_deleteEqualLastWord_lonelyLastWord() {
     char s1[] = "never gonna give you up";
 
     deleteEqualLastWord(s1);
 
     ASSERT_STRING("never gonna give you ", s1);
 }
-void test_deleteEqualLastWord_onlyLastWordInComplexStr(){
+
+void test_deleteEqualLastWord_onlyLastWordInComplexStr() {
     char s1[] = "criminal criminal criminal criminal";
 
     deleteEqualLastWord(s1);
@@ -1298,7 +1301,7 @@ void test_deleteEqualLastWord_onlyLastWordInComplexStr(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteEqualLastWord(){
+void test_deleteEqualLastWord() {
     test_deleteEqualLastWord_nullStr();
     test_deleteEqualLastWord_onlySpaceInStr();
     test_deleteEqualLastWord_complexStr();
@@ -1310,7 +1313,7 @@ void test_deleteEqualLastWord(){
 
 #include "string/tasks/deleteWordPallendrom.h"
 
-void test_deleteWordPallendrom_nullStr(){
+void test_deleteWordPallendrom_nullStr() {
     char s1[] = "";
 
     deleteWordPallendrom(s1);
@@ -1318,7 +1321,7 @@ void test_deleteWordPallendrom_nullStr(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteWordPallendrom_onlySpaceStr(){
+void test_deleteWordPallendrom_onlySpaceStr() {
     char s1[] = "    ";
 
     deleteWordPallendrom(s1);
@@ -1326,7 +1329,7 @@ void test_deleteWordPallendrom_onlySpaceStr(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteWordPallendrom_complexStr(){
+void test_deleteWordPallendrom_complexStr() {
     char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
 
     deleteWordPallendrom(s1);
@@ -1334,7 +1337,7 @@ void test_deleteWordPallendrom_complexStr(){
     ASSERT_STRING("verSUS train verSUS butter jesSUS verSUS everyone verSUS me ", s1);
 }
 
-void test_deleteWordPallendrom_noPall(){
+void test_deleteWordPallendrom_noPall() {
     char s1[] = "somebody ones told me the world is gonna roll me";
 
     deleteWordPallendrom(s1);
@@ -1342,21 +1345,23 @@ void test_deleteWordPallendrom_noPall(){
     ASSERT_STRING("somebody ones told me the world is gonna roll me ", s1);
 }
 
-void test_deleteWordPallendrom_onlyOneWord(){
+void test_deleteWordPallendrom_onlyOneWord() {
     char s1[] = "anna";
 
     deleteWordPallendrom(s1);
 
     ASSERT_STRING("", s1);
 }
-void test_deleteWordPallendrom_onlyOneWordNonPall(){
+
+void test_deleteWordPallendrom_onlyOneWordNonPall() {
     char s1[] = "train";
 
     deleteWordPallendrom(s1);
 
     ASSERT_STRING("train ", s1);
 }
-void test_deleteWordPallendrom_allWordsPall(){
+
+void test_deleteWordPallendrom_allWordsPall() {
     char s1[] = "anna mom dad bob anna mom dad dad";
 
     deleteWordPallendrom(s1);
@@ -1364,7 +1369,7 @@ void test_deleteWordPallendrom_allWordsPall(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteWordPallendrom(){
+void test_deleteWordPallendrom() {
     test_deleteWordPallendrom_nullStr();
     test_deleteWordPallendrom_onlySpaceStr();
     test_deleteWordPallendrom_complexStr();
@@ -1377,7 +1382,7 @@ void test_deleteWordPallendrom(){
 
 #include "string/tasks/deleteSequenceInWord.h"
 
-void test_deleteSequenceInWord_nullStr(){
+void test_deleteSequenceInWord_nullStr() {
     char s1[] = "";
     char s2[] = "nn";
 
@@ -1385,7 +1390,8 @@ void test_deleteSequenceInWord_nullStr(){
 
     ASSERT_STRING("", s1);
 }
-void test_deleteSequenceInWord_onlySpace(){
+
+void test_deleteSequenceInWord_onlySpace() {
     char s1[] = "          ";
     char s2[] = "nn";
 
@@ -1393,7 +1399,8 @@ void test_deleteSequenceInWord_onlySpace(){
 
     ASSERT_STRING("", s1);
 }
-void test_deleteSequenceInWord_complex(){
+
+void test_deleteSequenceInWord_complex() {
     char s1[] = "anna verSUS train bob verSUS butter jesSUS verSUS everyone dad verSUS me";
     char s2[] = "SUS";
 
@@ -1401,7 +1408,8 @@ void test_deleteSequenceInWord_complex(){
 
     ASSERT_STRING("anna train bob butter everyone dad me ", s1);
 }
-void test_deleteSequenceInWord_noSeqWords(){
+
+void test_deleteSequenceInWord_noSeqWords() {
     char s1[] = "red and Blue";
     char s2[] = "nn";
 
@@ -1409,7 +1417,8 @@ void test_deleteSequenceInWord_noSeqWords(){
 
     ASSERT_STRING("red and Blue ", s1);
 }
-void test_deleteSequenceInWord_nullSeq(){
+
+void test_deleteSequenceInWord_nullSeq() {
     char s1[] = "red and Blue";
     char s2[] = "";
 
@@ -1417,7 +1426,8 @@ void test_deleteSequenceInWord_nullSeq(){
 
     ASSERT_STRING("red and Blue ", s1);
 }
-void test_deleteSequenceInWord_allWordsSeq(){
+
+void test_deleteSequenceInWord_allWordsSeq() {
     char s1[] = "aaa aaaaa aaa aaaaa";
     char s2[] = "a";
 
@@ -1426,7 +1436,7 @@ void test_deleteSequenceInWord_allWordsSeq(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteSequenceInWord(){
+void test_deleteSequenceInWord() {
     test_deleteSequenceInWord_nullStr();
     test_deleteSequenceInWord_onlySpace();
     test_deleteSequenceInWord_complex();
@@ -1437,7 +1447,7 @@ void test_deleteSequenceInWord(){
 
 #include "string/tasks/deleteRepeatingCharinWord.h"
 
-void test_deleteRepeatingCharinWord_nullStr(){
+void test_deleteRepeatingCharinWord_nullStr() {
     char s1[] = "";
 
     deleteRepeatingCharinWord(s1);
@@ -1446,15 +1456,15 @@ void test_deleteRepeatingCharinWord_nullStr(){
 }
 
 
-void test_deleteRepeatingCharinWord_repeatChar(){
-    char s1[] = "Russ  Russ Russ Rus Rus  Russ Russ  Russ ";
+void test_deleteRepeatingCharinWord_repeatChar() {
+    char s1[] = "Russ  Russ Rsus Rus Rus  Russ Russ  Russ ";
 
     deleteRepeatingCharinWord(s1);
 
     ASSERT_STRING("Rus Rus ", s1);
 }
 
-void test_deleteRepeatingCharinWord_onlySpace(){
+void test_deleteRepeatingCharinWord_onlySpace() {
     char s1[] = "     ";
 
     deleteRepeatingCharinWord(s1);
@@ -1462,10 +1472,63 @@ void test_deleteRepeatingCharinWord_onlySpace(){
     ASSERT_STRING("", s1);
 }
 
-void test_deleteRepeatingCharinWord(){
+void test_deleteRepeatingCharinWord() {
     test_deleteRepeatingCharinWord_nullStr();
     test_deleteRepeatingCharinWord_repeatChar();
     test_deleteRepeatingCharinWord_onlySpace();
+}
+
+#include "string/tasks/reverseWordOrder.h"
+
+void test_reverseWordOrder_nullStr() {
+    char s[] = "";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("", s);
+}
+
+void test_reverseWordOrder_onlySpace() {
+    char s[] = "               ";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("               ", s);
+}
+
+void test_reverseWordOrder_oneWord() {
+    char s[] = " sad";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("sad", s);}
+
+void test_reverseWordOrder_twoWord() {
+    char s[] = " love you";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("you love", s);
+}
+
+void test_reverseWordOrder_complexStr() {
+    char s[] = " Im not kind Im just too lazy to hit you";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("you hit to lazy too just Im kind not Im", s);
+}
+
+void test_reverseWordOrder_Apocalypse() {
+    char s[] = "    Im     not      kind \n \t \n Im    just    \ntoo \t lazy \tto \nhit \nyou";
+
+    reverseWordsOrder(s);
+    ASSERT_STRING("you hit to lazy too just Im kind not Im", s);
+}
+
+
+void test_reverseWordOrder() {
+    test_reverseWordOrder_nullStr();
+    test_reverseWordOrder_onlySpace();
+    test_reverseWordOrder_oneWord();
+    test_reverseWordOrder_complexStr();
+    test_reverseWordOrder_Apocalypse();
+    test_reverseWordOrder_twoWord();
 }
 
 void testTask() {
@@ -1485,8 +1548,9 @@ void testTask() {
     test_isWordLettersSubsetStr();
     test_deleteEqualLastWord();
     test_deleteWordPallendrom();
-   test_deleteSequenceInWord();
+    test_deleteSequenceInWord();
     test_deleteRepeatingCharinWord();
+    test_reverseWordOrder();
     //   test_replace();
 }
 
@@ -1495,6 +1559,7 @@ int main() {
     testB();
     testTask();
 
-    // боже мой порадуйтесь мне починили компуктерю Сейчас буду спидранить лабу за 2 дня до финиша.
+    // боже мой порадуйтесь мне починили компуктерю
+    // Сейчас буду спидранить лабу за 2 дня до финиша.
     return 0;
 }
