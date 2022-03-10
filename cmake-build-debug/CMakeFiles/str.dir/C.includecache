@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/untitled4/libs/algorithms/algorithm.h
+stdio.h
+-
+
 D:/untitled4/string/string_.c
 string_.h
 D:/untitled4/string/string_.h
@@ -19,6 +23,8 @@ stdbool.h
 -
 iso646.h
 D:/untitled4/string/iso646.h
+../libs/algorithms/algorithm.h
+D:/untitled4/libs/algorithms/algorithm.h
 
 D:/untitled4/string/string_.h
 stdio.h

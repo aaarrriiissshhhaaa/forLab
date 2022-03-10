@@ -1435,44 +1435,38 @@ void test_deleteSequenceInWord(){
     test_deleteSequenceInWord_allWordsSeq();
 }
 
-//
-//void test_deleteRepeatingCharinWord_nullStr(){
-//    char s1[] = "";
-//
-//    deleteRepeatingCharinWord(&s1);
-//
-//    ASSERT_STRING("", s1);
-//}
-//
-//void test_deleteRepeatingCharinWord_equalWord(){
-//    char s1[] = "Rus  Rus Rus Rus   Rus Rus  Rus ";
-//
-//    deleteRepeatingCharinWord(&s1);
-//
-//    ASSERT_STRING("Rus Rus Rus Rus Rus Rus Rus ", s1);
-//}
-//
-//void test_deleteRepeatingCharinWord_repeatChar(){
-//    char s1[] = "Russ  Russ Russ Russ   Russ Russ  Russ ";
-//
-//    deleteRepeatingCharinWord(&s1);
-//
-//    ASSERT_STRING("", s1);
-//}
-//void test_deleteRepeatingCharinWord_onlySpace(){
-//    char s1[] = "     ";
-//
-//    deleteRepeatingCharinWord(&s1);
-//
-//    ASSERT_STRING("     ", s1);
-//}
-//
-//void test_deleteRepeatingCharinWord(){
-//    test_deleteRepeatingCharinWord_nullStr();
-//    test_deleteRepeatingCharinWord_equalWord();
-//    test_deleteRepeatingCharinWord_repeatChar();
-//    test_deleteRepeatingCharinWord_onlySpace();
-//}
+#include "string/tasks/deleteRepeatingCharinWord.h"
+
+void test_deleteRepeatingCharinWord_nullStr(){
+    char s1[] = "";
+
+    deleteRepeatingCharinWord(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+
+void test_deleteRepeatingCharinWord_repeatChar(){
+    char s1[] = "Russ  Russ Russ Rus Rus  Russ Russ  Russ ";
+
+    deleteRepeatingCharinWord(s1);
+
+    ASSERT_STRING("Rus Rus ", s1);
+}
+
+void test_deleteRepeatingCharinWord_onlySpace(){
+    char s1[] = "     ";
+
+    deleteRepeatingCharinWord(s1);
+
+    ASSERT_STRING("", s1);
+}
+
+void test_deleteRepeatingCharinWord(){
+    test_deleteRepeatingCharinWord_nullStr();
+    test_deleteRepeatingCharinWord_repeatChar();
+    test_deleteRepeatingCharinWord_onlySpace();
+}
 
 void testTask() {
     test_removeNonLetters();
@@ -1492,7 +1486,7 @@ void testTask() {
     test_deleteEqualLastWord();
     test_deleteWordPallendrom();
    test_deleteSequenceInWord();
-//    test_deleteRepeatingCharinWord();
+    test_deleteRepeatingCharinWord();
     //   test_replace();
 }
 
@@ -1501,5 +1495,6 @@ int main() {
     testB();
     testTask();
 
+    // боже мой порадуйтесь мне починили компуктерю Сейчас буду спидранить лабу за 2 дня до финиша.
     return 0;
 }

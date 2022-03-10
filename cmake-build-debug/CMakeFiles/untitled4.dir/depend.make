@@ -7,6 +7,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/ReverseWords.h \
  ../string/tasks/countPallendrom.h \
  ../string/tasks/deleteEqualLastWord.h \
+ ../string/tasks/deleteRepeatingCharinWord.h \
  ../string/tasks/deleteSequenceInWord.h \
  ../string/tasks/deleteWordPallendrom.h \
  ../string/tasks/digitSpace.h \

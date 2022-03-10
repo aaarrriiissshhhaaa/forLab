@@ -24,6 +24,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/deleteEqualLastWord.h
         string/tasks/deleteWordPallendrom.h
         string/tasks/deleteSequenceInWord.h
+        string/tasks/deleteRepeatingCharinWord.h
         )
 
 add_subdirectory(libs)
