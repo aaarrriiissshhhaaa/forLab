@@ -3,6 +3,8 @@
 
 #include "../string_.h"
 
+
+//  в начале строки должен быть  ' '
 void reverseWordsOrder(char *s) {
     int size = strlen_(s);
     copy(s, s + size + 1, _stringBuffer);

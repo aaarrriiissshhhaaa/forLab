@@ -26,6 +26,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/deleteSequenceInWord.h
         string/tasks/deleteRepeatingCharinWord.h
         string/tasks/reverseWordOrder.h
+        string/tasks/addToTheStringWithLessWord.h
         )
 
 add_subdirectory(libs)

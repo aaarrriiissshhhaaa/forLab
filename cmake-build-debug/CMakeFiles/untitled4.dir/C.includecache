@@ -55,6 +55,8 @@ string/tasks/deleteRepeatingCharinWord.h
 D:/untitled4/string/tasks/deleteRepeatingCharinWord.h
 string/tasks/reverseWordOrder.h
 D:/untitled4/string/tasks/reverseWordOrder.h
+string/tasks/addToTheStringWithLessWord.h
+D:/untitled4/string/tasks/addToTheStringWithLessWord.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -67,6 +69,10 @@ stdbool.h
 -
 
 D:/untitled4/string/tasks/ReverseWords.h
+../string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/addToTheStringWithLessWord.h
 ../string_.h
 D:/untitled4/string/string_.h
 

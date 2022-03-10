@@ -1498,7 +1498,8 @@ void test_reverseWordOrder_oneWord() {
     char s[] = " sad";
 
     reverseWordsOrder(s);
-    ASSERT_STRING("sad", s);}
+    ASSERT_STRING("sad", s);
+}
 
 void test_reverseWordOrder_twoWord() {
     char s[] = " love you";
@@ -1514,7 +1515,7 @@ void test_reverseWordOrder_complexStr() {
     ASSERT_STRING("you hit to lazy too just Im kind not Im", s);
 }
 
-void test_reverseWordOrder_Apocalypse() {
+void test_reverseWordOrder_spaceApocalypse() {
     char s[] = "    Im     not      kind \n \t \n Im    just    \ntoo \t lazy \tto \nhit \nyou";
 
     reverseWordsOrder(s);
@@ -1527,8 +1528,91 @@ void test_reverseWordOrder() {
     test_reverseWordOrder_onlySpace();
     test_reverseWordOrder_oneWord();
     test_reverseWordOrder_complexStr();
-    test_reverseWordOrder_Apocalypse();
+    test_reverseWordOrder_spaceApocalypse();
     test_reverseWordOrder_twoWord();
+}
+
+#include "string/tasks/addToTheStringWithLessWord.h"
+
+void test_addToTheStringWithLessWord_nullStr() {
+    char s1[] = "";
+    char s2[] = "";
+
+    addToTheStringWithLessWord(s1, s2);
+
+    char s1True[] = "";
+    char s2True[] = "";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord_onlySpace() {
+    char s1[] = "        ";
+    char s2[] = "";
+
+    addToTheStringWithLessWord(s1, s2);
+
+    char s1True[] = "        ";
+    char s2True[] = "";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord_oneWordFirst() {
+    char s1[] = "it's";
+    char s2[] = "a pity";
+
+    addToTheStringWithLessWord(s1, s2);
+
+    char s1True[] = "it's a pity";
+    char s2True[] = "a pity";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord_complexWord() {
+    char s1[] = "I mixed up the sign ";
+    char s2[] = "I might be dumb  in the function and sat on the bug for two hours";
+
+    addToTheStringWithLessWord(s1, s2);
+
+    char s1True[] = "I mixed up the sign in the function and sat on the bug for two hours";
+    char s2True[] = "I might be dumb  in the function and sat on the bug for two hours";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord_oneWordSecond() {
+    char s1[] = "it's";
+    char s2[] = "a pity";
+
+    addToTheStringWithLessWord(s2, s1);
+
+    char s1True[] = "it's a pity";
+    char s2True[] = "a pity";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord_EqualStr() {
+    char s1[] = "it could be better";
+    char s2[] = "it could be better";
+
+    addToTheStringWithLessWord(s1, s2);
+
+    char s1True[] = "it could be better";
+    char s2True[] = "it could be better";
+    ASSERT_STRING(s1True, s1);
+    ASSERT_STRING(s2True, s2);
+}
+
+void test_addToTheStringWithLessWord() {
+    test_addToTheStringWithLessWord_nullStr();
+    test_addToTheStringWithLessWord_onlySpace();
+    test_addToTheStringWithLessWord_oneWordFirst();
+    test_addToTheStringWithLessWord_complexWord();
+    test_addToTheStringWithLessWord_oneWordSecond();
+    test_addToTheStringWithLessWord_EqualStr();
 }
 
 void testTask() {
@@ -1551,15 +1635,13 @@ void testTask() {
     test_deleteSequenceInWord();
     test_deleteRepeatingCharinWord();
     test_reverseWordOrder();
+    test_addToTheStringWithLessWord();
     //   test_replace();
 }
-
 
 int main() {
     testB();
     testTask();
 
-    // боже мой порадуйтесь мне починили компуктерю
-    // Сейчас буду спидранить лабу за 2 дня до финиша.
     return 0;
 }

@@ -27,7 +27,7 @@ typedef struct BagOfWords {
     size_t size;
 } BagOfWords;
 
-BagOfWords _bag;
+BagOfWords _bag1;
 BagOfWords _bag2;
 
 void assertString(const char *expected, char *got,
@@ -73,6 +73,7 @@ int getOrderTwoWord(WordDescriptor w1, WordDescriptor w2);
 int getWordSeparatedByCommas(char *beginSearch, WordDescriptor *word);
 
 void getBagOfWords(BagOfWords *bag, char *s);
+
 void selectionSortLettersWord(WordDescriptor *a);
 
 #endif //MAIN_C_STRING__H
