@@ -76,4 +76,4 @@ void getBagOfWords(BagOfWords *bag, char *s);
 
 void selectionSortLettersWord(WordDescriptor *a);
 
-#endif //MAIN_C_STRING__H
+#endif

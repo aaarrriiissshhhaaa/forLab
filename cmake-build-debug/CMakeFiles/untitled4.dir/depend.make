@@ -17,6 +17,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/digitToStartNonReversString.h \
  ../string/tasks/digitToStartSymbolEnd.h \
  ../string/tasks/getStringMerging.h \
+ ../string/tasks/getWordBeforeFirstWordWithA.h \
  ../string/tasks/isOrderWord.h \
  ../string/tasks/isWordLettersSubsetStr.h \
  ../string/tasks/removeAdjacentEqualLetters.h \

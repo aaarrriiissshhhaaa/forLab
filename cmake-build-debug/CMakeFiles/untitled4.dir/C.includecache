@@ -57,6 +57,8 @@ string/tasks/reverseWordOrder.h
 D:/untitled4/string/tasks/reverseWordOrder.h
 string/tasks/addToTheStringWithLessWord.h
 D:/untitled4/string/tasks/addToTheStringWithLessWord.h
+string/tasks/getWordBeforeFirstWordWithA.h
+D:/untitled4/string/tasks/getWordBeforeFirstWordWithA.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -135,6 +137,10 @@ ctype.h
 -
 
 D:/untitled4/string/tasks/getStringMerging.h
+../string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/getWordBeforeFirstWordWithA.h
 ../string_.h
 D:/untitled4/string/string_.h
 
