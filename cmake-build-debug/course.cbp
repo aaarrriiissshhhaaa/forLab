@@ -293,6 +293,9 @@
 		<Unit filename="D:/untitled4/string/tasks/addToTheStringWithLessWord.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/areTheSameWordsInString.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/countPallendrom.h">
 			<Option target="str"/>
 		</Unit>

@@ -1644,6 +1644,47 @@ void test_getWordBeforeFirstWordWithA() {
             NOT_FOUND_A_WORD_WITH_A);
 }
 
+#include "string/tasks/areTheSameWordsInString.h"
+
+void test_areTheSameWordsInString_nullStr() {
+    char s[] = "";
+
+    assert(!areTheSameWordsInString(s));
+}
+
+void test_areTheSameWordsInString_wordEqual() {
+    char s[] = "word word";
+
+    assert(areTheSameWordsInString(s));
+
+}
+
+void test_areTheSameWordsInString_nonWordEqual() {
+    char s[] = "word don't equal";
+
+    assert(!areTheSameWordsInString(s));
+}
+
+void test_areTheSameWordsInString_spaceApocWordEqual() {
+    char s[] = "   wol a \t asda \n sf   a    word   df    ";
+
+    assert(areTheSameWordsInString(s));
+}
+
+void test_areTheSameWordsInString_spaceApocWordNonEqual() {
+    char s[] = "   wol  \t asda \n sf   a    word   df    ";
+
+    assert(!areTheSameWordsInString(s));
+}
+
+void test_areTheSameWordsInString() {
+    test_areTheSameWordsInString_nullStr();
+    test_areTheSameWordsInString_wordEqual();
+    test_areTheSameWordsInString_nonWordEqual();
+    test_areTheSameWordsInString_spaceApocWordEqual();
+    test_areTheSameWordsInString_spaceApocWordNonEqual();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1666,6 +1707,7 @@ void testTask() {
     test_reverseWordOrder();
     test_addToTheStringWithLessWord();
     test_getWordBeforeFirstWordWithA();
+    test_areTheSameWordsInString();
     //   test_replace();
 }
 

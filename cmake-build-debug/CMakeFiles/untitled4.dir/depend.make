@@ -6,6 +6,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/string_.h \
  ../string/tasks/ReverseWords.h \
  ../string/tasks/addToTheStringWithLessWord.h \
+ ../string/tasks/areTheSameWordsInString.h \
  ../string/tasks/countPallendrom.h \
  ../string/tasks/deleteEqualLastWord.h \
  ../string/tasks/deleteRepeatingCharinWord.h \

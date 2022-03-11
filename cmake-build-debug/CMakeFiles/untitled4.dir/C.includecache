@@ -59,6 +59,8 @@ string/tasks/addToTheStringWithLessWord.h
 D:/untitled4/string/tasks/addToTheStringWithLessWord.h
 string/tasks/getWordBeforeFirstWordWithA.h
 D:/untitled4/string/tasks/getWordBeforeFirstWordWithA.h
+string/tasks/areTheSameWordsInString.h
+D:/untitled4/string/tasks/areTheSameWordsInString.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -75,6 +77,10 @@ D:/untitled4/string/tasks/ReverseWords.h
 D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/addToTheStringWithLessWord.h
+../string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/areTheSameWordsInString.h
 ../string_.h
 D:/untitled4/string/string_.h
 

@@ -28,6 +28,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/reverseWordOrder.h
         string/tasks/addToTheStringWithLessWord.h
         string/tasks/getWordBeforeFirstWordWithA.h
+        string/tasks/areTheSameWordsInString.h
         )
 
 add_subdirectory(libs)

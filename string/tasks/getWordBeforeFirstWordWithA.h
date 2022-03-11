@@ -22,6 +22,7 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s, char **b
         return FIRST_WORD_WITH_A;
 
     char *begin = wordFirst.end;
+
     WordDescriptor wordCur;
     while (getWord(begin, &wordCur)) {
         if (find(wordCur.begin, wordCur.end, 'A') != wordCur.end
@@ -31,6 +32,7 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s, char **b
 
             return WORD_FOUND;
         }
+
         wordFirst = wordCur;
         begin = wordCur.end;
     }
@@ -42,7 +44,8 @@ void printWordBeforeFirstWordWithA(char *s) {
     char *begin = s;
     char *beginWordBefore, *endWordBefore;
 
-    if (getWordBeforeFirstWordWithA(begin, &beginWordBefore, &endWordBefore) == WORD_FOUND) {
+    if (getWordBeforeFirstWordWithA(begin, &beginWordBefore, &endWordBefore)
+                                    == WORD_FOUND) {
         *endWordBefore = '\0';
 
         printf("%s", beginWordBefore);
