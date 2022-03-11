@@ -1687,34 +1687,101 @@ void test_areTheSameWordsInString() {
 
 #include "string/tasks/wordsOfEqualLetters.h"
 
-void test_wordsOfEqualLetters_nullStr(){
+void test_wordsOfEqualLetters_nullStr() {
     char s[] = "";
 
     assert(!wordsOfEqualLetters(s));
 }
-void test_wordsOfEqualLetters_wordLettersEqual(){
+
+void test_wordsOfEqualLetters_wordLettersEqual() {
     char s[] = "Madmuzel muza";
 
     assert(!wordsOfEqualLetters(s)); //так как функция работает для слов равной длины.
 }
 
-void test_wordsOfEqualLetters_nonWordLettersEqual(){
+void test_wordsOfEqualLetters_nonWordLettersEqual() {
     char s[] = "I S Pritchin";
 
     assert(!wordsOfEqualLetters(s));
 }
 
-void test_wordsOfEqualLetters_wordsLettersEqual(){
+void test_wordsOfEqualLetters_wordsLettersEqual() {
     char s[] = "my name is Ariadna but anyone calls me Adriana or Adrnaia or how he want";
 
     assert(wordsOfEqualLetters(s));
 }
 
-void test_wordsOfEqualLetters(){
+void test_wordsOfEqualLetters() {
     test_wordsOfEqualLetters_nullStr();
     test_wordsOfEqualLetters_wordLettersEqual();
     test_wordsOfEqualLetters_nonWordLettersEqual();
     test_wordsOfEqualLetters_wordsLettersEqual();
+}
+
+#include "string/tasks/getLastWordFromFirstToSecond.h"
+
+void test_getLastWordFromFirstToSecond_nullStr() {
+    char s1[] = "";
+    char s2[] = "";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("", s);
+}
+
+void test_getLastWordFromFirstToSecond_nonWordInsecond() {
+    char s1[] = "one two";
+    char s2[] = "three";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("", s);
+}
+
+void test_getLastWordFromFirstToSecond_lastWordInSecond() {
+    char s1[] = "one two";
+    char s2[] = " two three one";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("two", s);
+}
+
+void test_getLastWordFromFirstToSecond_lastWordInFirst() {
+    char s1[] = "one two";
+    char s2[] = "three one";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("one", s);
+}
+
+void test_getLastWordFromFirstToSecond_complexStr() {
+    char s1[] = "I have no imagination to come up with tests";
+    char s2[] = "but I have a translator and a little bit of tests";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("tests", s);
+}
+
+void test_getLastWordFromFirstToSecond_complexStr1() {
+    char s1[] = "I have no imagination to come up with tests";
+    char s2[] = "but I have a translator and imagination bla blA bla";
+    WordDescriptor word = getLastWordFromFirstToSecond(s1, s2);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING ("imagination", s);
+}
+
+
+void test_getLastWordFromFirstToSecond() {
+    test_getLastWordFromFirstToSecond_nullStr();
+    test_getLastWordFromFirstToSecond_nonWordInsecond();
+    test_getLastWordFromFirstToSecond_lastWordInSecond();
+    test_getLastWordFromFirstToSecond_lastWordInFirst();
+    test_getLastWordFromFirstToSecond_complexStr();
+    test_getLastWordFromFirstToSecond_complexStr1();
 }
 
 void testTask() {
@@ -1741,6 +1808,7 @@ void testTask() {
     test_getWordBeforeFirstWordWithA();
     test_areTheSameWordsInString();
     test_wordsOfEqualLetters();
+    test_getLastWordFromFirstToSecond();
     //   test_replace();
 }
 

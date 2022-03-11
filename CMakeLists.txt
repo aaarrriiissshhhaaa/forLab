@@ -30,6 +30,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/getWordBeforeFirstWordWithA.h
         string/tasks/areTheSameWordsInString.h
         string/tasks/wordsOfEqualLetters.h
+        string/tasks/getLastWordFromFirstToSecond.h
         )
 
 add_subdirectory(libs)

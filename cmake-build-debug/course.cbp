@@ -326,6 +326,9 @@
 		<Unit filename="D:/untitled4/string/tasks/digitToStartSymbolEnd.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/untitled4/string/tasks/getLastWordFromFirstToSecond.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/untitled4/string/tasks/getStringMerging.h">
 			<Option target="str"/>
 		</Unit>
