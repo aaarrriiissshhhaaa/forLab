@@ -26,4 +26,5 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/removeNonLetters.h \
  ../string/tasks/replace.h \
  ../string/tasks/reverseWordInString.h \
- ../string/tasks/reverseWordOrder.h
+ ../string/tasks/reverseWordOrder.h \
+ ../string/tasks/wordsOfEqualLetters.h

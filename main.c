@@ -1685,6 +1685,38 @@ void test_areTheSameWordsInString() {
     test_areTheSameWordsInString_spaceApocWordNonEqual();
 }
 
+#include "string/tasks/wordsOfEqualLetters.h"
+
+void test_wordsOfEqualLetters_nullStr(){
+    char s[] = "";
+
+    assert(!wordsOfEqualLetters(s));
+}
+void test_wordsOfEqualLetters_wordLettersEqual(){
+    char s[] = "Madmuzel muza";
+
+    assert(!wordsOfEqualLetters(s)); //так как функция работает для слов равной длины.
+}
+
+void test_wordsOfEqualLetters_nonWordLettersEqual(){
+    char s[] = "I S Pritchin";
+
+    assert(!wordsOfEqualLetters(s));
+}
+
+void test_wordsOfEqualLetters_wordsLettersEqual(){
+    char s[] = "my name is Ariadna but anyone calls me Adriana or Adrnaia or how he want";
+
+    assert(wordsOfEqualLetters(s));
+}
+
+void test_wordsOfEqualLetters(){
+    test_wordsOfEqualLetters_nullStr();
+    test_wordsOfEqualLetters_wordLettersEqual();
+    test_wordsOfEqualLetters_nonWordLettersEqual();
+    test_wordsOfEqualLetters_wordsLettersEqual();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1708,6 +1740,7 @@ void testTask() {
     test_addToTheStringWithLessWord();
     test_getWordBeforeFirstWordWithA();
     test_areTheSameWordsInString();
+    test_wordsOfEqualLetters();
     //   test_replace();
 }
 

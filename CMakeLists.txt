@@ -29,6 +29,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/addToTheStringWithLessWord.h
         string/tasks/getWordBeforeFirstWordWithA.h
         string/tasks/areTheSameWordsInString.h
+        string/tasks/wordsOfEqualLetters.h
         )
 
 add_subdirectory(libs)

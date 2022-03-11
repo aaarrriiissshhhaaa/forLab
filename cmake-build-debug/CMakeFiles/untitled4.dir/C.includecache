@@ -61,6 +61,8 @@ string/tasks/getWordBeforeFirstWordWithA.h
 D:/untitled4/string/tasks/getWordBeforeFirstWordWithA.h
 string/tasks/areTheSameWordsInString.h
 D:/untitled4/string/tasks/areTheSameWordsInString.h
+string/tasks/wordsOfEqualLetters.h
+D:/untitled4/string/tasks/wordsOfEqualLetters.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -179,4 +181,10 @@ D:/untitled4/string/tasks/reverseWordInString.h
 D:/untitled4/string/tasks/reverseWordOrder.h
 ../string_.h
 D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/wordsOfEqualLetters.h
+../string_.h
+D:/untitled4/string/string_.h
+areTheSameWordsInString.h
+D:/untitled4/string/tasks/areTheSameWordsInString.h
 

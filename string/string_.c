@@ -211,7 +211,9 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
     if (w1.end - w1.begin != w2.end - w2.begin)
         return 0;
 
+    bool isNonOneLetter = true;
     while (w1.begin != w1.end) {
+        isNonOneLetter = false;
         if (*w1.begin == *w2.begin) {
             w1.begin++;
             w2.begin++;
@@ -219,7 +221,10 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
             return 0;
     }
 
-    return 1;
+    if(!isNonOneLetter)
+        return 1;
+    else
+        return *w1.begin == *w2.begin;
 }
 
 
