@@ -19,6 +19,7 @@ CMakeFiles/untitled4.dir/main.c.obj: \
  ../string/tasks/digitToStartSymbolEnd.h \
  ../string/tasks/getLastWordFromFirstToSecond.h \
  ../string/tasks/getStringMerging.h \
+ ../string/tasks/getWordBeforeFirstMatch.h \
  ../string/tasks/getWordBeforeFirstWordWithA.h \
  ../string/tasks/isOrderWord.h \
  ../string/tasks/isWordLettersSubsetStr.h \

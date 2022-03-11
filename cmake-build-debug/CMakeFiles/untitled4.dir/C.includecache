@@ -65,6 +65,8 @@ string/tasks/wordsOfEqualLetters.h
 D:/untitled4/string/tasks/wordsOfEqualLetters.h
 string/tasks/getLastWordFromFirstToSecond.h
 D:/untitled4/string/tasks/getLastWordFromFirstToSecond.h
+string/tasks/getWordBeforeFirstMatch.h
+D:/untitled4/string/tasks/getWordBeforeFirstMatch.h
 
 D:/untitled4/string/string_.h
 stdio.h
@@ -151,6 +153,10 @@ D:/untitled4/string/tasks/getLastWordFromFirstToSecond.h
 D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/getStringMerging.h
+../string_.h
+D:/untitled4/string/string_.h
+
+D:/untitled4/string/tasks/getWordBeforeFirstMatch.h
 ../string_.h
 D:/untitled4/string/string_.h
 

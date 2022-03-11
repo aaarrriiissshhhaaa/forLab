@@ -1788,6 +1788,68 @@ void test_getLastWordFromFirstToSecond() {
     test_getLastWordFromFirstToSecond_complexStr1();
 }
 
+#include "string/tasks/getWordBeforeFirstMatch.h"
+
+void test_getWordBeforeFirstMatch_nullStrTwo() {
+    char s1[] = "";
+    char s2[] = "";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == EMPTY_STR);
+}
+
+void test_getWordBeforeFirstMatch_nullStrFirst() {
+    char s1[] = "";
+    char s2[] = "word";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == EMPTY_STR);
+}
+
+void test_getWordBeforeFirstMatch_nullStrSecond() {
+    char s1[] = "first";
+    char s2[] = "";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == NOT_FOUND_WORD);
+}
+
+void test_getWordBeforeFirstMatch_firstWord() {
+    char s1[] = "word first in string";
+    char s2[] = "word first in string";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == FIRST_WORD);
+}
+
+void test_getWordBeforeFirstMatch_notWordEqual() {
+    char s1[] = "ok that was easy";
+    char s2[] = "well almost";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == NOT_FOUND_WORD);
+}
+
+void test_getWordBeforeFirstMatch_classicStr() {
+    char s1[] = "it's won't be the first or the second word";
+    char s2[] = "it will be the third";
+    WordDescriptor word;
+
+    assert(getWordBeforeFirstMatch(s1, s2, &word) == BEFORE_WORD_FOUND);
+    char s[MAX_WORD_SIZE];
+    wordDescriptorToString(word, s);
+    ASSERT_STRING("won't", s);
+}
+
+void test_getWordBeforeFirstMatch() {
+    test_getWordBeforeFirstMatch_nullStrTwo();
+    test_getWordBeforeFirstMatch_nullStrFirst();
+    test_getWordBeforeFirstMatch_nullStrSecond();
+    test_getWordBeforeFirstMatch_firstWord();
+    test_getWordBeforeFirstMatch_notWordEqual();
+    test_getWordBeforeFirstMatch_classicStr();
+}
+
 void testTask() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -1814,14 +1876,12 @@ void testTask() {
     test_wordsOfEqualLetters();
     test_getLastWordFromFirstToSecond();
     test_replace();
+    test_getWordBeforeFirstMatch();
 }
 
 int main() {
     testB();
     testTask();
-
-//    char  s[] = "Hello my dear friend";
-//    printWordBeforeFirstWordWithA(s);
 
     return 0;
 }
