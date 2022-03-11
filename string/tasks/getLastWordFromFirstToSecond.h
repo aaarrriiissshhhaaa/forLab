@@ -31,9 +31,7 @@ void wordDescriptorToString(WordDescriptor w, char *s) {
     if (w.begin == NULL || *w.begin == '\0')
         *s = '\0';
     else
-
         *copy(w.begin, w.end, s) = '\0';
-
 }
 
 #endif //MAIN_C_GETLASTWORDFROMFIRSTTOSECOND_H

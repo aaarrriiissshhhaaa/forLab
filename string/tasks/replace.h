@@ -19,14 +19,20 @@ void replace(char *source, char *w1, char *w2) {
         recPtr = source;
     }
 
-    while (*readPtr) {
+    WordDescriptor cur_word;
+    while (getWord(readPtr, &cur_word)) {
+        recPtr = copy(readPtr, cur_word.begin, recPtr);
+        if (areWordsEqual(cur_word, word1))
+            recPtr = copy(word2.begin, word2.end, recPtr);
+        else
+            recPtr = copy(cur_word.begin, cur_word.end,
+                          recPtr);
 
+        readPtr = cur_word.end;
     }
-
-
-
-    // продолжение функции
+    *recPtr = '\0';
 }
+
 
 
 #endif //MAIN_C_REPLACE_H

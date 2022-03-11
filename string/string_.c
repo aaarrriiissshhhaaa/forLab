@@ -1,7 +1,5 @@
 #include "string_.h"
-#include <stdlib.h>
 #include <ctype.h>
-#include <memory.h>
 #include <stdbool.h>
 #include "iso646.h"
 
@@ -75,33 +73,6 @@ int strcmp_(const char *lhs, const char *rhs) {
 
     return *lhs - *rhs;
 }
-
-//char *searcWordInStr(char *s1, char *w) {
-//    while (*s1) {
-//        if (*s1 == *w) {
-//            int isСonformity = 1;
-//
-//            char *beginSearchWord = w;
-//            char *beginSearchSource = s1;
-//
-//            while (*beginSearchWord)
-//                if (*beginSearchWord == *beginSearchSource && isСonformity) {
-//                    beginSearchWord++;
-//                    beginSearchSource++;
-//                } else
-//                    isСonformity = 0;
-//
-//            if (isСonformity)
-//                return s1;
-//        }
-//
-//        s1++;
-//    }
-//
-//    return s1;
-//}
-
-
 
 
 // Возвращает указатель на следующий свободный фрагмент памяти в

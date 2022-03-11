@@ -756,8 +756,8 @@ void test_replace_w1SmallW2Big() {
 
 void test_replace_spaceApocalypse() {
     char s[] = "heroine \t       of           \n three-volume \t      novels";
-    char w1[] = "three";
-    char w2[] = "five";
+    char w1[] = "three-volume";
+    char w2[] = "five-volume";
 
     replace(s, w1, w2);
 
@@ -774,7 +774,7 @@ void test_replace_complexStr() {
 
     replace(s, w1, w2);
 
-    ASSERT_STRING("You've been acting stupid\n"
+    ASSERT_STRING("I've been acting stupid\n"
                   "You didn't follow the speech\n"
                   "You want to apologize\n"
                   "But You dont know how", s);
@@ -799,41 +799,45 @@ void test_replace_onlySpace() {
 
     replace(s, w1, w2);
 
-    ASSERT_STRING("                       ", s);
+    ASSERT_STRING("", s);
 }
 
 void test_replace_onlyW1InStr() {
-    char s[] = "frog frog frog frog frog";
+    char expected[] = "greenFrog greenFrog greenFrog greenFrog greenFrog";
+    char s[sizeof(expected)] = "frog frog frog frog frog";
     char w1[] = "frog";
-    char w2[] = "green frog";
+    char w2[] = "greenFrog";
 
     replace(s, w1, w2);
 
-    ASSERT_STRING("green frog green frog green frog green frog green frog", s);
+    ASSERT_STRING(expected, s);
 }
 
 void test_replace_onlyW2Str() {
-    char s[] = "frog frog frog frog frog";
+    char expected[] = "frog frog frog frog frog";
+    char s[sizeof(expected)] = "frog frog frog frog frog";
     char w2[] = "frog";
-    char w1[] = "green frog";
+    char w1[] = "greenfrog";
 
     replace(s, w1, w2);
 
-    ASSERT_STRING("frog frog frog frog frog", s);
+    ASSERT_STRING(expected, s);
 }
 
 void test_replace_w1InsideW2() {
-    char s[] = "frog frog frog frog frog";
+    char expected[] = "greenfrogs greenfrogs greenfrogs greenfrogs greenfrogs";
+    char s[sizeof(expected)] = "frog frog frog frog frog";
     char w1[] = "frog";
     char w2[] = "greenfrogs";
 
     replace(s, w1, w2);
 
-    ASSERT_STRING("greenfrogs greenfrogs greenfrogs greenfrogs greenfrogs", s);
+    ASSERT_STRING(expected, s);
 }
 
 void test_replace_repeat() {
-    char s[] = "the frog says qua-qua\n but I say \"I'm stupid\"";
+    char expected[] = "the dog says woof-woof\n but I say \"I'm stupid\"";
+    char s[sizeof(expected)] = "the frog says qua-qua\n but I say \"I'm stupid\"";
     char w1[] = "frog";
     char w2[] = "dog";
     char w3[] = "qua-qua";
@@ -842,7 +846,7 @@ void test_replace_repeat() {
     replace(s, w1, w2);
     replace(s, w3, w4);
 
-    ASSERT_STRING("the dog says woof-woof\n but I say \"I'm stupid\"", s);
+    ASSERT_STRING(expected, s);
 }
 
 
@@ -1809,7 +1813,7 @@ void testTask() {
     test_areTheSameWordsInString();
     test_wordsOfEqualLetters();
     test_getLastWordFromFirstToSecond();
-    //   test_replace();
+    test_replace();
 }
 
 int main() {
