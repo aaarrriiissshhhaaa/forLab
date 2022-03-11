@@ -679,7 +679,6 @@ void test_reverseWordInString() {
     test_reverseWordInString_bigString();
     test_reverseWordInString_nullString();
     test_reverseWordInString_onlySymbolOrOnlyDigit();
-
 }
 
 #include "string/tasks/digitSpace.h"

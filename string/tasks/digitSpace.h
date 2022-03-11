@@ -10,10 +10,10 @@ void getDigitCountSpace(char *s) {
     *endOfBuffer = '\0';
 
     while (*beginB != '\0') {
-        if (isalpha(*beginB) || isspace(*beginB)) {
+        if (!isdigit(*beginB)) {
             *s = *beginB;
             s++;
-        } else if (isdigit(*beginB)) {
+        } else  {
             unsigned char digit = *beginB - '0';
             while (digit--){
                 *s = ' ';

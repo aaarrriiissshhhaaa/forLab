@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/untitled4/libs/algorithms/algorithm.h
+stdio.h
+-
+
 D:/untitled4/main.c
 stdio.h
 -
@@ -189,6 +193,8 @@ D:/untitled4/string/tasks/replace.h
 D:/untitled4/string/string_.h
 
 D:/untitled4/string/tasks/reverseWordInString.h
+../../libs/algorithms/algorithm.h
+D:/untitled4/libs/algorithms/algorithm.h
 
 D:/untitled4/string/tasks/reverseWordOrder.h
 ../string_.h
